@@ -2,6 +2,8 @@
 ### CS 180 Capstone Project
 To design and implement a limited form of social network application. 
 
+***
+
 **This README file has to be submitted under the Documentation of our project.**
 
 This document will include the following for each class: 
