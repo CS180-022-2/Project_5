@@ -1,5 +1,5 @@
 # Project_5
-#### CS 180 Capstone Project
+### CS 180 Capstone Project
 To design and implement a limited form of social network application. 
 
 **This README file has to be submitted under the Documentation of our project.**
