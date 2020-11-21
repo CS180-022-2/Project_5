@@ -70,56 +70,39 @@ public class ProfileServer implements Runnable {
                     return;
                 }
                 switch (command) {
-                    case "Login" : {
-                        break;
+                    case "Login" -> {
                     }
-                    case "Register" : {
-                        break;
+                    case "Register" -> {
                     }
-                    case "ShowOwnInfo" : {
-                        break;
+                    case "ShowOwnInfo" -> {
                     }
-                    case "AddFriend" : {
-                        break;
+                    case "AddFriend" -> {
                     }
-                    case "DeleteFriend" : {
-                        break;
+                    case "DeleteFriend" -> {
                     }
-                    case "ShowFriendList" : {
-                        break;
+                    case "ShowFriendList" -> {
                     }
-                    case "EditOwnAccount" : {
-                        break;
+                    case "EditOwnAccount" -> {
                     }
-                    case "DeleteOwnAccount" : {
-                        break;
+                    case "DeleteOwnAccount" -> {
                     }
-                    case "ShowAllUser" : {
-                        break;
+                    case "ShowAllUser" -> {
                     }
-                    case "ViewOwnProfile" : {
-                        break;
+                    case "ViewOwnProfile" -> {
                     }
-                    case "EditOwnProfile" : {
-                        break;
+                    case "EditOwnProfile" -> {
                     }
-                    case "ViewOtherProfile" : {
-                        break;
+                    case "ViewOtherProfile" -> {
                     }
-                    case "ShowFriendRequestList" : {
-                        break;
+                    case "ShowFriendRequestList" -> {
                     }
-                    case "ShowPendingList" : {
-                        break;
+                    case "ShowPendingList" -> {
                     }
-                    case "ResendFriendRequest" : {
-                        break;
+                    case "ResendFriendRequest" -> {
                     }
-                    case "AcceptFriendRequest" : {
-                        break;
+                    case "AcceptFriendRequest" -> {
                     }
-                    case "DenyFriendRequest" : {
-                        break;
+                    case "DenyFriendRequest" -> {
                     }
                 }
             }
