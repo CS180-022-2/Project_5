@@ -27,7 +27,6 @@ public class LoginFrame extends JComponent implements Runnable {
     BufferedReader bufferedReader;
     PrintWriter printWriter;
 
-
     public LoginFrame(Socket socket) {
         this.socket = socket;
     }
