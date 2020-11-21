@@ -124,7 +124,6 @@ public class RegisterFrame extends JComponent implements Runnable{
 
         /*
         Regex used for password validation:
-
         ^                 # start-of-string
         (?=.*[0-9])       # a digit must occur at least once
         (?=.*[a-z])       # a lower case letter must occur at least once

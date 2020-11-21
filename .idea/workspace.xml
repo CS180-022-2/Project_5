@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/LoginFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProfileClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProfileServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RegisterFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserFrame.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProfileClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,8 +107,6 @@
       <updated>1605875331683</updated>
       <workItem from="1605875332972" duration="6147000" />
       <workItem from="1605970834937" duration="1972000" />
-      <workItem from="1605973494798" duration="352000" />
-      <workItem from="1605974118085" duration="5896000" />
     </task>
     <servers />
   </component>
