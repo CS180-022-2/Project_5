@@ -6,6 +6,8 @@ public class User {
     private String name;
     private String email;
     private ArrayList<User> friendList;
+    private ArrayList<User> requestList;
+    private ArrayList<User> pendingList;
     private Profile userProfile;
 
     public User(String userId, String password, String name, String email) {
@@ -14,6 +16,24 @@ public class User {
         this.name = name;
         this.email = email;
         friendList = new ArrayList<>();
+        pendingList = new ArrayList<>();
+        requestList = new ArrayList<>();
+    }
+
+    public ArrayList<User> getRequestList() {
+        return requestList;
+    }
+
+    public void setRequestList(ArrayList<User> requestList) {
+        this.requestList = requestList;
+    }
+
+    public ArrayList<User> getPendingList() {
+        return pendingList;
+    }
+
+    public void setPendingList(ArrayList<User> pendingList) {
+        this.pendingList = pendingList;
     }
 
     public String getUserId() {
@@ -64,4 +84,3 @@ public class User {
         this.userProfile = userProfile;
     }
 }
-
