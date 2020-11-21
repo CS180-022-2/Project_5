@@ -6,8 +6,6 @@ import javax.swing.SwingUtilities;
 public class ProfileClient {
     private static Socket socket;
 
-
-
     public static void main(String[] args) {
         try {
             socket = new Socket("localhost", 1112);

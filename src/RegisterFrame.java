@@ -70,7 +70,7 @@ public class RegisterFrame extends JComponent implements Runnable{
         Container registerFrameContentPane = registerFrame.getContentPane();
         registerFrameContentPane.setLayout(null);
         //Initialize components
-        userIdLabel = new JLabel("UserId");
+        userIdLabel = new JLabel("UserID");
         userIdTextField = new JTextField();
         passwordLabel = new JLabel("Password");
         passwordField = new JPasswordField();
@@ -115,21 +115,35 @@ public class RegisterFrame extends JComponent implements Runnable{
     }
     public boolean contentCheck(String userId, String password, String realName, String email) {
         boolean correct = true;
-        if (!userId.matches("")) {
-            JOptionPane.showMessageDialog(null, "",
-                    "UserId Error", JOptionPane.WARNING_MESSAGE);
+        if (!userId.matches("^[a-zA-Z0-9_-][^%+\\\\/#@*:;`~<>?!.,'\"]+$")) {
+            JOptionPane.showMessageDialog(null, "UserID should at least contain" +
+                            " two characters and only contain alphabets and numbers.",
+                    "UserID Error", JOptionPane.WARNING_MESSAGE);
             correct = false;
         }
-        if (!password.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,18}$")) {
+
+        /*
+        Regex used for password validation:
+        ^                 # start-of-string
+        (?=.*[0-9])       # a digit must occur at least once
+        (?=.*[a-z])       # a lower case letter must occur at least once
+        (?=.*[A-Z])       # an upper case letter must occur at least once
+        (?=.*[@#$%^&+=])  # a special character must occur at least once
+        (?=\S+$)          # no whitespace allowed in the entire string
+        .{8,}             # anything, at least eight places though
+        $                 # end-of-string
+         */
+        if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")) {
             JOptionPane.showMessageDialog(null, "Password must have a length"
-                            + "between 6 to 18 and contain an uppercase, a lower case, and a number",
+                            + " greater than 8 and contain at least one uppercase, one lower case, one digit" +
+                            " and one special character.",
                     "Password Error", JOptionPane.WARNING_MESSAGE);
             correct = false;
         }
         if (!realName.matches("[A-Za-z]+ [A-Za-z]+ ?[A-Za-z]+")) {
             JOptionPane.showMessageDialog(null, "Real Name must have a first"
-                            + "name and a lastName. A space needs to appear between the first name and next"
-                            + "name. Middle name can be included ",
+                            + "Name and a lastName. A space needs to appear between the first name and next"
+                            + "Name. Middle name can be included ",
                     "Real Name Error", JOptionPane.WARNING_MESSAGE);
             correct = false;
         }
