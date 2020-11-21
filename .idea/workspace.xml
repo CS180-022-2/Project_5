@@ -54,15 +54,24 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last.edited.regexp" value="" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ProfileClient">
     <configuration name="ProfileClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ProfileClient" />
+      <module name="Project_5" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProfileServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ProfileServer" />
       <module name="Project_5" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -84,6 +93,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ProfileClient" />
+        <item itemvalue="Application.ProfileServer" />
       </list>
     </recent_temporary>
   </component>
@@ -116,21 +126,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1662" height="270" key="GridCell.Tab.0.bottom" timestamp="1605877333749">
+    <state width="1663" height="270" key="GridCell.Tab.0.bottom" timestamp="1605981930036">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1662" height="270" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1605877333749" />
-    <state width="1662" height="270" key="GridCell.Tab.0.center" timestamp="1605877333749">
+    <state width="1663" height="270" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1605981930036" />
+    <state width="1663" height="270" key="GridCell.Tab.0.center" timestamp="1605981930036">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1662" height="270" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1605877333749" />
-    <state width="1662" height="270" key="GridCell.Tab.0.left" timestamp="1605877333748">
+    <state width="1663" height="270" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1605981930036" />
+    <state width="1663" height="270" key="GridCell.Tab.0.left" timestamp="1605981930036">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1662" height="270" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1605877333748" />
-    <state width="1662" height="270" key="GridCell.Tab.0.right" timestamp="1605877333749">
+    <state width="1663" height="270" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1605981930036" />
+    <state width="1663" height="270" key="GridCell.Tab.0.right" timestamp="1605981930036">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1662" height="270" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1605877333749" />
+    <state width="1663" height="270" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1605981930036" />
+    <state x="355" y="158" key="SettingsEditor" timestamp="1605973810559">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="355" y="158" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1605973810559" />
   </component>
 </project>

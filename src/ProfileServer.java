@@ -1,10 +1,7 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.io.*;
 
 public class ProfileServer implements Runnable {
     Socket socket;
@@ -73,36 +70,52 @@ public class ProfileServer implements Runnable {
                     case "Login" -> {
                     }
                     case "Register" -> {
+
                     }
                     case "ShowOwnInfo" -> {
+
                     }
                     case "AddFriend" -> {
+
                     }
                     case "DeleteFriend" -> {
+
                     }
                     case "ShowFriendList" -> {
+
                     }
                     case "EditOwnAccount" -> {
+
                     }
                     case "DeleteOwnAccount" -> {
+
                     }
                     case "ShowAllUser" -> {
+
                     }
                     case "ViewOwnProfile" -> {
+
                     }
                     case "EditOwnProfile" -> {
+
                     }
                     case "ViewOtherProfile" -> {
+
                     }
                     case "ShowFriendRequestList" -> {
+
                     }
                     case "ShowPendingList" -> {
+
                     }
                     case "ResendFriendRequest" -> {
+
                     }
                     case "AcceptFriendRequest" -> {
+
                     }
                     case "DenyFriendRequest" -> {
+
                     }
                 }
             }
