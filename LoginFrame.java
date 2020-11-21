@@ -62,12 +62,6 @@ public class LoginFrame extends JComponent implements Runnable {
 			}
 			if (e.getSource() == registerButton) {
 				SwingUtilities.invokeLater(new RegisterFrame(socket));
-				try{
-					bufferedReader.close();
-					printWriter.close();
-				} catch (IOException ioException) {
-					ioException.printStackTrace();
-				}
 				loginFrame.dispose();
 			}
 		}
@@ -79,8 +73,9 @@ public class LoginFrame extends JComponent implements Runnable {
 			bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			printWriter = new PrintWriter(socket.getOutputStream());
 		} catch (IOException e) {
+			e.printStackTrace();
 			JOptionPane.showMessageDialog(null,
-				"Unable to initialize", "Error", JOptionPane.ERROR_MESSAGE);
+				"Unable to initialize in Login Frame", "Error", JOptionPane.ERROR_MESSAGE);
 			return;
 		}
 
