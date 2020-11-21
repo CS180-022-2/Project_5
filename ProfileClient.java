@@ -10,9 +10,8 @@ public class profileClient {
 
 	public static void main(String[] args) {
 		try {
-			socket = new Socket("localhost", 4242);
+			socket = new Socket("localhost", 1112);
 		} catch (IOException e) {
-			e.printStackTrace();
 			JOptionPane.showMessageDialog(null,
 				"Unable to connect to the server", "Error", JOptionPane.ERROR_MESSAGE);
 			return;
