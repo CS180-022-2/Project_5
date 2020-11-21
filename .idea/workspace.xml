@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfileClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProfileServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RegisterFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterFrame.java" afterDir="false" />
-    </list>
+    <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
