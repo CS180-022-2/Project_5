@@ -11,9 +11,11 @@ public class UserFrame extends JComponent implements Runnable {
     Socket socket;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
+    String userId;
 
-    public UserFrame(Socket socket) {
+    public UserFrame(Socket socket, String userId) {
         this.socket = socket;
+        this.userId = userId;
     }
 
     @Override
@@ -26,6 +28,7 @@ public class UserFrame extends JComponent implements Runnable {
                     "Unable to initialize", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+
 
 
     }
