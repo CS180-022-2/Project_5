@@ -37,20 +37,33 @@ public class ProfileServer implements Runnable {
         return false;
     }
 
-    synchronized boolean setUserProfile(Profile profile, String userName) {
+    synchronized boolean setUserProfile(Profile profile, String userId) {
         return false;
     }
 
-    synchronized Profile viewProfile(String username) {
+    synchronized Profile viewProfile(String userId) {
         return null;
     }
 
-    synchronized boolean addFriend(String username) {
+    synchronized boolean addFriend(String userId) {
         return false;
     }
 
     synchronized boolean checkFriendRequest() {
         return false;
+    }
+
+    synchronized boolean uniqueIdCheck(String userId) {
+        if (userArrayList.isEmpty()) {
+            return true;
+        }
+        boolean unique = true;
+        for (int i = 0; i < userArrayList.size(); i++) {
+            if (userArrayList.get(i).getUserId().equals(userId)) {
+                unique = false;
+            }
+        }
+        return unique;
     }
 
     @Override
@@ -72,11 +85,13 @@ public class ProfileServer implements Runnable {
                         String[] splitLoginUser = loginUser.split(", ");
                     }
                     case "Register" -> {
-                        //The User would send the content in a string
+                        //The User would send the user account info in a string
                         String newUser  = bufferedReader.readLine();
                         String[] splitNewUser = newUser.split(", ");
                         userArrayList.add(new User(splitNewUser[0], splitNewUser[1],
                             splitNewUser[2], splitNewUser[3]));
+                        printWriter.println("Success");
+                        printWriter.flush();
                     }
                     case "ShowOwnInfo" -> {
 
@@ -121,6 +136,18 @@ public class ProfileServer implements Runnable {
 
                     }
                     case "DenyFriendRequest" -> {
+
+                    }
+                    case "UniqueIdCheck" -> {
+                        String userId = bufferedReader.readLine();
+                        boolean unique = uniqueIdCheck(userId);
+                        if (unique) {
+                            printWriter.println("Unique");
+                            printWriter.flush();
+                        } else {
+                            printWriter.println("Existed");
+                            printWriter.flush();
+                        }
 
                     }
                 }

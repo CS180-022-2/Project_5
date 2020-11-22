@@ -47,10 +47,41 @@ public class RegisterFrame extends JComponent implements Runnable{
                 if (!contentCheck(userId, rawPassword.toString(), realName, email)){
                     return;
                 }
+                printWriter.println("UniqueIdCheck");
+                printWriter.println(userId);
+                printWriter.flush();
+                String result = "";
+                try {
+                    result = bufferedReader.readLine();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+                if (!result.equals("Unique")) {
+                    JOptionPane.showMessageDialog(null, "UserId existed",
+                            "UserID Error", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 //Pass the data to server
                 printWriter.println("Register");
                 printWriter.printf("%s, %s, %s, %s\n", userId, rawPassword.toString(), realName, email);
                 printWriter.flush();
+                String success = "";
+                try {
+                    success = bufferedReader.readLine();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+                if (success.equals("Success")) {
+                    JOptionPane.showMessageDialog(null, "Congratulation! " +
+                                    "You have successfully registered",
+                            "Register Successfully", JOptionPane.INFORMATION_MESSAGE);
+                    SwingUtilities.invokeLater(new LoginFrame(socket));
+                    registerFrame.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Oops!" +
+                                    "Unsuccessful register./n Please retry.",
+                            "Register Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         }
     };
