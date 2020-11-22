@@ -47,6 +47,10 @@ public class RegisterFrame extends JComponent implements Runnable{
                 if (!contentCheck(userId, rawPassword.toString(), realName, email)){
                     return;
                 }
+                //Pass the data to server
+                printWriter.println("Register");
+                printWriter.printf("%s, %s, %s, %s\n", userId, rawPassword.toString(), realName, email);
+                printWriter.flush();
             }
         }
     };
