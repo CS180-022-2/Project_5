@@ -25,12 +25,24 @@ public class ProfileServer implements Runnable {
         }
     }
 
-    synchronized boolean dualLoginCheck(String username) {
-        return false;
+    synchronized boolean dualLoginCheck(String userId) {
+        return true;
     }
 
     synchronized boolean login(String username, String password) {
-        return false;
+        boolean hasAccount = false;
+        if (userArrayList.isEmpty()) {
+            return false;
+        } else {
+            for (int i = 0; i < userArrayList.size(); i++) {
+                if (userArrayList.get(i).getUserId().equals(username)
+                        && userArrayList.get(i).getPassword().equals(password)) {
+                    hasAccount = true;
+                    break;
+                }
+            }
+            return hasAccount;
+        }
     }
 
     synchronized boolean register(String username, String password, String name, String email) {
@@ -61,6 +73,7 @@ public class ProfileServer implements Runnable {
         for (int i = 0; i < userArrayList.size(); i++) {
             if (userArrayList.get(i).getUserId().equals(userId)) {
                 unique = false;
+                break;
             }
         }
         return unique;
@@ -82,7 +95,21 @@ public class ProfileServer implements Runnable {
                 switch (command) {
                     case "Login" -> {
                         String loginUser  = bufferedReader.readLine();
-                        String[] splitLoginUser = loginUser.split(", ");
+                        String password = bufferedReader.readLine();
+                        boolean hasAccount = login(loginUser, password);
+                        /*
+                            DualLoginCheck can prevent the login of several accounts.
+                            Not implemented yet, wait until the whole project is finished.
+                         */
+                        if (hasAccount && dualLoginCheck(loginUser)) {
+                            printWriter.println("Success");
+                        } else if (hasAccount) {
+                            printWriter.println("DualLogin");
+                        }else {
+                            printWriter.println("Invalid");
+                        }
+                        printWriter.flush();
+
                     }
                     case "Register" -> {
                         //The User would send the user account info in a string
