@@ -118,6 +118,14 @@ public class ProfileServer implements Runnable {
                 switch (command) {
                     case "Login" -> {
                         String loginUser  = bufferedReader.readLine();
+                        String[] splitLoginUser = loginUser.split(", ");
+                    }
+                    case "Register" -> {
+                        //The User would send the content in a string
+                        String newUser  = bufferedReader.readLine();
+                        String[] splitNewUser = newUser.split(", ");
+                        userArrayList.add(new User(splitNewUser[0], splitNewUser[1],
+                                splitNewUser[2], splitNewUser[3]));
                         String password = bufferedReader.readLine();
                         boolean hasAccount = login(loginUser, password);
                         /*
