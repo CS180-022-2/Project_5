@@ -6,6 +6,7 @@ import java.io.*;
 public class ProfileServer implements Runnable {
     Socket socket;
     public static ArrayList<User> userArrayList;
+    public static ArrayList<Profile> profileArrayList;
 
     public ProfileServer(Socket socket) {
         this.socket = socket;
@@ -34,9 +35,9 @@ public class ProfileServer implements Runnable {
         if (userArrayList.isEmpty()) {
             return false;
         } else {
-            for (int i = 0; i < userArrayList.size(); i++) {
-                if (userArrayList.get(i).getUserId().equals(username)
-                        && userArrayList.get(i).getPassword().equals(password)) {
+            for (User user : userArrayList) {
+                if (user.getUserId().equals(username)
+                        && user.getPassword().equals(password)) {
                     hasAccount = true;
                     break;
                 }
@@ -46,7 +47,15 @@ public class ProfileServer implements Runnable {
     }
 
     synchronized boolean register(String username, String password, String name, String email) {
-        return false;
+        if (userArrayList.isEmpty()) {
+            return true;
+        }
+        for (User user : userArrayList) {
+            if (user.getUserId().equals(username)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     synchronized boolean setUserProfile(Profile profile, String userId) {
@@ -65,13 +74,27 @@ public class ProfileServer implements Runnable {
         return false;
     }
 
+    synchronized boolean uniquePhoneNoCheck(String phoneNumber) {
+        if (profileArrayList.isEmpty()) {
+            return true;
+        }
+        boolean unique = false;
+        for (Profile profile : profileArrayList) {
+            if (profile.getPhoneNumber().equals(phoneNumber)) {
+                unique = false;
+                break;
+            }
+        }
+        return unique;
+    }
+
     synchronized boolean uniqueIdCheck(String userId) {
         if (userArrayList.isEmpty()) {
             return true;
         }
         boolean unique = true;
-        for (int i = 0; i < userArrayList.size(); i++) {
-            if (userArrayList.get(i).getUserId().equals(userId)) {
+        for (User user : userArrayList) {
+            if (user.getUserId().equals(userId)) {
                 unique = false;
                 break;
             }
@@ -165,16 +188,25 @@ public class ProfileServer implements Runnable {
                     case "DenyFriendRequest" -> {
 
                     }
+                    case "UniquePhoneNoCheck" -> {
+                        String phoneNo = bufferedReader.readLine();
+                        boolean unique = uniquePhoneNoCheck(phoneNo);
+                        if (unique) {
+                            printWriter.println("Unique");
+                        } else {
+                            printWriter.println("Exists");
+                        }
+                        printWriter.flush();
+                    }
                     case "UniqueIdCheck" -> {
                         String userId = bufferedReader.readLine();
                         boolean unique = uniqueIdCheck(userId);
                         if (unique) {
                             printWriter.println("Unique");
-                            printWriter.flush();
                         } else {
-                            printWriter.println("Existed");
-                            printWriter.flush();
+                            printWriter.println("Exists");
                         }
+                        printWriter.flush();
 
                     }
                 }
