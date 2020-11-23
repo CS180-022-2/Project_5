@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CreateProfileFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/LocalTestCases.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/LoginFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/LoginFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/LoginFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/Profile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RegisterFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RegisterFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RegisterFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RegisterFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocalTestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalTestCases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/CreateProfileFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/CreateProfileFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/CreateProfileFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/CreateProfileFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CreateProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateProfileFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,22 +132,38 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1663" height="270" key="GridCell.Tab.0.bottom" timestamp="1606091462754">
+    <state width="1663" height="270" key="GridCell.Tab.0.bottom" timestamp="1606092842715">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1663" height="270" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606091462754" />
-    <state width="1663" height="270" key="GridCell.Tab.0.center" timestamp="1606091462754">
+    <state width="1663" height="270" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606092842715" />
+    <state width="1663" height="270" key="GridCell.Tab.0.center" timestamp="1606092842715">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1663" height="270" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606091462754" />
-    <state width="1663" height="270" key="GridCell.Tab.0.left" timestamp="1606091462754">
+    <state width="1663" height="270" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606092842715" />
+    <state width="1663" height="270" key="GridCell.Tab.0.left" timestamp="1606092842715">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1663" height="270" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606091462754" />
-    <state width="1663" height="270" key="GridCell.Tab.0.right" timestamp="1606091462754">
+    <state width="1663" height="270" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606092842715" />
+    <state width="1663" height="270" key="GridCell.Tab.0.right" timestamp="1606092842715">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1663" height="270" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606091462754" />
+    <state width="1663" height="270" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606092842715" />
+    <state width="1663" height="334" key="GridCell.Tab.1.bottom" timestamp="1606092810321">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1663" height="334" key="GridCell.Tab.1.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606092810321" />
+    <state width="1663" height="334" key="GridCell.Tab.1.center" timestamp="1606092810321">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1663" height="334" key="GridCell.Tab.1.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606092810321" />
+    <state width="1663" height="334" key="GridCell.Tab.1.left" timestamp="1606092810321">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1663" height="334" key="GridCell.Tab.1.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606092810321" />
+    <state width="1663" height="334" key="GridCell.Tab.1.right" timestamp="1606092810321">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1663" height="334" key="GridCell.Tab.1.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606092810321" />
     <state x="355" y="158" key="SettingsEditor" timestamp="1605973810559">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>

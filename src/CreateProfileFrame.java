@@ -19,10 +19,12 @@ public class CreateProfileFrame extends JComponent implements Runnable {
     JTextField currentOccupationTextField;
     String[] genderChoose = {"Male", "Female", "I do not wish to identify"};
     JList<String> genderList = new JList<String>(genderChoose);
-    String[] relationshipChoose = {"Yes", "No"};
+    String[] relationshipChoose = {"Single", "In relationship"};
     JList<String> relationshipList = new JList<String>(relationshipChoose);
     JLabel aboutMeLabel;
     JTextField aboutMeTextField;
+    JLabel gender;
+    JLabel relationship;
     JLabel interestLabel;
     JTextField interestField;
     JButton createProfileButton;
@@ -34,7 +36,7 @@ public class CreateProfileFrame extends JComponent implements Runnable {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
-                SwingUtilities.invokeLater(new LoginFrame(socket));
+                SwingUtilities.invokeLater(new MenuFrame(socket));
                 profileFrame.dispose();
             }
             if (e.getSource() == createProfileButton) {
@@ -120,21 +122,27 @@ public class CreateProfileFrame extends JComponent implements Runnable {
         aboutMeTextField = new JTextField();
         interestLabel = new JLabel("Interests");
         interestField = new JTextField();
+        relationship = new JLabel("Relationship Status");
         relationshipList = new JList<>(relationshipChoose);
+        gender = new JLabel("Gender");
         genderList = new JList<>(genderChoose);
         createProfileButton = new JButton("Create Profile");
         backButton = new JButton("Back to menu");
         //Set component location
-        userPhoneNoLabel.setBounds(110, 30 , 80, 30);
-        userPhoneNoTextField.setBounds(200, 30 , 100, 30);
-        currentOccupationLabel.setBounds(110, 70 , 80, 30);
-        currentOccupationTextField.setBounds(200, 70 , 100, 30);
-        aboutMeLabel.setBounds(110, 110, 80, 30);
-        aboutMeTextField.setBounds(200, 110 , 100, 30);
-        interestLabel.setBounds(140, 150 , 50, 30);
-        interestField.setBounds(200, 150 , 100, 30);
-        createProfileButton.setBounds(140, 190 , 120, 30);
-        backButton.setBounds(140,225, 120, 30);
+        userPhoneNoLabel.setBounds(90, 10, 100, 30);
+        userPhoneNoTextField.setBounds(220, 10 , 100, 30);
+        currentOccupationLabel.setBounds(90, 50 , 120, 30);
+        currentOccupationTextField.setBounds(220, 50 , 100, 30);
+        aboutMeLabel.setBounds(90, 90, 80, 30);
+        aboutMeTextField.setBounds(220, 90 , 100, 30);
+        gender.setBounds(90, 130, 100, 30);
+        genderList.setBounds(220, 130, 100, 30);
+        relationship.setBounds(90, 170, 120, 30);
+        relationshipList.setBounds(220, 170, 100, 30);
+        interestLabel.setBounds(90, 210 , 100, 30);
+        interestField.setBounds(220, 210 , 100, 30);
+        createProfileButton.setBounds(140, 270 , 120, 30);
+        backButton.setBounds(140,310, 120, 30);
 
         //Add actionLister
         createProfileButton.addActionListener(actionListener);
@@ -147,14 +155,16 @@ public class CreateProfileFrame extends JComponent implements Runnable {
         registerFrameContentPane.add(currentOccupationTextField);
         registerFrameContentPane.add(aboutMeLabel);
         registerFrameContentPane.add(aboutMeTextField);
+        registerFrameContentPane.add(relationship);
         registerFrameContentPane.add(relationshipList);
+        registerFrameContentPane.add(gender);
         registerFrameContentPane.add(genderList);
         registerFrameContentPane.add(interestLabel);
         registerFrameContentPane.add(interestField);
         registerFrameContentPane.add(createProfileButton);
         registerFrameContentPane.add(backButton);
         //Finalize the Frame
-        profileFrame.setSize(400, 300);
+        profileFrame.setSize(400, 400);
         profileFrame.setLocationRelativeTo(null);
         profileFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         profileFrame.setVisible(true);
