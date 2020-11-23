@@ -28,8 +28,5 @@ public class UserFrame extends JComponent implements Runnable {
                     "Unable to initialize", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
-
-
     }
 }

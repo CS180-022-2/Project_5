@@ -47,16 +47,17 @@ public class LoginFrame extends JComponent implements Runnable {
                     String result = bufferedReader.readLine();
                     if (result.equals("Success")) {
                         JOptionPane.showMessageDialog(null,
-                                "Successfully login!", "Login Success",
+                                "Login Successful!", "Login Success",
                                 JOptionPane.INFORMATION_MESSAGE);
-                        SwingUtilities.invokeLater(new UserFrame(socket, userId));
-                        bufferedReader.close();
-                        printWriter.close();
+                        //SwingUtilities.invokeLater(new UserFrame(socket, userId));
+                        //bufferedReader.close();
+                        //printWriter.close();
+                        SwingUtilities.invokeLater(new MenuFrame(socket));
                         loginFrame.dispose();
                     } else {
                         if (result.equals("Invalid")) {
                             JOptionPane.showMessageDialog(null,
-                                    "Invalid username/ password", "Login Failure",
+                                    "Invalid username/password", "Login Failure",
                                     JOptionPane.INFORMATION_MESSAGE);
                             return;
                         }
