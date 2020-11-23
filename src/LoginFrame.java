@@ -35,25 +35,37 @@ public class LoginFrame extends JComponent implements Runnable {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == loginButton ) {
-                String userName = userIdField.getText();
+                String userId = userIdField.getText();
                 char[] rawPassword = passwordField.getPassword();
                 StringBuilder actualPassword = new StringBuilder();
                 actualPassword.append(rawPassword);
                 try {
                     printWriter.println("Login");
-                    printWriter.println(userName);
+                    printWriter.println(userId);
                     printWriter.println(actualPassword.toString());
+                    printWriter.flush();
                     String result = bufferedReader.readLine();
                     if (result.equals("Success")) {
-                        SwingUtilities.invokeLater(new RegisterFrame(socket));
-                        bufferedReader.close();
-                        printWriter.close();
+                        JOptionPane.showMessageDialog(null,
+                                "Login Successful!", "Login Success",
+                                JOptionPane.INFORMATION_MESSAGE);
+                        //SwingUtilities.invokeLater(new UserFrame(socket, userId));
+                        //bufferedReader.close();
+                        //printWriter.close();
+                        SwingUtilities.invokeLater(new MenuFrame(socket));
                         loginFrame.dispose();
                     } else {
-                        JOptionPane.showMessageDialog(null,
-                                "Invalid username/ password", "Login Failure",
-                                JOptionPane.INFORMATION_MESSAGE);
-                        return;
+                        if (result.equals("Invalid")) {
+                            JOptionPane.showMessageDialog(null,
+                                    "Invalid username/password", "Login Failure",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                            return;
+                        }
+                        else if (result.equals("DualLogin")) {
+                            JOptionPane.showMessageDialog(null,
+                                    "Your account has already logged in ", "Login Failure",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                        }
                     }
                 } catch (IOException ioException) {
                     ioException.printStackTrace();

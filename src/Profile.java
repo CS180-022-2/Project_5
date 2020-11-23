@@ -1,13 +1,13 @@
 public class Profile {
-    private long phoneNumber;
-    private boolean relationship;
-    private boolean gender;
+    private String phoneNumber;
+    private String relationship;
+    private String gender;
     private String currentOccupation;
-    private String[] interest;
+    private String interest;
     private String aboutMe;
 
-    public Profile(long phoneNumber, boolean relationship, boolean gender,
-                   String currentOccupation, String[] interest, String aboutMe) {
+    public Profile(String phoneNumber, String relationship, String gender,
+                   String currentOccupation, String interest, String aboutMe) {
         this.phoneNumber = phoneNumber;
         this.relationship = relationship;
         this.gender = gender;
@@ -16,15 +16,15 @@ public class Profile {
         this.aboutMe = aboutMe;
     }
 
-    public long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public boolean isRelationship() {
+    public String isRelationship() {
         return relationship;
     }
 
-    public boolean isGender() {
+    public String isGender() {
         return gender;
     }
 
@@ -32,7 +32,7 @@ public class Profile {
         return currentOccupation;
     }
 
-    public String[] getInterest() {
+    public String getInterest() {
         return interest;
     }
 
@@ -40,15 +40,15 @@ public class Profile {
         return aboutMe;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setRelationship(boolean relationship) {
+    public void setRelationship(String relationship) {
         this.relationship = relationship;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -56,7 +56,7 @@ public class Profile {
         this.currentOccupation = currentOccupation;
     }
 
-    public void setInterest(String[] interest) {
+    public void setInterest(String interest) {
         this.interest = interest;
     }
 

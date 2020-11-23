@@ -47,6 +47,41 @@ public class RegisterFrame extends JComponent implements Runnable{
                 if (!contentCheck(userId, rawPassword.toString(), realName, email)){
                     return;
                 }
+                printWriter.println("UniqueIdCheck");
+                printWriter.println(userId);
+                printWriter.flush();
+                String result = "";
+                try {
+                    result = bufferedReader.readLine();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+                if (!result.equals("Unique")) {
+                    JOptionPane.showMessageDialog(null, "UserId existed",
+                            "UserID Error", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                //Pass the data to server
+                printWriter.println("Register");
+                printWriter.printf("%s, %s, %s, %s\n", userId, rawPassword.toString(), realName, email);
+                printWriter.flush();
+                String success = "";
+                try {
+                    success = bufferedReader.readLine();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+                if (success.equals("Success")) {
+                    JOptionPane.showMessageDialog(null, "Congratulation! " +
+                                    "You have successfully registered",
+                            "Register Successfully", JOptionPane.INFORMATION_MESSAGE);
+                    SwingUtilities.invokeLater(new LoginFrame(socket));
+                    registerFrame.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Oops!" +
+                                    "Unsuccessful register./n Please retry.",
+                            "Register Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         }
     };
@@ -70,7 +105,7 @@ public class RegisterFrame extends JComponent implements Runnable{
         Container registerFrameContentPane = registerFrame.getContentPane();
         registerFrameContentPane.setLayout(null);
         //Initialize components
-        userIdLabel = new JLabel("UserID");
+        userIdLabel = new JLabel("User ID");
         userIdTextField = new JTextField();
         passwordLabel = new JLabel("Password");
         passwordField = new JPasswordField();
@@ -81,14 +116,14 @@ public class RegisterFrame extends JComponent implements Runnable{
         registerButton = new JButton("Register");
         backButton = new JButton("Back to login");
         //Set component location
-        userIdLabel.setBounds(110, 30 , 80, 30);
-        userIdTextField.setBounds(200, 30 , 100, 30);
-        passwordLabel.setBounds(110, 70 , 80, 30);
-        passwordField.setBounds(200, 70 , 100, 30);
-        realNameLabel.setBounds(110, 110, 80, 30);
-        realNameTextField.setBounds(200, 110 , 100, 30);
-        emailLabel.setBounds(140, 150 , 50, 30);
-        emailTextField.setBounds(200, 150 , 100, 30);
+        userIdLabel.setBounds(110, 20 , 80, 30);
+        userIdTextField.setBounds(200, 20 , 100, 30);
+        passwordLabel.setBounds(110, 60 , 80, 30);
+        passwordField.setBounds(200, 60 , 100, 30);
+        realNameLabel.setBounds(110, 100, 80, 30);
+        realNameTextField.setBounds(200, 100 , 100, 30);
+        emailLabel.setBounds(110, 140 , 50, 30);
+        emailTextField.setBounds(200, 140 , 100, 30);
         registerButton.setBounds(140, 190 , 120, 30);
         backButton.setBounds(140,225, 120, 30);
 

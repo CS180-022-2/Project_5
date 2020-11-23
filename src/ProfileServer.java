@@ -6,6 +6,7 @@ import java.io.*;
 public class ProfileServer implements Runnable {
     Socket socket;
     public static ArrayList<User> userArrayList;
+    public static ArrayList<Profile> profileArrayList;
 
     public ProfileServer(Socket socket) {
         this.socket = socket;
@@ -25,32 +26,80 @@ public class ProfileServer implements Runnable {
         }
     }
 
-    synchronized boolean dualLoginCheck(String username) {
-        return false;
+    synchronized boolean dualLoginCheck(String userId) {
+        return true;
     }
 
     synchronized boolean login(String username, String password) {
-        return false;
+        boolean hasAccount = false;
+        if (userArrayList.isEmpty()) {
+            return false;
+        } else {
+            for (User user : userArrayList) {
+                if (user.getUserId().equals(username)
+                        && user.getPassword().equals(password)) {
+                    hasAccount = true;
+                    break;
+                }
+            }
+            return hasAccount;
+        }
     }
 
     synchronized boolean register(String username, String password, String name, String email) {
+        if (userArrayList.isEmpty()) {
+            return true;
+        }
+        for (User user : userArrayList) {
+            if (user.getUserId().equals(username)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    synchronized boolean setUserProfile(Profile profile, String userId) {
         return false;
     }
 
-    synchronized boolean setUserProfile(Profile profile, String userName) {
-        return false;
-    }
-
-    synchronized Profile viewProfile(String username) {
+    synchronized Profile viewProfile(String userId) {
         return null;
     }
 
-    synchronized boolean addFriend(String username) {
+    synchronized boolean addFriend(String userId) {
         return false;
     }
 
     synchronized boolean checkFriendRequest() {
         return false;
+    }
+
+    synchronized boolean uniquePhoneNoCheck(String phoneNumber) {
+        if (profileArrayList.isEmpty()) {
+            return true;
+        }
+        boolean unique = false;
+        for (Profile profile : profileArrayList) {
+            if (profile.getPhoneNumber().equals(phoneNumber)) {
+                unique = false;
+                break;
+            }
+        }
+        return unique;
+    }
+
+    synchronized boolean uniqueIdCheck(String userId) {
+        if (userArrayList.isEmpty()) {
+            return true;
+        }
+        boolean unique = true;
+        for (User user : userArrayList) {
+            if (user.getUserId().equals(userId)) {
+                unique = false;
+                break;
+            }
+        }
+        return unique;
     }
 
     @Override
@@ -77,6 +126,30 @@ public class ProfileServer implements Runnable {
                         String[] splitNewUser = newUser.split(", ");
                         userArrayList.add(new User(splitNewUser[0], splitNewUser[1],
                                 splitNewUser[2], splitNewUser[3]));
+                        String password = bufferedReader.readLine();
+                        boolean hasAccount = login(loginUser, password);
+                        /*
+                            DualLoginCheck can prevent the login of several accounts.
+                            Not implemented yet, wait until the whole project is finished.
+                         */
+                        if (hasAccount && dualLoginCheck(loginUser)) {
+                            printWriter.println("Success");
+                        } else if (hasAccount) {
+                            printWriter.println("DualLogin");
+                        }else {
+                            printWriter.println("Invalid");
+                        }
+                        printWriter.flush();
+
+                    }
+                    case "Register" -> {
+                        //The User would send the user account info in a string
+                        String newUser  = bufferedReader.readLine();
+                        String[] splitNewUser = newUser.split(", ");
+                        userArrayList.add(new User(splitNewUser[0], splitNewUser[1],
+                            splitNewUser[2], splitNewUser[3]));
+                        printWriter.println("Success");
+                        printWriter.flush();
                     }
                     case "ShowOwnInfo" -> {
 
@@ -121,6 +194,27 @@ public class ProfileServer implements Runnable {
 
                     }
                     case "DenyFriendRequest" -> {
+
+                    }
+                    case "UniquePhoneNoCheck" -> {
+                        String phoneNo = bufferedReader.readLine();
+                        boolean unique = uniquePhoneNoCheck(phoneNo);
+                        if (unique) {
+                            printWriter.println("Unique");
+                        } else {
+                            printWriter.println("Exists");
+                        }
+                        printWriter.flush();
+                    }
+                    case "UniqueIdCheck" -> {
+                        String userId = bufferedReader.readLine();
+                        boolean unique = uniqueIdCheck(userId);
+                        if (unique) {
+                            printWriter.println("Unique");
+                        } else {
+                            printWriter.println("Exists");
+                        }
+                        printWriter.flush();
 
                     }
                 }

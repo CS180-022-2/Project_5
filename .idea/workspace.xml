@@ -42,6 +42,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -74,6 +78,7 @@
       <list>
         <item itemvalue="Application.ProfileClient" />
         <item itemvalue="Application.ProfileServer" />
+        <item itemvalue="Application.RunLocalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -127,5 +132,9 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="355" y="158" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1605973810559" />
+    <state x="564" y="402" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606067510672">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="564" y="402" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1707.1027@0.0.1707.1027" timestamp="1606067510672" />
   </component>
 </project>
