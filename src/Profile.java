@@ -16,6 +16,14 @@ public class Profile {
         this.aboutMe = aboutMe;
     }
 
+    public String getRelationship() {
+        return relationship;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }

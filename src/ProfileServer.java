@@ -57,6 +57,15 @@ public class ProfileServer implements Runnable {
         }
         return true;
     }
+    synchronized Profile getProfile(String userId) {
+        Profile profile = null;
+        for (int i = 0; i < userArrayList.size(); i++) {
+            if (userArrayList.get(i).getUserId().equals(userId)) {
+                profile = userArrayList.get(i).getUserProfile();
+            }
+        }
+        return  profile;
+    }
 
     synchronized boolean setUserProfile(Profile profile, String userId) {
         return false;
@@ -143,7 +152,15 @@ public class ProfileServer implements Runnable {
                         printWriter.println("Success");
                         printWriter.flush();
                     }
-                    case "ShowOwnInfo" -> {
+                    case "GetProfileContent" -> {
+                        String userId = bufferedReader.readLine();
+                        Profile profile = getProfile(userId);
+                        printWriter.println(profile.getPhoneNumber());
+                        printWriter.println(profile.getCurrentOccupation());
+                        printWriter.println(profile.getGender());
+                        printWriter.println(profile.getAboutMe());
+                        printWriter.println(profile.getInterest());
+                        printWriter.println(profile.getRelationship());
 
                     }
                     case "AddFriend" -> {
@@ -207,7 +224,6 @@ public class ProfileServer implements Runnable {
                             printWriter.println("Exists");
                         }
                         printWriter.flush();
-
                     }
                 }
             }

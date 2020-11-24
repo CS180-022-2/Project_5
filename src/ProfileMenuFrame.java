@@ -8,11 +8,12 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import javax.swing.*;
 
-public class MenuFrame extends JComponent implements Runnable {
+public class ProfileMenuFrame extends JComponent implements Runnable {
     Socket socket;
+    String userId;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
-    JFrame MenuFrame;
+    JFrame profileMenuFrame;
     JButton createProfileButton;
     JButton editProfileButton;
     JButton deleteProfileButton;
@@ -23,13 +24,14 @@ public class MenuFrame extends JComponent implements Runnable {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
                 SwingUtilities.invokeLater(new LoginFrame(socket));
-                MenuFrame.dispose();
+                profileMenuFrame.dispose();
             }
             if (e.getSource() == createProfileButton) {
-                SwingUtilities.invokeLater(new CreateProfileFrame(socket));
-                MenuFrame.dispose();
+                SwingUtilities.invokeLater(new EditProfileFrame(socket, userId));
+                profileMenuFrame.dispose();
             }
             if (e.getSource() == editProfileButton) {
+
 
             }
             if (e.getSource() == deleteProfileButton) {
@@ -38,8 +40,9 @@ public class MenuFrame extends JComponent implements Runnable {
         }
     };
 
-    public MenuFrame(Socket socket) {
+    public ProfileMenuFrame(Socket socket, String userId) {
         this.socket = socket;
+        this.userId = userId;
     }
 
     @Override
@@ -53,8 +56,8 @@ public class MenuFrame extends JComponent implements Runnable {
             e.printStackTrace();
             return;
         }
-        MenuFrame = new JFrame("Menu Frame");
-        Container MenuFrameContentPane = MenuFrame.getContentPane();
+        profileMenuFrame = new JFrame("Profile Menu Frame");
+        Container MenuFrameContentPane = profileMenuFrame.getContentPane();
         MenuFrameContentPane.setLayout(null);
         deleteProfileButton = new JButton("Delete Profile");
         editProfileButton = new JButton("Edit Profile");
@@ -78,9 +81,9 @@ public class MenuFrame extends JComponent implements Runnable {
         MenuFrameContentPane.add(deleteProfileButton);
         MenuFrameContentPane.add(backButton);
         //Finalize the Frame
-        MenuFrame.setSize(400, 300);
-        MenuFrame.setLocationRelativeTo(null);
-        MenuFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        MenuFrame.setVisible(true);
+        profileMenuFrame.setSize(400, 300);
+        profileMenuFrame.setLocationRelativeTo(null);
+        profileMenuFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        profileMenuFrame.setVisible(true);
     }
 }
