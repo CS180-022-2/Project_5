@@ -20,11 +20,11 @@ public class Profile {
         return phoneNumber;
     }
 
-    public String isRelationship() {
+    public String getRelationship() {
         return relationship;
     }
 
-    public String isGender() {
+    public String getGender() {
         return gender;
     }
 

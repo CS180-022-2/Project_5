@@ -1,11 +1,15 @@
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 public class UserFrame extends JComponent implements Runnable {
     Socket socket;
@@ -132,7 +136,7 @@ public class UserFrame extends JComponent implements Runnable {
 
         });
         JFrame frame = new JFrame("EasyChat");
-        frame.add(new UserFrame());
+        frame.add(new UserFrame(socket, userId));
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);

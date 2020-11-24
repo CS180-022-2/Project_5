@@ -8,8 +8,9 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import javax.swing.*;
 
-public class MenuFrame extends JComponent implements Runnable {
+public class ProfileMenuFrame extends JComponent implements Runnable {
     Socket socket;
+    String userId;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
     JFrame MenuFrame;
@@ -25,12 +26,9 @@ public class MenuFrame extends JComponent implements Runnable {
                 SwingUtilities.invokeLater(new LoginFrame(socket));
                 MenuFrame.dispose();
             }
-            if (e.getSource() == createProfileButton) {
-                SwingUtilities.invokeLater(new CreateProfileFrame(socket));
-                MenuFrame.dispose();
-            }
             if (e.getSource() == editProfileButton) {
-
+                SwingUtilities.invokeLater(new EditProfileFrame(socket,userId));
+                MenuFrame.dispose();
             }
             if (e.getSource() == deleteProfileButton) {
 
@@ -38,8 +36,9 @@ public class MenuFrame extends JComponent implements Runnable {
         }
     };
 
-    public MenuFrame(Socket socket) {
+    public ProfileMenuFrame(Socket socket, String userId) {
         this.socket = socket;
+        this.userId = userId;
     }
 
     @Override
