@@ -3636,8 +3636,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameClassDeclarationTest() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             int modifiers;
             Class<?> superclass;
@@ -3663,8 +3663,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTestOne() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -3702,8 +3702,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTestTwo() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -3741,8 +3741,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTestThree() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -3780,8 +3780,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTestFour() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -3819,8 +3819,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTestFive() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -3858,8 +3858,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTestOSix() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -3897,8 +3897,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTestSeven() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -3936,8 +3936,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTestEight() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -3975,8 +3975,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTestNine() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4014,8 +4014,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTestTen() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4053,8 +4053,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest11() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4092,8 +4092,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest12() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4131,8 +4131,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest13() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4170,8 +4170,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest14() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4209,8 +4209,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest15() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4248,8 +4248,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest16() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4287,8 +4287,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest17() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4326,8 +4326,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest18() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4365,8 +4365,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest19() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4404,8 +4404,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest20() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4443,8 +4443,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest21() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4482,8 +4482,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest22() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4521,8 +4521,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameFieldDeclarationTest23() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Field testField;
             int modifiers;
@@ -4560,8 +4560,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void createProfileFrameParameterizedConstructorDeclarationTestOne() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Constructor<?> constructor;
             int modifiers;
@@ -4588,8 +4588,8 @@ public class RunLocalTest {
         @Test(timeout = 1000)
         public void createProfileFrameMethodTestOne() {
 
-            Class<?> clazz = CreateProfileFrame.class;
-            String className = "CreateProfileFrame";
+            Class<?> clazz = EditProfileFrame.class;
+            String className = "EditProfileFrame";
 
             Method method;
             int modifiers;
@@ -4637,8 +4637,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameFrameClassDeclarationTest() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             int modifiers;
             Class<?> superclass;
@@ -4664,8 +4664,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameFieldDeclarationTestOne() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Field testField;
             int modifiers;
@@ -4703,8 +4703,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameFieldDeclarationTest2() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Field testField;
             int modifiers;
@@ -4742,8 +4742,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameFieldDeclarationTest3() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Field testField;
             int modifiers;
@@ -4781,8 +4781,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameFieldDeclarationTest4() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Field testField;
             int modifiers;
@@ -4820,8 +4820,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameFieldDeclarationTest5() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Field testField;
             int modifiers;
@@ -4859,8 +4859,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameFieldDeclarationTest6() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Field testField;
             int modifiers;
@@ -4898,8 +4898,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameFieldDeclarationTest7() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Field testField;
             int modifiers;
@@ -4937,8 +4937,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameFieldDeclarationTest8() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Field testField;
             int modifiers;
@@ -4976,8 +4976,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameFieldDeclarationTest9() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Field testField;
             int modifiers;
@@ -5017,8 +5017,8 @@ public class RunLocalTest {
         @Test(timeout = 1_000)
         public void menuFrameParameterizedConstructorDeclarationTestOne() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Constructor<?> constructor;
             int modifiers;
@@ -5045,8 +5045,8 @@ public class RunLocalTest {
         @Test(timeout = 1000)
         public void menuFrameMethodTestOne() {
 
-            Class<?> clazz = MenuFrame.class;
-            String className = "MenuFrame";
+            Class<?> clazz = ProfileMenuFrame.class;
+            String className = "ProfileMenuFrame";
 
             Method method;
             int modifiers;
