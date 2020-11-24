@@ -1,3 +1,4 @@
+
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,7 +17,7 @@ public class UserFrame extends JComponent implements Runnable {
     BufferedReader bufferedReader;
     PrintWriter printWriter;
     String userId;
-    
+
     //example data
     String[] columnName = {"Name", "ID", "Age"};
     String[][] rowData =
@@ -86,7 +87,7 @@ public class UserFrame extends JComponent implements Runnable {
                     "Unable to initialize", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+
         jTable.setRowSorter(rowSorter);
 
         JPanel panel = new JPanel();
@@ -136,7 +137,7 @@ public class UserFrame extends JComponent implements Runnable {
 
         });
         JFrame frame = new JFrame("EasyChat");
-        //frame.add(new UserFrame());
+        frame.add(new UserFrame(socket, userId));
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);

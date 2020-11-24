@@ -6,7 +6,6 @@ import java.io.*;
 public class ProfileServer implements Runnable {
     Socket socket;
     public static ArrayList<User> userArrayList;
-    public static ArrayList<Profile> profileArrayList;
 
     public ProfileServer(Socket socket) {
         this.socket = socket;
@@ -46,24 +45,25 @@ public class ProfileServer implements Runnable {
         }
     }
 
-    synchronized boolean register(String username, String password, String name, String email) {
-        if (userArrayList.isEmpty()) {
-            return true;
-        }
-        for (User user : userArrayList) {
-            if (user.getUserId().equals(username)) {
-                return false;
+    synchronized Profile getProfile(String userId) {
+        Profile profile = null;
+        for (int i = 0; i < userArrayList.size(); i++) {
+            if (userArrayList.get(i).getUserId().equals(userId)) {
+                profile = userArrayList.get(i).getUserProfile();
             }
         }
-        return true;
+        return  profile;
     }
 
-    synchronized boolean setUserProfile(Profile profile, String userId) {
-        return false;
-    }
-
-    synchronized Profile viewProfile(String userId) {
-        return null;
+    synchronized boolean setUserProfile(Profile userProfile, String userId) {
+        boolean success = false;
+        for (int i = 0; i < userArrayList.size(); i++) {
+            if (userArrayList.get(i).getUserId().equals(userId)) {
+                userArrayList.get(i).setUserProfile(userProfile);
+                success = true;
+            }
+        }
+        return success;
     }
 
     synchronized boolean addFriend(String userId) {
@@ -75,12 +75,12 @@ public class ProfileServer implements Runnable {
     }
 
     synchronized boolean uniquePhoneNoCheck(String phoneNumber) {
-        if (profileArrayList.isEmpty()) {
+        if (userArrayList.isEmpty()) {
             return true;
         }
         boolean unique = false;
-        for (Profile profile : profileArrayList) {
-            if (profile.getPhoneNumber().equals(phoneNumber)) {
+        for (User user : userArrayList) {
+            if (user.getUserProfile().getPhoneNumber().equals(phoneNumber)) {
                 unique = false;
                 break;
             }
@@ -118,14 +118,6 @@ public class ProfileServer implements Runnable {
                 switch (command) {
                     case "Login" -> {
                         String loginUser  = bufferedReader.readLine();
-                        String[] splitLoginUser = loginUser.split(", ");
-                    }
-                    case "Register" -> {
-                        //The User would send the content in a string
-                        String newUser  = bufferedReader.readLine();
-                        String[] splitNewUser = newUser.split(", ");
-                        userArrayList.add(new User(splitNewUser[0], splitNewUser[1],
-                                splitNewUser[2], splitNewUser[3]));
                         String password = bufferedReader.readLine();
                         boolean hasAccount = login(loginUser, password);
                         /*
@@ -140,16 +132,16 @@ public class ProfileServer implements Runnable {
                             printWriter.println("Invalid");
                         }
                         printWriter.flush();
-
                     }
                     case "Register" -> {
                         //The User would send the user account info in a string
                         String newUser  = bufferedReader.readLine();
                         String[] splitNewUser = newUser.split(", ");
                         userArrayList.add(new User(splitNewUser[0], splitNewUser[1],
-                            splitNewUser[2], splitNewUser[3]));
+                                splitNewUser[2], splitNewUser[3]));
                         printWriter.println("Success");
                         printWriter.flush();
+
                     }
                     case "ShowOwnInfo" -> {
 
@@ -176,7 +168,16 @@ public class ProfileServer implements Runnable {
 
                     }
                     case "EditOwnProfile" -> {
-
+                        String userId = bufferedReader.readLine();
+                        String[] splitProfile = bufferedReader.readLine().split(", ");
+                        Profile userProfile = new Profile(splitProfile[0], splitProfile[1], splitProfile[2],
+                                splitProfile[3], splitProfile[4], splitProfile[5]);
+                        boolean success = setUserProfile(userProfile,userId);
+                        if (success) {
+                            printWriter.println("Success");
+                        } else {
+                            printWriter.println("Failure");
+                        }
                     }
                     case "ViewOtherProfile" -> {
 
@@ -215,7 +216,16 @@ public class ProfileServer implements Runnable {
                             printWriter.println("Exists");
                         }
                         printWriter.flush();
-
+                    }
+                    case "GetProfileContent" -> {
+                        String userId = bufferedReader.readLine();
+                        Profile profile = getProfile(userId);
+                        printWriter.println(profile.getPhoneNumber());
+                        printWriter.println(profile.getCurrentOccupation());
+                        printWriter.println(profile.getGender());
+                        printWriter.println(profile.getAboutMe());
+                        printWriter.println(profile.getInterest());
+                        printWriter.println(profile.getRelationship());
                     }
                 }
             }
