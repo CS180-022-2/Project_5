@@ -46,9 +46,9 @@ public class CreateProfileFrame extends JComponent implements Runnable {
                 String interest = interestField.getText();
                 String gender = genderList.getSelectedValue();
                 String relationship = relationshipList.getSelectedValue();
-                /*if (!contentCheck(userId, rawPassword.toString(), realName, email)){
+                if (!contentCheck(userPhoneNo, currentOccupation, aboutMe, interest)){
                     return;
-                }*/
+                }
                 printWriter.println("UniquePhoneNoCheck");
                 printWriter.println(userPhoneNo);
                 printWriter.flush();
@@ -64,9 +64,9 @@ public class CreateProfileFrame extends JComponent implements Runnable {
                     return;
                 }
                 //Pass the data to server
-                printWriter.println("Profile");
-                printWriter.printf("%s, %s, %s, %s, %s, %s\n", userPhoneNo, currentOccupation, aboutMe, interest,
-                        gender, relationship);
+                printWriter.println("CreateProfile");
+                printWriter.printf("%s, %s, %s, %s, %s, %s\n", userPhoneNo, relationship, gender,
+                        currentOccupation, interest, aboutMe);
                 printWriter.flush();
                 String success = "";
                 try {
@@ -168,5 +168,50 @@ public class CreateProfileFrame extends JComponent implements Runnable {
         profileFrame.setLocationRelativeTo(null);
         profileFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         profileFrame.setVisible(true);
+    }
+
+    public boolean contentCheck(String userPhoneNO, String currentOccupation, String aboutMe, String interest) {
+        boolean correct = false;
+        if (userPhoneNO.matches("\\d{10}")) {
+            correct = true;
+        }
+            // validating phone number with -, . or spaces
+        else if (userPhoneNO.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}"))
+            correct = true;
+            // validating phone number with extension length from 3 to 5
+        else if (userPhoneNO.matches("\\d{3}-\\d{3}-\\d{4}\\s(x|(ext))\\d{3,5}"))
+            correct = true;
+            // validating phone number where area code is in braces ()
+        else if (userPhoneNO.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}"))
+            correct = true;
+            // Validation for India numbers
+        else if (userPhoneNO.matches("\\d{4}[-\\.\\s]\\d{3}[-\\.\\s]\\d{3}"))
+            correct = true;
+        else if (userPhoneNO.matches("\\(\\d{5}\\)-\\d{3}-\\d{3}"))
+            correct = true;
+        else if (userPhoneNO.matches("\\(\\d{4}\\)-\\d{3}-\\d{3}"))
+            correct = true;
+            // false if nothing matches the input
+        else
+            JOptionPane.showMessageDialog(null, "Enter proper phone number!",
+                    "Phone Number Error!", JOptionPane.WARNING_MESSAGE);
+
+        if (currentOccupation.length() < 1) {
+            JOptionPane.showMessageDialog(null, "Current Occupation cannot be Null!",
+                    "Empty Error", JOptionPane.WARNING_MESSAGE);
+            correct = false;
+        }
+        if (aboutMe.length() < 1) {
+            JOptionPane.showMessageDialog(null, "About me cannot be Null!",
+                    "Empty Error", JOptionPane.WARNING_MESSAGE);
+            correct = false;
+        }
+        if (interest.length() < 1) {
+            JOptionPane.showMessageDialog(null, "Interest cannot be Null!",
+                    "Empty Error", JOptionPane.WARNING_MESSAGE);
+            correct = false;
+        }
+
+        return correct;
     }
 }

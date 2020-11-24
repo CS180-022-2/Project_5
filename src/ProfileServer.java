@@ -143,6 +143,14 @@ public class ProfileServer implements Runnable {
                         printWriter.println("Success");
                         printWriter.flush();
                     }
+                    case "CreateProfile" -> {
+                        String newProfile = bufferedReader.readLine();
+                        String[] splitNewProfile = newProfile.split(", ");
+                        profileArrayList.add(new Profile(splitNewProfile[0], splitNewProfile[1],
+                                splitNewProfile[2], splitNewProfile[3], splitNewProfile[4], splitNewProfile[5]));
+                        printWriter.println("Success");
+                        printWriter.flush();
+                    }
                     case "ShowOwnInfo" -> {
 
                     }
