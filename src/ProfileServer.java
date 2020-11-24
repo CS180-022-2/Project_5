@@ -118,6 +118,14 @@ public class ProfileServer implements Runnable {
                 switch (command) {
                     case "Login" -> {
                         String loginUser  = bufferedReader.readLine();
+                        String[] splitLoginUser = loginUser.split(", ");
+                    }
+                    case "Register" -> {
+                        //The User would send the content in a string
+                        String newUser  = bufferedReader.readLine();
+                        String[] splitNewUser = newUser.split(", ");
+                        userArrayList.add(new User(splitNewUser[0], splitNewUser[1],
+                                splitNewUser[2], splitNewUser[3]));
                         String password = bufferedReader.readLine();
                         boolean hasAccount = login(loginUser, password);
                         /*
@@ -140,14 +148,6 @@ public class ProfileServer implements Runnable {
                         String[] splitNewUser = newUser.split(", ");
                         userArrayList.add(new User(splitNewUser[0], splitNewUser[1],
                             splitNewUser[2], splitNewUser[3]));
-                        printWriter.println("Success");
-                        printWriter.flush();
-                    }
-                    case "CreateProfile" -> {
-                        String newProfile = bufferedReader.readLine();
-                        String[] splitNewProfile = newProfile.split(", ");
-                        profileArrayList.add(new Profile(splitNewProfile[0], splitNewProfile[1],
-                                splitNewProfile[2], splitNewProfile[3], splitNewProfile[4], splitNewProfile[5]));
                         printWriter.println("Success");
                         printWriter.flush();
                     }

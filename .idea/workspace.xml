@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/CreateProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateProfileFrame.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/ProfileClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileClient.java" afterDir="false" />
+>>>>>>> 86f5cffb23ce894fce0ce1312e7704111884ae65
       <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,6 +78,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="RunLocalTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RunLocalTest" />
       <module name="Project_5" />
@@ -92,6 +97,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+>>>>>>> 86f5cffb23ce894fce0ce1312e7704111884ae65
     <recent_temporary>
       <list>
         <item itemvalue="Application.ProfileClient" />
@@ -110,7 +117,11 @@
       <updated>1605875331683</updated>
       <workItem from="1605875332972" duration="6147000" />
       <workItem from="1605970834937" duration="1972000" />
+<<<<<<< HEAD
       <workItem from="1606156703997" duration="5468000" />
+=======
+      <workItem from="1606015855705" duration="145000" />
+>>>>>>> 86f5cffb23ce894fce0ce1312e7704111884ae65
     </task>
     <servers />
   </component>
@@ -130,6 +141,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state width="1663" height="270" key="GridCell.Tab.0.bottom" timestamp="1606160323753">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
@@ -162,6 +174,24 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1663" height="334" key="GridCell.Tab.1.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606156664129" />
+=======
+    <state width="1663" height="270" key="GridCell.Tab.0.bottom" timestamp="1606015790354">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1663" height="270" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606015790354" />
+    <state width="1663" height="270" key="GridCell.Tab.0.center" timestamp="1606015790354">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1663" height="270" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606015790354" />
+    <state width="1663" height="270" key="GridCell.Tab.0.left" timestamp="1606015790354">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1663" height="270" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606015790354" />
+    <state width="1663" height="270" key="GridCell.Tab.0.right" timestamp="1606015790354">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state width="1663" height="270" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606015790354" />
+>>>>>>> 86f5cffb23ce894fce0ce1312e7704111884ae65
     <state x="355" y="158" key="SettingsEditor" timestamp="1605973810559">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
