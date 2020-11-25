@@ -227,6 +227,7 @@ public class ProfileServer implements Runnable {
                         printWriter.println(profile.getAboutMe());
                         printWriter.println(profile.getInterest());
                         printWriter.println(profile.getRelationship());
+                        printWriter.flush();
                     }
                 }
             }

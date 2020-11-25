@@ -138,6 +138,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
         backButton.addActionListener(actionListener);
         printWriter.println("GetProfileContent");
         printWriter.println(userId);
+        printWriter.flush();
         String phoneNumber = "";
         String currentOccupation = "";
         String gender = "";

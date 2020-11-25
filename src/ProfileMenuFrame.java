@@ -13,7 +13,7 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
     String userId;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
-    JFrame MenuFrame;
+    JFrame profileMenuFrame;
     JButton createProfileButton;
     JButton editProfileButton;
     JButton deleteProfileButton;
@@ -24,11 +24,11 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
                 SwingUtilities.invokeLater(new LoginFrame(socket));
-                MenuFrame.dispose();
+                profileMenuFrame.dispose();
             }
             if (e.getSource() == editProfileButton) {
                 SwingUtilities.invokeLater(new EditProfileFrame(socket,userId));
-                MenuFrame.dispose();
+                profileMenuFrame.dispose();
             }
             if (e.getSource() == deleteProfileButton) {
 
@@ -52,9 +52,9 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
             e.printStackTrace();
             return;
         }
-        MenuFrame = new JFrame("Menu Frame");
-        Container MenuFrameContentPane = MenuFrame.getContentPane();
-        MenuFrameContentPane.setLayout(null);
+        profileMenuFrame = new JFrame("Profile Menu Frame");
+        Container profileMenuFrameContentPane = profileMenuFrame.getContentPane();
+        profileMenuFrameContentPane.setLayout(null);
         deleteProfileButton = new JButton("Delete Profile");
         editProfileButton = new JButton("Edit Profile");
         createProfileButton = new JButton("Create Profile");
@@ -72,14 +72,14 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         backButton.addActionListener(actionListener);
 
         //Add all components into the Frame;
-        MenuFrameContentPane.add(createProfileButton);
-        MenuFrameContentPane.add(editProfileButton);
-        MenuFrameContentPane.add(deleteProfileButton);
-        MenuFrameContentPane.add(backButton);
+        profileMenuFrameContentPane.add(createProfileButton);
+        profileMenuFrameContentPane.add(editProfileButton);
+        profileMenuFrameContentPane.add(deleteProfileButton);
+        profileMenuFrameContentPane.add(backButton);
         //Finalize the Frame
-        MenuFrame.setSize(400, 300);
-        MenuFrame.setLocationRelativeTo(null);
-        MenuFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        MenuFrame.setVisible(true);
+        profileMenuFrame.setSize(400, 300);
+        profileMenuFrame.setLocationRelativeTo(null);
+        profileMenuFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        profileMenuFrame.setVisible(true);
     }
 }
