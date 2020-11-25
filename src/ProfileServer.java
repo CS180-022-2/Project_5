@@ -78,7 +78,7 @@ public class ProfileServer implements Runnable {
         if (userArrayList.isEmpty()) {
             return true;
         }
-        boolean unique = false;
+        boolean unique = true;
         for (User user : userArrayList) {
             if (user.getUserProfile().getPhoneNumber().equals(phoneNumber)) {
                 unique = false;
@@ -178,9 +178,22 @@ public class ProfileServer implements Runnable {
                         } else {
                             printWriter.println("Failure");
                         }
+                        printWriter.flush();
                     }
                     case "ViewOtherProfile" -> {
 
+                    }
+                    case "DeleteOwnProfile" -> {
+                        String userId = bufferedReader.readLine();
+                        boolean success = setUserProfile(
+                                new Profile("", "", "", "","",
+                                        ""), userId);
+                        if (success) {
+                            printWriter.println("Success");
+                        } else {
+                            printWriter.println("Failure");
+                        }
+                        printWriter.flush();
                     }
                     case "ShowFriendRequestList" -> {
 
@@ -226,6 +239,7 @@ public class ProfileServer implements Runnable {
                         printWriter.println(profile.getAboutMe());
                         printWriter.println(profile.getInterest());
                         printWriter.println(profile.getRelationship());
+                        printWriter.flush();
                     }
                 }
             }

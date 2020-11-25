@@ -18,6 +18,7 @@ public class User {
         friendList = new ArrayList<>();
         pendingList = new ArrayList<>();
         requestList = new ArrayList<>();
+        userProfile = new Profile("", "", "", "", "", "");
     }
 
     public ArrayList<User> getRequestList() {
