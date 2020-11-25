@@ -79,7 +79,7 @@ public class ProfileServer implements Runnable {
         if (userArrayList.isEmpty()) {
             return true;
         }
-        boolean unique = false;
+        boolean unique = true;
         for (User user : userArrayList) {
             if (user.getUserProfile().getPhoneNumber().equals(phoneNumber)) {
                 unique = false;

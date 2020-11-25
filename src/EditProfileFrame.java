@@ -106,7 +106,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
         userPhoneNoLabel = new JLabel("Phone Number");
         userPhoneNoTextField = new JTextField();
         currentOccupationLabel = new JLabel("Current Occupation");
-        currentOccupationTextField = new JPasswordField();
+        currentOccupationTextField = new JTextField();
         aboutMeLabel = new JLabel("About Me");
         aboutMeTextField = new JTextField();
         interestLabel = new JLabel("Interests");
@@ -175,13 +175,13 @@ public class EditProfileFrame extends JComponent implements Runnable {
             }
         }
         if (relationship.equals("")) {
-            genderList.setSelectedIndex(-1);
+            relationshipList.setSelectedIndex(-1);
         } else {
             if (relationship.equals("Single")) {
-                genderList.setSelectedIndex(0);
+                relationshipList.setSelectedIndex(0);
             }
             if (relationship.equals("In relationship")) {
-                genderList.setSelectedIndex(1);
+                relationshipList.setSelectedIndex(1);
             }
         }
 
