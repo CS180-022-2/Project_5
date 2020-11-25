@@ -179,9 +179,22 @@ public class ProfileServer implements Runnable {
                         } else {
                             printWriter.println("Failure");
                         }
+                        printWriter.flush();
                     }
                     case "ViewOtherProfile" -> {
 
+                    }
+                    case "DeleteOwnProfile" -> {
+                        String userId = bufferedReader.readLine();
+                        boolean success = setUserProfile(
+                                new Profile("", "", "", "","",
+                                        ""), userId);
+                        if (success) {
+                            printWriter.println("Success");
+                        } else {
+                            printWriter.println("Failure");
+                        }
+                        printWriter.flush();
                     }
                     case "ShowFriendRequestList" -> {
 

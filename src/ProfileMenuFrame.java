@@ -31,7 +31,30 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
                 profileMenuFrame.dispose();
             }
             if (e.getSource() == deleteProfileButton) {
-
+                int isDelete = JOptionPane.showConfirmDialog(null,
+                        "All you sure to delete all your profile?", "Profile delete",
+                        JOptionPane.YES_NO_OPTION);
+                if (isDelete == JOptionPane.YES_OPTION) {
+                    printWriter.println("DeleteOwnProfile");
+                    printWriter.println(userId);
+                    printWriter.flush();
+                    String success = "";
+                    try {
+                        success = bufferedReader.readLine();
+                    } catch (IOException ioException) {
+                        ioException.printStackTrace();
+                    }
+                    if (success.equals("Success")) {
+                        JOptionPane.showMessageDialog(null, "Congratulations! " +
+                                        "You have successfully delete your profile!",
+                                "Profile deletion Successful", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Oops!" +
+                                        "Unsuccessful deletion./n Please retry.",
+                                "Delete Profile Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+                return;
             }
         }
     };
