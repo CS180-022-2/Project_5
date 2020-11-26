@@ -59,6 +59,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
                 }
                 //Pass the data to server
                 printWriter.println("EditOwnProfile");
+                printWriter.println(userId);
                 printWriter.printf("%s, %s, %s, %s, %s, %s\n", userPhoneNo, relationship, gender, currentOccupation,
                         interest, aboutMe);
                 printWriter.flush();
