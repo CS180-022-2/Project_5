@@ -18,7 +18,7 @@ public class UserFrame extends JComponent implements Runnable {
     String userId;
 
     //example data
-    String[] columnName = {"Name", "ID", "Age"};
+    String[] columnName = {"Name", "ID", "About me "};
     String[][] rowData =
             {
                     {"Joshua Paik", "joshuatree", "20"},
@@ -86,9 +86,9 @@ public class UserFrame extends JComponent implements Runnable {
                     "Unable to initialize", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
+        JFrame userFrame = new JFrame("EasyChat");
+        userFrame.setLayout(new BorderLayout());
         jTable.setRowSorter(rowSorter);
-
         JPanel panel = new JPanel();
         add = new JButton("Add Friend");
         main = new JButton("Main Page");
@@ -97,13 +97,15 @@ public class UserFrame extends JComponent implements Runnable {
         panel.add(jtfFilter);
         panel.add(main);
         panel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        panel.setVisible(true);
 
         setLayout(new BorderLayout());
-        add(panel, BorderLayout.NORTH);
+        userFrame.add(panel, BorderLayout.NORTH);
         jScrollPane = new JScrollPane(jTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JPanel panel2 = new JPanel(new BorderLayout());
         panel2.add(jScrollPane, BorderLayout.CENTER);
-        add(panel2, BorderLayout.CENTER);
+        panel2.setVisible(true);
+        userFrame.add(panel2, BorderLayout.CENTER);
 
         jtfFilter.getDocument().addDocumentListener(new DocumentListener(){
 
@@ -135,11 +137,9 @@ public class UserFrame extends JComponent implements Runnable {
             }
 
         });
-        JFrame frame = new JFrame("EasyChat");
-        frame.add(new UserFrame(socket, userId));
-        frame.pack();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        userFrame.pack();
+        userFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        userFrame.setLocationRelativeTo(null);
+        userFrame.setVisible(true);
     }
 }
