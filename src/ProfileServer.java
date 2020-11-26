@@ -244,6 +244,5 @@ public class ProfileServer implements Runnable {
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
-
     }
 }

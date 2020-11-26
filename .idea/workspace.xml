@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" afterDir="false" />
@@ -67,7 +66,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager" selected="Application.ProfileClient">
     <configuration name="ProfileClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -116,7 +115,7 @@
       <workItem from="1605970834937" duration="1972000" />
       <workItem from="1606015855705" duration="145000" />
       <workItem from="1606320517806" duration="1959000" />
-      <workItem from="1606338114781" duration="6408000" />
+      <workItem from="1606338114781" duration="13752000" />
     </task>
     <servers />
   </component>
@@ -144,26 +143,26 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="534" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1606335377238" />
-    <state width="1663" height="412" key="GridCell.Tab.0.bottom" timestamp="1606360890384">
+    <state width="1663" height="412" key="GridCell.Tab.0.bottom" timestamp="1606370800580">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.bottom/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606360890384" />
-    <state width="1663" height="412" key="GridCell.Tab.0.center" timestamp="1606360890384">
+    <state width="1663" height="412" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606370800580" />
+    <state width="1663" height="412" key="GridCell.Tab.0.center" timestamp="1606370800580">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.center/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606360890384" />
-    <state width="1663" height="412" key="GridCell.Tab.0.left" timestamp="1606360890383">
+    <state width="1663" height="412" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606370800580" />
+    <state width="1663" height="412" key="GridCell.Tab.0.left" timestamp="1606370800579">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.left/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606360890383" />
-    <state width="1663" height="412" key="GridCell.Tab.0.right" timestamp="1606360890384">
+    <state width="1663" height="412" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606370800579" />
+    <state width="1663" height="412" key="GridCell.Tab.0.right" timestamp="1606370800580">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.right/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606360890384" />
+    <state width="1663" height="412" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606370800580" />
     <state width="1491" height="258" key="GridCell.Tab.1.bottom" timestamp="1606322476855">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
@@ -180,10 +179,10 @@
       <screen x="0" y="0" width="1549" height="831" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.1.right/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state x="355" y="158" key="SettingsEditor" timestamp="1605973810559">
+    <state x="355" y="158" key="SettingsEditor" timestamp="1606368812088">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="355" y="158" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1605973810559" />
+    <state x="355" y="158" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1606368812088" />
     <state x="564" y="402" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606067510672">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
