@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditProfileFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProfileMenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileMenuFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +117,7 @@
       <workItem from="1605970834937" duration="1972000" />
       <workItem from="1606015855705" duration="145000" />
       <workItem from="1606320517806" duration="1959000" />
+      <workItem from="1606338114781" duration="5334000" />
     </task>
     <servers />
   </component>
@@ -134,26 +137,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1491" height="258" key="GridCell.Tab.0.bottom" timestamp="1606322476855">
-      <screen x="0" y="0" width="1549" height="831" />
+    <state x="446" y="155" key="#Plugins" timestamp="1606338138459">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="446" y="155" key="#Plugins/0.0.1707.1027@0.0.1707.1027" timestamp="1606338138459" />
+    <state x="534" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606335377238">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="534" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1606335377238" />
+    <state width="1663" height="412" key="GridCell.Tab.0.bottom" timestamp="1606358692993">
+      <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.bottom/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606249906518" />
-    <state width="1491" height="258" key="GridCell.Tab.0.center" timestamp="1606322476855">
-      <screen x="0" y="0" width="1549" height="831" />
+    <state width="1663" height="412" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606358692993" />
+    <state width="1663" height="412" key="GridCell.Tab.0.center" timestamp="1606358692993">
+      <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.center/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606249906517" />
-    <state width="1491" height="258" key="GridCell.Tab.0.left" timestamp="1606322476855">
-      <screen x="0" y="0" width="1549" height="831" />
+    <state width="1663" height="412" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606358692993" />
+    <state width="1663" height="412" key="GridCell.Tab.0.left" timestamp="1606358692993">
+      <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.left/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606249906517" />
-    <state width="1491" height="258" key="GridCell.Tab.0.right" timestamp="1606322476855">
-      <screen x="0" y="0" width="1549" height="831" />
+    <state width="1663" height="412" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606358692993" />
+    <state width="1663" height="412" key="GridCell.Tab.0.right" timestamp="1606358692993">
+      <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.right/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606249906518" />
+    <state width="1663" height="412" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606358692993" />
     <state width="1491" height="258" key="GridCell.Tab.1.bottom" timestamp="1606322476855">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
@@ -178,46 +189,5 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="564" y="402" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1707.1027@0.0.1707.1027" timestamp="1606067510672" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/EditProfileFrame.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/EditProfileFrame.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/EditProfileFrame.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/EditProfileFrame.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ProfileMenuFrame.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ProfileMenuFrame.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ProfileMenuFrame.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

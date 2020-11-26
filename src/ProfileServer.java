@@ -47,19 +47,19 @@ public class ProfileServer implements Runnable {
 
     synchronized Profile getProfile(String userId) {
         Profile profile = null;
-        for (int i = 0; i < userArrayList.size(); i++) {
-            if (userArrayList.get(i).getUserId().equals(userId)) {
-                profile = userArrayList.get(i).getUserProfile();
+        for (User user : userArrayList) {
+            if (user.getUserId().equals(userId)) {
+                profile = user.getUserProfile();
             }
         }
-        return  profile;
+        return profile;
     }
 
     synchronized boolean setUserProfile(Profile userProfile, String userId) {
         boolean success = false;
-        for (int i = 0; i < userArrayList.size(); i++) {
-            if (userArrayList.get(i).getUserId().equals(userId)) {
-                userArrayList.get(i).setUserProfile(userProfile);
+        for (User user : userArrayList) {
+            if (user.getUserId().equals(userId)) {
+                user.setUserProfile(userProfile);
                 success = true;
             }
         }
@@ -184,7 +184,14 @@ public class ProfileServer implements Runnable {
 
                     }
                     case "DeleteOwnProfile" -> {
+                        Profile dummy = new Profile("", "", "", "",
+                                "", "");
                         String userId = bufferedReader.readLine();
+                        if (getProfile(userId).equals(dummy)) {
+                            printWriter.println("No Profile");
+                            printWriter.flush();
+                            return;
+                        }
                         boolean success = setUserProfile(
                                 new Profile("", "", "", "","",
                                         ""), userId);

@@ -48,13 +48,15 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
                         JOptionPane.showMessageDialog(null, "Congratulations! " +
                                         "You have successfully delete your profile!",
                                 "Profile deletion Successful", JOptionPane.INFORMATION_MESSAGE);
-                    } else {
+                    } else if (success.equals("Failure")) {
                         JOptionPane.showMessageDialog(null, "Oops!" +
                                         "Unsuccessful deletion./n Please retry.",
                                 "Delete Profile Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No profile to delete",
+                                 "Delete Profile Error", JOptionPane.ERROR_MESSAGE);
                     }
                 }
-                return;
             }
         }
     };
