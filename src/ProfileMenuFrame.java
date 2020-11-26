@@ -52,7 +52,7 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
                         JOptionPane.showMessageDialog(null, "Oops!" +
                                         "Unsuccessful deletion./n Please retry.",
                                 "Delete Profile Error", JOptionPane.ERROR_MESSAGE);
-                    } else {
+                    } else if (success.equals("No Profile")) {
                         JOptionPane.showMessageDialog(null, "No profile to delete",
                                  "Delete Profile Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -81,23 +81,19 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         Container profileMenuFrameContentPane = profileMenuFrame.getContentPane();
         profileMenuFrameContentPane.setLayout(null);
         deleteProfileButton = new JButton("Delete Profile");
-        editProfileButton = new JButton("Edit Profile");
-        createProfileButton = new JButton("Create Profile");
+        editProfileButton = new JButton("Create / Edit Profile");
         backButton = new JButton("Back to Login");
         //Set component location
-        createProfileButton.setBounds(140, 30 , 120, 30);
-        deleteProfileButton.setBounds(140, 80 , 120, 30);
-        editProfileButton.setBounds(140, 130 , 120, 30);
-        backButton.setBounds(140,180, 120, 30);
+        deleteProfileButton.setBounds(140, 50 , 150, 30);
+        editProfileButton.setBounds(140, 100 , 150, 30);
+        backButton.setBounds(140,150, 150, 30);
 
         //Add actionLister
-        createProfileButton.addActionListener(actionListener);
         deleteProfileButton.addActionListener(actionListener);
         editProfileButton.addActionListener(actionListener);
         backButton.addActionListener(actionListener);
 
         //Add all components into the Frame;
-        profileMenuFrameContentPane.add(createProfileButton);
         profileMenuFrameContentPane.add(editProfileButton);
         profileMenuFrameContentPane.add(deleteProfileButton);
         profileMenuFrameContentPane.add(backButton);
