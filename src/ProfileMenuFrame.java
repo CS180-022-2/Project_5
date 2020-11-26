@@ -82,9 +82,9 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         editProfileButton = new JButton("Create / Edit Profile");
         backButton = new JButton("Back to Login");
         //Set component location
-        deleteProfileButton.setBounds(140, 50 , 150, 30);
-        editProfileButton.setBounds(140, 100 , 150, 30);
-        backButton.setBounds(140,150, 150, 30);
+        deleteProfileButton.setBounds(120, 50 , 150, 30);
+        editProfileButton.setBounds(120, 100 , 150, 30);
+        backButton.setBounds(120,150, 150, 30);
 
         //Add actionLister
         deleteProfileButton.addActionListener(actionListener);

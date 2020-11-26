@@ -13,6 +13,6 @@ public class ProfileClient {
                     "Unable to connect to the server", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        SwingUtilities.invokeLater(new UserFrame(socket, "thisIsUserId"));
+        SwingUtilities.invokeLater(new LoginFrame(socket));
     }
 }

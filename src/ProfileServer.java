@@ -174,19 +174,19 @@ public class ProfileServer implements Runnable {
                     case "ViewOtherProfile" -> {
                     }
                     case "DeleteOwnProfile" -> {
-                        Profile dummy = new Profile("", "", "", "",
-                                "", "");
                         String userId = bufferedReader.readLine();
-                        if (getProfile(userId).equals(dummy)) {
+                        if (getProfile(userId).getPhoneNumber().equals("") && getProfile(userId).getAboutMe().equals("")
+                        && getProfile(userId).getCurrentOccupation().equals("") && getProfile(userId).getInterest().equals("")) {
                             printWriter.println("No Profile");
                             printWriter.flush();
-                            return;
+                            break;
                         }
                         boolean success = setUserProfile(
                                 new Profile("", "", "", "","",
                                         ""), userId);
                         if (success) {
                             printWriter.println("Success");
+                            System.out.println("Profile: " + getProfile(userId).toString());
                         } else {
                             printWriter.println("Failure");
                         }
@@ -240,7 +240,6 @@ public class ProfileServer implements Runnable {
                     }
                 }
             }
-
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }

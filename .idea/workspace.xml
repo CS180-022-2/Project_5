@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditProfileFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProfileMenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileMenuFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +73,7 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager" selected="Application.ProfileClient">
-    <configuration name="ProfileClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfileClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ProfileClient" />
       <module name="Project_5" />
       <method v="2">
@@ -83,19 +87,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ProfileClient" />
+      <item itemvalue="Application.ProfileServer" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ProfileClient" />
@@ -115,7 +121,7 @@
       <workItem from="1605970834937" duration="1972000" />
       <workItem from="1606015855705" duration="145000" />
       <workItem from="1606320517806" duration="1959000" />
-      <workItem from="1606338114781" duration="13752000" />
+      <workItem from="1606338114781" duration="26414000" />
     </task>
     <servers />
   </component>
@@ -139,30 +145,34 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="446" y="155" key="#Plugins/0.0.1707.1027@0.0.1707.1027" timestamp="1606338138459" />
+    <state x="309" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606426029877">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="309" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1606426029877" />
     <state x="534" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606335377238">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="534" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1606335377238" />
-    <state width="1663" height="412" key="GridCell.Tab.0.bottom" timestamp="1606370800580">
+    <state width="1663" height="181" key="GridCell.Tab.0.bottom" timestamp="1606430832853">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.bottom/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606370800580" />
-    <state width="1663" height="412" key="GridCell.Tab.0.center" timestamp="1606370800580">
+    <state width="1663" height="181" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606430832853" />
+    <state width="1663" height="181" key="GridCell.Tab.0.center" timestamp="1606430832853">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.center/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606370800580" />
-    <state width="1663" height="412" key="GridCell.Tab.0.left" timestamp="1606370800579">
+    <state width="1663" height="181" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606430832853" />
+    <state width="1663" height="181" key="GridCell.Tab.0.left" timestamp="1606430832853">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.left/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606370800579" />
-    <state width="1663" height="412" key="GridCell.Tab.0.right" timestamp="1606370800580">
+    <state width="1663" height="181" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606430832853" />
+    <state width="1663" height="181" key="GridCell.Tab.0.right" timestamp="1606430832853">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.right/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="412" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606370800580" />
+    <state width="1663" height="181" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606430832853" />
     <state width="1491" height="258" key="GridCell.Tab.1.bottom" timestamp="1606322476855">
       <screen x="0" y="0" width="1549" height="831" />
     </state>

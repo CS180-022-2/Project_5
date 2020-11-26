@@ -1,4 +1,4 @@
-import java.awt.Container;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -43,6 +43,9 @@ public class EditProfileFrame extends JComponent implements Runnable {
                 String interest = interestField.getText();
                 String gender = String.valueOf(genderList.getSelectedItem());
                 String relationship = String.valueOf(relationshipList.getSelectedItem());
+                if (!contentCheck(userPhoneNo, currentOccupation, aboutMe, interest, gender, relationship)) {
+                    return;
+                }
                 printWriter.println("UniquePhoneNoCheck");
                 printWriter.println(userPhoneNo);
                 printWriter.flush();
@@ -207,5 +210,48 @@ public class EditProfileFrame extends JComponent implements Runnable {
         editProfileFrame.setLocationRelativeTo(null);
         editProfileFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         editProfileFrame.setVisible(true);
+    }
+
+    public boolean contentCheck(String userPhoneNo, String currentOccupation, String aboutMe, String interest,
+                                String gender, String relationship) {
+        boolean correct = true;
+        try {
+            int number = Integer.parseInt(userPhoneNo);
+            if (userPhoneNo.equals("")) {
+                JOptionPane.showMessageDialog(null, "Phone Number cannot be Null",
+                        "Input Error", JOptionPane.WARNING_MESSAGE);
+                correct = false;
+            }
+            if (currentOccupation.equals("")) {
+                JOptionPane.showMessageDialog(null, "Current Occupation cannot be Null",
+                        "Input Error", JOptionPane.WARNING_MESSAGE);
+                correct = false;
+            }
+            if (aboutMe.equals("")) {
+                JOptionPane.showMessageDialog(null, "About me cannot be Null",
+                        "Input Error", JOptionPane.WARNING_MESSAGE);
+                correct = false;
+            }
+            if (interest.equals("")) {
+                JOptionPane.showMessageDialog(null, "Interest cannot be Null",
+                        "Input Error", JOptionPane.WARNING_MESSAGE);
+                correct = false;
+            }
+            if (gender.equals("")) {
+                JOptionPane.showMessageDialog(null, "Please select your gender",
+                        "Input Error", JOptionPane.WARNING_MESSAGE);
+                correct = false;
+            }
+            if (relationship.equals("")) {
+                JOptionPane.showMessageDialog(null, "Please select your relationship status",
+                        "Input Error", JOptionPane.WARNING_MESSAGE);
+                correct = false;
+            }
+        } catch (NumberFormatException | HeadlessException e) {
+            JOptionPane.showMessageDialog(null, "Phone Number should only contain numbers.\n" +
+                    "Do not write anything else than numbers.", "Input Error", JOptionPane.WARNING_MESSAGE);
+            correct = false;
+        }
+        return correct;
     }
 }
