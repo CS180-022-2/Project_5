@@ -133,6 +133,7 @@ public class ProfileServer implements Runnable {
                             printWriter.println("Invalid");
                         }
                         printWriter.flush();
+                        break;
                     }
                     case "Register" -> {
                         //The User would send the user account info in a string
@@ -142,31 +143,31 @@ public class ProfileServer implements Runnable {
                                 splitNewUser[2], splitNewUser[3]));
                         printWriter.println("Success");
                         printWriter.flush();
-
+                        break;
                     }
                     case "ShowOwnInfo" -> {
-
+                        break;
                     }
                     case "AddFriend" -> {
-
+                        break;
                     }
                     case "DeleteFriend" -> {
-
+                        break;
                     }
                     case "ShowFriendList" -> {
-
+                        break;
                     }
                     case "EditOwnAccount" -> {
-
+                        break;
                     }
                     case "DeleteOwnAccount" -> {
-
+                        break;
                     }
                     case "ShowAllUser" -> {
-
+                        break;
                     }
                     case "ViewOwnProfile" -> {
-
+                        break;
                     }
                     case "EditOwnProfile" -> {
                         String userId = bufferedReader.readLine();
@@ -180,8 +181,10 @@ public class ProfileServer implements Runnable {
                             printWriter.println("Failure");
                         }
                         printWriter.flush();
+                        break;
                     }
                     case "ViewOtherProfile" -> {
+                        break;
 
                     }
                     case "DeleteOwnProfile" -> {
@@ -195,6 +198,7 @@ public class ProfileServer implements Runnable {
                             printWriter.println("Failure");
                         }
                         printWriter.flush();
+                        break;
                     }
                     case "ShowFriendRequestList" -> {
 
@@ -220,6 +224,7 @@ public class ProfileServer implements Runnable {
                             printWriter.println("Exists");
                         }
                         printWriter.flush();
+                        break;
                     }
                     case "UniqueIdCheck" -> {
                         String userId = bufferedReader.readLine();
@@ -230,6 +235,7 @@ public class ProfileServer implements Runnable {
                             printWriter.println("Exists");
                         }
                         printWriter.flush();
+                        break;
                     }
                     case "GetProfileContent" -> {
                         String userId = bufferedReader.readLine();
@@ -241,6 +247,7 @@ public class ProfileServer implements Runnable {
                         printWriter.println(profile.getInterest());
                         printWriter.println(profile.getRelationship());
                         printWriter.flush();
+                        break;
                     }
                 }
             }
