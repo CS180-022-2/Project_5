@@ -26,12 +26,28 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
                 SwingUtilities.invokeLater(new LoginFrame(socket));
                 profileMenuFrame.dispose();
             }
-            if (e.getSource() == editProfileButton) {
-                SwingUtilities.invokeLater(new EditProfileFrame(socket,userId));
-                profileMenuFrame.dispose();
-            }
             if (e.getSource() == userFrameButton) {
-                SwingUtilities.invokeLater(new UserFrame(socket, userId));
+                printWriter.println("DeleteOwnProfile");
+                printWriter.println(userId);
+                printWriter.flush();
+                String success = "";
+                try {
+                    success = bufferedReader.readLine();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+                if (success.equals("No Profile")) {
+                    JOptionPane.showMessageDialog(null,
+                            "First create your profile in order to view friend list.", "Profile Error",
+                            JOptionPane.ERROR_MESSAGE);
+                } else {
+                    SwingUtilities.invokeLater(new UserFrame(socket,userId));
+                    profileMenuFrame.dispose();
+                }
+            }
+            if (e.getSource() == editProfileButton) {
+                SwingUtilities.invokeLater(new EditProfileFrame(socket, userId));
+                profileMenuFrame.dispose();
             }
             if (e.getSource() == deleteProfileButton) {
                 int isDelete = JOptionPane.showConfirmDialog(null,
@@ -49,7 +65,7 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
                     }
                     switch (success) {
                         case "No Profile" -> JOptionPane.showMessageDialog(null,
-                                "No profile to delete\nPlease fill the profile first",
+                                "No profile to delete.\nPlease fill the profile first.",
                                 "Delete Profile Error", JOptionPane.ERROR_MESSAGE);
                         case "Success" -> JOptionPane.showMessageDialog(null, "Congratulations! " +
                                         "You have successfully delete your profile!",

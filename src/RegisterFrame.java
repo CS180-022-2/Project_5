@@ -47,7 +47,7 @@ public class RegisterFrame extends JComponent implements Runnable{
                 if (!contentCheck(userId, rawPassword.toString(), realName, email)){
                     return;
                 }
-                printWriter.println("UniqueIdCheck");
+                /*printWriter.println("UniqueIdCheck");
                 printWriter.println(userId);
                 printWriter.flush();
                 String result = "";
@@ -60,7 +60,7 @@ public class RegisterFrame extends JComponent implements Runnable{
                     JOptionPane.showMessageDialog(null, "UserId existed",
                             "UserID Error", JOptionPane.WARNING_MESSAGE);
                     return;
-                }
+                }*/
                 //Pass the data to server
                 printWriter.println("Register");
                 printWriter.printf("%s, %s, %s, %s\n", userId, rawPassword.toString(), realName, email);
