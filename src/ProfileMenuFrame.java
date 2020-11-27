@@ -14,7 +14,7 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
     BufferedReader bufferedReader;
     PrintWriter printWriter;
     JFrame profileMenuFrame;
-    JButton createProfileButton;
+    JButton userFrameButton;
     JButton editProfileButton;
     JButton deleteProfileButton;
     JButton backButton;
@@ -29,6 +29,9 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
             if (e.getSource() == editProfileButton) {
                 SwingUtilities.invokeLater(new EditProfileFrame(socket,userId));
                 profileMenuFrame.dispose();
+            }
+            if (e.getSource() == userFrameButton) {
+                SwingUtilities.invokeLater(new UserFrame(socket, userId));
             }
             if (e.getSource() == deleteProfileButton) {
                 int isDelete = JOptionPane.showConfirmDialog(null,
@@ -46,7 +49,8 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
                     }
                     switch (success) {
                         case "No Profile" -> JOptionPane.showMessageDialog(null,
-                                "No profile to delete", "Delete Profile Error", JOptionPane.ERROR_MESSAGE);
+                                "No profile to delete\nPlease fill the profile first",
+                                "Delete Profile Error", JOptionPane.ERROR_MESSAGE);
                         case "Success" -> JOptionPane.showMessageDialog(null, "Congratulations! " +
                                         "You have successfully delete your profile!",
                                 "Profile deletion Successful", JOptionPane.INFORMATION_MESSAGE);
@@ -78,20 +82,24 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         profileMenuFrame = new JFrame("Profile Menu Frame");
         Container profileMenuFrameContentPane = profileMenuFrame.getContentPane();
         profileMenuFrameContentPane.setLayout(null);
+        userFrameButton = new JButton("See Friend List");
         deleteProfileButton = new JButton("Delete Profile");
         editProfileButton = new JButton("Create / Edit Profile");
         backButton = new JButton("Back to Login");
         //Set component location
-        deleteProfileButton.setBounds(120, 50 , 150, 30);
-        editProfileButton.setBounds(120, 100 , 150, 30);
-        backButton.setBounds(120,150, 150, 30);
+        userFrameButton.setBounds(120, 30, 150, 30);
+        deleteProfileButton.setBounds(120, 80 , 150, 30);
+        editProfileButton.setBounds(120, 130 , 150, 30);
+        backButton.setBounds(120,180, 150, 30);
 
         //Add actionLister
+        userFrameButton.addActionListener(actionListener);
         deleteProfileButton.addActionListener(actionListener);
         editProfileButton.addActionListener(actionListener);
         backButton.addActionListener(actionListener);
 
         //Add all components into the Frame;
+        profileMenuFrameContentPane.add(userFrameButton);
         profileMenuFrameContentPane.add(editProfileButton);
         profileMenuFrameContentPane.add(deleteProfileButton);
         profileMenuFrameContentPane.add(backButton);

@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -26,16 +28,31 @@ public class UserFrame extends JComponent implements Runnable {
                     {"Leo Li", "lileo98", "18"},
                     {"Jason Hung", "jasonH12", "18"},
                     {"Derek Sun", "tsunderek", "18"},
-                    {"Junwon Choi", "roger22", "17"}
+                    {"Logan Kulinski", "logan22", "17"},
+                    {"Kedar Abhyankar", "papakedar", "19"},
+                    {"Buster Dunsmore", "bald", "43"},
+                    {"Jeffrey Turkstra", "tureky12", "55"}
             };
 
     DefaultTableModel model = new DefaultTableModel(rowData, columnName);
     JTable jTable = new JTable(model);
+    JFrame userFrame;
     TableRowSorter<TableModel> rowSorter = new TableRowSorter<>(jTable.getModel());
     JTextField jtfFilter = new JTextField(10);
     JScrollPane jScrollPane;
     JButton add;
     JButton main;
+    JButton back;
+
+    ActionListener actionListener = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == back) {
+                SwingUtilities.invokeLater(new ProfileMenuFrame(socket, userId));
+                userFrame.dispose();
+            }
+        }
+    };
 
     public UserFrame(Socket socket, String userId) {
         this.socket = socket;
@@ -52,12 +69,14 @@ public class UserFrame extends JComponent implements Runnable {
                     "Unable to initialize", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        JFrame userFrame = new JFrame("EasyChat");
+        userFrame = new JFrame("User Frame");
         userFrame.setLayout(new BorderLayout());
         jTable.setRowSorter(rowSorter);
         JPanel panel = new JPanel();
+        JPanel panel3 = new JPanel();
         add = new JButton("Add Friend");
         main = new JButton("Main Page");
+        back = new JButton("Back to Menu");
         panel.add(add);
         panel.add(new JLabel("Find a specific friend"));
         panel.add(jtfFilter);
@@ -65,16 +84,19 @@ public class UserFrame extends JComponent implements Runnable {
         panel.setLayout(new FlowLayout(FlowLayout.CENTER));
         panel.setVisible(true);
 
+
         setLayout(new BorderLayout());
         userFrame.add(panel, BorderLayout.NORTH);
+        panel3.add(back);
+        userFrame.add(panel3, BorderLayout.SOUTH);
         jScrollPane = new JScrollPane(jTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JPanel panel2 = new JPanel(new BorderLayout());
         panel2.add(jScrollPane, BorderLayout.CENTER);
         panel2.setVisible(true);
         userFrame.add(panel2, BorderLayout.CENTER);
+        back.addActionListener(actionListener);
 
         jtfFilter.getDocument().addDocumentListener(new DocumentListener(){
-
             @Override
             public void insertUpdate(DocumentEvent e) {
                 String text = jtfFilter.getText();
