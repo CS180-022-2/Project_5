@@ -19,38 +19,27 @@ public class UserFrame extends JComponent implements Runnable {
     PrintWriter printWriter;
     String userId;
 
-    //example data
     String[] columnName = {"Name", "ID", "About me "};
-    String[][] rowData =
-            {
-                    {"Joshua Paik", "joshuatree", "20"},
-                    {"Youngjun Yoo", "joon916", "18"},
-                    {"Leo Li", "lileo98", "18"},
-                    {"Jason Hung", "jasonH12", "18"},
-                    {"Derek Sun", "tsunderek", "18"},
-                    {"Logan Kulinski", "logan22", "17"},
-                    {"Kedar Abhyankar", "papakedar", "19"},
-                    {"Buster Dunsmore", "bald", "43"},
-                    {"Jeffrey Turkstra", "tureky12", "55"}
-            };
+    String[][] rowData;
 
-    DefaultTableModel model = new DefaultTableModel(rowData, columnName);
+    DefaultTableModel model;
     JTable jTable = new JTable(model);
     JFrame userFrame;
-    TableRowSorter<TableModel> rowSorter = new TableRowSorter<>(jTable.getModel());
+    TableRowSorter<TableModel> rowSorter;
     JTextField jtfFilter = new JTextField(10);
     JScrollPane jScrollPane;
     JButton add;
-    JButton main;
+    JButton account;
     JButton back;
 
     ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == back) {
-                SwingUtilities.invokeLater(new ProfileMenuFrame(socket, userId));
+                SwingUtilities.invokeLater(new LoginFrame(socket));
                 userFrame.dispose();
             }
+            if (e.getSource() == add) {}
         }
     };
 
@@ -69,18 +58,47 @@ public class UserFrame extends JComponent implements Runnable {
                     "Unable to initialize", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        //Initialize the 
+        printWriter.println("GetFriendList");
+        printWriter.println(userId);
+        printWriter.flush();
+        try {
+            int i = Integer.parseInt(bufferedReader.readLine());
+            rowData = new String[i][3];
+            for (int j = 0; j < i; j++ ) {
+                String name = bufferedReader.readLine();
+                String id = bufferedReader.readLine();
+                String aboutMe = bufferedReader.readLine();
+                rowData[j][0] = name;
+                rowData[j][1] = id;
+                rowData[j][2] = aboutMe;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        model = new DefaultTableModel(rowData, columnName);
+        rowSorter = new TableRowSorter<>(jTable.getModel());
+
+
+
+
+
+
+
+
+
         userFrame = new JFrame("User Frame");
         userFrame.setLayout(new BorderLayout());
         jTable.setRowSorter(rowSorter);
         JPanel panel = new JPanel();
         JPanel panel3 = new JPanel();
         add = new JButton("Add Friend");
-        main = new JButton("Main Page");
+        account = new JButton("Edit Profile and Account");
         back = new JButton("Back to Menu");
         panel.add(add);
         panel.add(new JLabel("Find a specific friend"));
         panel.add(jtfFilter);
-        panel.add(main);
+        panel.add(account);
         panel.setLayout(new FlowLayout(FlowLayout.CENTER));
         panel.setVisible(true);
 
