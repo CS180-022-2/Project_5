@@ -216,7 +216,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
                                 String gender, String relationship) {
         boolean correct = true;
         try {
-            int number = Integer.parseInt(userPhoneNo);
+            long number = Long.parseLong(userPhoneNo);
             if (userPhoneNo.equals("")) {
                 JOptionPane.showMessageDialog(null, "Phone Number cannot be Null",
                         "Input Error", JOptionPane.WARNING_MESSAGE);
