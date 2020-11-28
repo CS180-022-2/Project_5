@@ -19,7 +19,7 @@ public class UserFrame extends JComponent implements Runnable {
     PrintWriter printWriter;
     String userId;
 
-    String[] columnName = {"Name", "ID", "About me "};
+    String[] columnName = {"Name", "ID", "About me"};
     String[][] rowData = new String[3][3];
 
     DefaultTableModel model;
@@ -47,7 +47,7 @@ public class UserFrame extends JComponent implements Runnable {
                     return;
                 } else {
                     String profileOwnerId = String.valueOf(jTable.getValueAt(selectedRow, 2));
-                    SwingUtilities.invokeLater(new ProfileDisplayFrame(socket, userId, profileOwnerId));
+                    SwingUtilities.invokeLater(new ProfileDisplayFrame(socket, userId, profileOwnerId, "UserFrame"));
                     userFrame.dispose();
                 }
             }
@@ -143,9 +143,6 @@ public class UserFrame extends JComponent implements Runnable {
         panel.add(account);
         panel.setLayout(new FlowLayout(FlowLayout.CENTER));
         panel.setVisible(true);
-
-
-        setLayout(new BorderLayout());
         userFrame.add(panel, BorderLayout.NORTH);
         panel3.add(back);
         userFrame.add(panel3, BorderLayout.SOUTH);

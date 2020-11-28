@@ -12,6 +12,7 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
     Socket socket;
     String viewerId;
     String profileOwnerId;
+    String tracker;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
     JFrame profileDisplayFrame;
@@ -33,14 +34,19 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
-                SwingUtilities.invokeLater(new UserFrame(socket, viewerId));
-                profileDisplayFrame.dispose();
+                if (tracker.equals("UserFrame")) {
+                    SwingUtilities.invokeLater(new UserFrame(socket, viewerId));
+                    profileDisplayFrame.dispose();
+                } else if (tracker.equals("AddFriendFrame")) {
+                    SwingUtilities.invokeLater(new AddFriendFrame(socket, viewerId));
+                }
             }
         }};
-    public ProfileDisplayFrame(Socket socket, String viewerId, String profileOwnerId) {
+    public ProfileDisplayFrame(Socket socket, String viewerId, String profileOwnerId, String tracker) {
         this.socket = socket;
         this.viewerId = viewerId;
         this.profileOwnerId = profileOwnerId;
+        this.tracker = tracker;
     }
 
     @Override
