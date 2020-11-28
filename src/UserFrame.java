@@ -31,7 +31,59 @@ public class UserFrame extends JComponent implements Runnable {
     JButton add;
     JButton account;
     JButton back;
-    JPopupMenu actionMenu;
+    JPopupMenu popupMenu;
+    JMenuItem viewProfile;
+    JMenuItem deleteFriend;
+
+    ActionListener popupItemListener = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JMenuItem menuChoice = (JMenuItem) e.getSource();
+            if (menuChoice == viewProfile) {
+                int selectedRow = jTable.getSelectedRow();
+                if (selectedRow == -1) {
+                    JOptionPane.showMessageDialog(null,
+                            "You must first select a line! ", "No selection", JOptionPane.WARNING_MESSAGE);
+                    return;
+                } else {
+                    String profileOwnerId = String.valueOf(jTable.getValueAt(selectedRow, 2));
+                    SwingUtilities.invokeLater(new ProfileDisplayFrame(socket, userId, profileOwnerId));
+                    userFrame.dispose();
+                }
+            }
+            if (menuChoice == deleteFriend) {
+                int selectedRow = jTable.getSelectedRow();
+                if (selectedRow == -1) {
+                    JOptionPane.showMessageDialog(null,
+                            "You must first select a line! ", "No selection", JOptionPane.WARNING_MESSAGE);
+                    return;
+                } else {
+                    String deleteFriendId = String.valueOf(jTable.getValueAt(selectedRow, 2));
+                    printWriter.println("DeleteFriend");
+                    printWriter.println(userId);
+                    printWriter.println(deleteFriendId);
+                    printWriter.flush();
+                    String success = null;
+                    try {
+                        success = bufferedReader.readLine();
+                    } catch (IOException ioException) {
+                        ioException.printStackTrace();
+                    }
+                    if (success.equals("Success")) {
+                        JOptionPane.showMessageDialog(null,
+                                "You have successfully deleted a friend",
+                                "Success", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                    JOptionPane.showMessageDialog(null,
+                            "Unable to deleteFriend", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                    model = updateModel(userId);
+                    jTable.setModel(model);
+                    jTable.repaint();
+                }
+            }
+        }
+    };
 
     ActionListener buttonActionListener = new ActionListener() {
         @Override
@@ -41,7 +93,8 @@ public class UserFrame extends JComponent implements Runnable {
                 userFrame.dispose();
             }
             if (e.getSource() == add) {
-
+                SwingUtilities.invokeLater(new AddFriendFrame(socket, userId));
+                userFrame.dispose();
             }
         }
     };
@@ -53,7 +106,7 @@ public class UserFrame extends JComponent implements Runnable {
 
     @Override
     public void run() {
-        /*
+
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             printWriter = new PrintWriter(socket.getOutputStream());
@@ -62,60 +115,19 @@ public class UserFrame extends JComponent implements Runnable {
                     "Unable to initialize", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        //Initialize the
-        printWriter.println("GetFriendList");
-        printWriter.println(userId);
-        printWriter.flush();
-        String result = null;
-        try {
-            result = bufferedReader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (result.equals("Empty")) {
-            rowData = new String[0][0];
+        //Initialize GUI
+        popupMenu = new JPopupMenu();
+        viewProfile = new JMenuItem("View profile");
+        deleteFriend = new JMenuItem("Delete Friend");
 
-        } else if (result.equals("NotFound")) {
-            rowData = new String[0][0];
-            JOptionPane.showMessageDialog(null,
-                    "Unable to find Id", "Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            try {
-                int i = Integer.parseInt(result);
-                rowData = new String[i][3];
-                for (int j = 0; j < i; j++) {
-                    String name = bufferedReader.readLine();
-                    String id = bufferedReader.readLine();
-                    String aboutMe = bufferedReader.readLine();
-                    rowData[j][0] = name;
-                    rowData[j][1] = id;
-                    rowData[j][2] = aboutMe;
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-         */
-        rowData[0][0] = "Name1";
-        rowData[0][1] = "Id1";
-        rowData[0][2] = "AboutMe1";
-        rowData[1][0] = "Name2";
-        rowData[1][1] = "Id2";
-        rowData[1][2] = "AboutMe2";
-        rowData[2][0] = "Name3";
-        rowData[2][1] = "Id3";
-        rowData[2][2] = "AboutMe3";
-        actionMenu = new JPopupMenu();
-        JMenuItem viewProfile = new JMenuItem("View profile");
-        JMenuItem deleteFriend = new JMenuItem("Delete Friend");
+        viewProfile.addActionListener(popupItemListener);
+        deleteFriend.addActionListener(popupItemListener);
+        popupMenu.add(viewProfile);
+        popupMenu.add(deleteFriend);
 
-        model = new DefaultTableModel(rowData, columnName) {
-            @Override
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
+        model = updateModel(userId);
         jTable = new JTable(model);
+        jTable.setComponentPopupMenu(popupMenu);
         rowSorter = new TableRowSorter<>(jTable.getModel());
         userFrame = new JFrame("User Frame");
         userFrame.setLayout(new BorderLayout());
@@ -137,14 +149,14 @@ public class UserFrame extends JComponent implements Runnable {
         userFrame.add(panel, BorderLayout.NORTH);
         panel3.add(back);
         userFrame.add(panel3, BorderLayout.SOUTH);
-        jScrollPane = new JScrollPane(jTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane = new JScrollPane(jTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JPanel panel2 = new JPanel(new BorderLayout());
         panel2.add(jScrollPane, BorderLayout.CENTER);
         panel2.setVisible(true);
         userFrame.add(panel2, BorderLayout.CENTER);
         back.addActionListener(buttonActionListener);
 
-        jtfFilter.getDocument().addDocumentListener(new DocumentListener(){
+        jtfFilter.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 String text = jtfFilter.getText();
@@ -177,5 +189,46 @@ public class UserFrame extends JComponent implements Runnable {
         userFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         userFrame.setLocationRelativeTo(null);
         userFrame.setVisible(true);
+    }
+
+    public DefaultTableModel updateModel(String userId) {
+        printWriter.println("GetFriendList");
+        printWriter.println(userId);
+        printWriter.flush();
+        String result = null;
+        try {
+            result = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (result.equals("Empty")) {
+            rowData = new String[0][0];
+
+        } else if (result.equals("NotFound")) {
+            rowData = new String[0][0];
+            JOptionPane.showMessageDialog(null,
+                    "Unable to find Id", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try {
+                int i = Integer.parseInt(result);
+                rowData = new String[i][3];
+                for (int j = 0; j < i; j++) {
+                    String name = bufferedReader.readLine();
+                    String id = bufferedReader.readLine();
+                    String aboutMe = bufferedReader.readLine();
+                    rowData[j][0] = name;
+                    rowData[j][1] = id;
+                    rowData[j][2] = aboutMe;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return new DefaultTableModel(rowData, columnName){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
     }
 }
