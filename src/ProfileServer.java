@@ -66,7 +66,7 @@ public class ProfileServer implements Runnable {
         return success;
     }
 
-    synchronized boolean addFriend(String userId) {
+    synchronized boolean addFriend(String ownId, String friendId) {
         return false;
     }
 
@@ -148,6 +148,34 @@ public class ProfileServer implements Runnable {
                     }
                     case "DeleteFriend" -> {
                     }
+                    case "GetFriendList" -> {
+                       String userId = bufferedReader.readLine();
+                       ArrayList<User> currentFriendList = null;
+                       boolean found = false;
+                       for (User user : userArrayList) {
+                           if (user.getUserId().equals(userId)) {
+                               currentFriendList = user.getFriendList();
+                               found = true;
+                               break;
+                           }
+                       }
+                       if (found) {
+                           if (!currentFriendList.isEmpty()) {
+                               printWriter.println(currentFriendList.size());
+                               for (User user : currentFriendList) {
+                                   printWriter.println(user.getName());
+                                   printWriter.println(user.getUserId());
+                                   printWriter.println(user.getUserProfile().getAboutMe());
+                               }
+                           } else {
+                               printWriter.println("Empty");
+                           }
+                       } else {
+                           printWriter.println("NotFound");
+                       }
+                       printWriter.flush();
+                    }
+
                     case "ShowFriendList" -> {
                     }
                     case "EditOwnAccount" -> {

@@ -64,19 +64,34 @@ public class UserFrame extends JComponent implements Runnable {
         printWriter.println("GetFriendList");
         printWriter.println(userId);
         printWriter.flush();
+        String result = null;
         try {
-            int i = Integer.parseInt(bufferedReader.readLine());
-            rowData = new String[i][3];
-            for (int j = 0; j < i; j++ ) {
-                String name = bufferedReader.readLine();
-                String id = bufferedReader.readLine();
-                String aboutMe = bufferedReader.readLine();
-                rowData[j][0] = name;
-                rowData[j][1] = id;
-                rowData[j][2] = aboutMe;
-            }
+            result = bufferedReader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        if (result.equals("Empty")) {
+            rowData = new String[0][0];
+
+        } else if (result.equals("NotFound")) {
+            rowData = new String[0][0];
+            JOptionPane.showMessageDialog(null,
+                    "Unable to find Id", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try {
+                int i = Integer.parseInt(result);
+                rowData = new String[i][3];
+                for (int j = 0; j < i; j++) {
+                    String name = bufferedReader.readLine();
+                    String id = bufferedReader.readLine();
+                    String aboutMe = bufferedReader.readLine();
+                    rowData[j][0] = name;
+                    rowData[j][1] = id;
+                    rowData[j][2] = aboutMe;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         model = new DefaultTableModel(rowData, columnName);
         rowSorter = new TableRowSorter<>(jTable.getModel());
@@ -87,7 +102,7 @@ public class UserFrame extends JComponent implements Runnable {
         JPanel panel3 = new JPanel();
         add = new JButton("Add Friend");
         account = new JButton("Edit Profile and Account");
-        back = new JButton("Back to Menu");
+        back = new JButton("Log Out");
         panel.add(add);
         panel.add(new JLabel("Find a specific friend"));
         panel.add(jtfFilter);
@@ -137,7 +152,7 @@ public class UserFrame extends JComponent implements Runnable {
 
         });
         userFrame.pack();
-        userFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        userFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         userFrame.setLocationRelativeTo(null);
         userFrame.setVisible(true);
     }
