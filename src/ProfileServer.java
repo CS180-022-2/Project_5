@@ -208,7 +208,6 @@ public class ProfileServer implements Runnable {
                                         ""), userId);
                         if (success) {
                             printWriter.println("Success");
-                            System.out.println("Profile: " + getProfile(userId).toString());
                         } else {
                             printWriter.println("Failure");
                         }
