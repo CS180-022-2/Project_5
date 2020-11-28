@@ -6,17 +6,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
-public class RegisterFrame extends JComponent implements Runnable{
+public class EditAccountFrame extends JOptionPane implements Runnable{
     Socket socket;
+    String userId;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
     JFrame registerFrame;
@@ -28,22 +22,23 @@ public class RegisterFrame extends JComponent implements Runnable{
     JTextField realNameTextField;
     JLabel emailLabel;
     JTextField emailTextField;
-    JButton registerButton;
+    JButton editAccountButton;
     JButton backButton;
+    JFrame editAccountFrame;
 
     ActionListener actionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
-                SwingUtilities.invokeLater(new LoginFrame(socket));
-                registerFrame.dispose();
+                SwingUtilities.invokeLater(new AccountMenuFrame(socket, userId));
+                editAccountFrame.dispose();
             }
-            if (e.getSource() == registerButton) {
+            if (e.getSource() == editAccountButton) {
                 String userId = userIdTextField.getText();
                 StringBuilder rawPassword = new StringBuilder();
                 rawPassword.append(passwordField.getPassword());
                 String realName = realNameTextField.getText();
-                String email = emailTextField.getText();
+                String email = emailTextField.getText();;
                 if (!contentCheck(userId, rawPassword.toString(), realName, email)){
                     return;
                 }
@@ -57,12 +52,12 @@ public class RegisterFrame extends JComponent implements Runnable{
                     ioException.printStackTrace();
                 }
                 if (!result.equals("Unique")) {
-                    JOptionPane.showMessageDialog(null, "UserID existed",
+                    JOptionPane.showMessageDialog(null, "UserID exists",
                             "UserID Error", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
                 //Pass the data to server
-                printWriter.println("Register");
+                printWriter.println("EditOwnAccount");
                 printWriter.printf("%s, %s, %s, %s\n", userId, rawPassword.toString(), realName, email);
                 printWriter.flush();
                 String success = "";
@@ -73,21 +68,22 @@ public class RegisterFrame extends JComponent implements Runnable{
                 }
                 if (success.equals("Success")) {
                     JOptionPane.showMessageDialog(null, "Congratulation! " +
-                                    "You have successfully registered",
-                            "Register Successfully", JOptionPane.INFORMATION_MESSAGE);
+                                    "You have successfully edited your account details.",
+                            "Edit Account Successful", JOptionPane.INFORMATION_MESSAGE);
                     SwingUtilities.invokeLater(new LoginFrame(socket));
                     registerFrame.dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Oops!" +
-                                    "Unsuccessful register./n Please retry.",
-                            "Register Error", JOptionPane.ERROR_MESSAGE);
+                                    "Unsuccessful attempt. Please retry.",
+                            "Edit Account Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
     };
 
-    public RegisterFrame(Socket socket) {
+    public EditAccountFrame(Socket socket, String userId) {
         this.socket = socket;
+        this.userId = userId;
     }
 
     @Override
@@ -97,13 +93,13 @@ public class RegisterFrame extends JComponent implements Runnable{
             printWriter = new PrintWriter(socket.getOutputStream());
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null,
-                    "Unable to initialize in Register frame", "Error", JOptionPane.ERROR_MESSAGE);
+                    "Unable to initialize in Edit Account frame", "Error", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
             return;
         }
-        registerFrame = new JFrame("Register Frame");
-        Container registerFrameContentPane = registerFrame.getContentPane();
-        registerFrameContentPane.setLayout(null);
+        editAccountFrame = new JFrame("Edit Account Frame");
+        Container editAccountFrameContentPane = editAccountFrame.getContentPane();
+        editAccountFrameContentPane.setLayout(null);
         //Initialize components
         userIdLabel = new JLabel("User ID");
         userIdTextField = new JTextField();
@@ -113,8 +109,8 @@ public class RegisterFrame extends JComponent implements Runnable{
         realNameTextField = new JTextField();
         emailLabel = new JLabel("Email");
         emailTextField = new JTextField();
-        registerButton = new JButton("Register");
-        backButton = new JButton("Back to login");
+        editAccountButton = new JButton("Register");
+        backButton = new JButton("Back to Menu");
         //Set component location
         userIdLabel.setBounds(110, 20 , 80, 30);
         userIdTextField.setBounds(200, 20 , 100, 30);
@@ -124,30 +120,31 @@ public class RegisterFrame extends JComponent implements Runnable{
         realNameTextField.setBounds(200, 100 , 100, 30);
         emailLabel.setBounds(110, 140 , 50, 30);
         emailTextField.setBounds(200, 140 , 100, 30);
-        registerButton.setBounds(140, 190 , 120, 30);
+        editAccountButton.setBounds(140, 190 , 120, 30);
         backButton.setBounds(140,225, 120, 30);
 
         //Add actionLister
-        registerButton.addActionListener(actionListener);
+        editAccountButton.addActionListener(actionListener);
         backButton.addActionListener(actionListener);
 
         //Add all components into the Frame;
-        registerFrameContentPane.add(userIdLabel);
-        registerFrameContentPane.add(userIdTextField);
-        registerFrameContentPane.add(passwordLabel);
-        registerFrameContentPane.add(passwordField);
-        registerFrameContentPane.add(realNameLabel);
-        registerFrameContentPane.add(realNameTextField);
-        registerFrameContentPane.add(emailLabel);
-        registerFrameContentPane.add(emailTextField);
-        registerFrameContentPane.add(registerButton);
-        registerFrameContentPane.add(backButton);
+        editAccountFrameContentPane.add(userIdLabel);
+        editAccountFrameContentPane.add(userIdTextField);
+        editAccountFrameContentPane.add(passwordLabel);
+        editAccountFrameContentPane.add(passwordField);
+        editAccountFrameContentPane.add(realNameLabel);
+        editAccountFrameContentPane.add(realNameTextField);
+        editAccountFrameContentPane.add(emailLabel);
+        editAccountFrameContentPane.add(emailTextField);
+        editAccountFrameContentPane.add(editAccountButton);
+        editAccountFrameContentPane.add(backButton);
         //Finalize the Frame
-        registerFrame.setSize(400, 300);
-        registerFrame.setLocationRelativeTo(null);
-        registerFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        registerFrame.setVisible(true);
+        editAccountFrame.setSize(400, 300);
+        editAccountFrame.setLocationRelativeTo(null);
+        editAccountFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        editAccountFrame.setVisible(true);
     }
+
     public boolean contentCheck(String userId, String password, String realName, String email) {
         boolean correct = true;
         if (!userId.matches("^[a-zA-Z0-9_-][^%+\\\\/#@*:;`~<>?!.,'\"]+$")) {
@@ -191,3 +188,6 @@ public class RegisterFrame extends JComponent implements Runnable{
         return correct;
     }
 }
+
+
+

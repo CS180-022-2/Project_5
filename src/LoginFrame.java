@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class LoginFrame extends JComponent implements Runnable {
+    String userId;
     JFrame loginFrame;
     JLabel userIdLabel;
     JTextField userIdField;
@@ -23,6 +24,7 @@ public class LoginFrame extends JComponent implements Runnable {
     JPasswordField passwordField;
     JButton loginButton;
     JButton registerButton;
+    JButton myAccountButton;
     Socket socket;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
@@ -35,7 +37,7 @@ public class LoginFrame extends JComponent implements Runnable {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == loginButton ) {
-                String userId = userIdField.getText();
+                userId = userIdField.getText();
                 char[] rawPassword = passwordField.getPassword();
                 StringBuilder actualPassword = new StringBuilder();
                 actualPassword.append(rawPassword);
@@ -72,6 +74,10 @@ public class LoginFrame extends JComponent implements Runnable {
                 SwingUtilities.invokeLater(new RegisterFrame(socket));
                 loginFrame.dispose();
             }
+            if (e.getSource() == myAccountButton) {
+                SwingUtilities.invokeLater(new AccountMenuFrame(socket, userId));
+                loginFrame.dispose();
+            }
         }
     };
 
@@ -99,17 +105,23 @@ public class LoginFrame extends JComponent implements Runnable {
         passwordField = new JPasswordField();
         passwordField.setBounds(300, 80, 150, 30);
         loginButton = new JButton("Login");
-        loginButton.setBounds(250, 140, 100 ,30);
+        loginButton.setBounds(180, 140, 100 ,30);
         loginButton.addActionListener(actionListener);
         registerButton = new JButton("Register");
-        registerButton.setBounds(250, 180, 100 ,30);
+        registerButton.setBounds(290, 140, 100 ,30);
         registerButton.addActionListener(actionListener);
+        myAccountButton = new JButton("My Account");
+        myAccountButton.setBounds(225, 190, 120, 30);
+        myAccountButton.addActionListener(actionListener);
+
         loginFrameContentPane.add(registerButton);
         loginFrameContentPane.add(loginButton);
+        loginFrameContentPane.add(myAccountButton);
         loginFrameContentPane.add(userIdLabel);
         loginFrameContentPane.add(userIdField);
         loginFrameContentPane.add(passwordLabel);
         loginFrameContentPane.add(passwordField);
+
         loginFrame.setSize(600, 300);
         loginFrame.setLocationRelativeTo(null);
         loginFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

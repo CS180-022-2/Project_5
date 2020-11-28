@@ -39,7 +39,9 @@ public class UserFrame extends JComponent implements Runnable {
                 SwingUtilities.invokeLater(new LoginFrame(socket));
                 userFrame.dispose();
             }
-            if (e.getSource() == add) {}
+            if (e.getSource() == add) {
+
+            }
         }
     };
 
@@ -78,15 +80,6 @@ public class UserFrame extends JComponent implements Runnable {
         }
         model = new DefaultTableModel(rowData, columnName);
         rowSorter = new TableRowSorter<>(jTable.getModel());
-
-
-
-
-
-
-
-
-
         userFrame = new JFrame("User Frame");
         userFrame.setLayout(new BorderLayout());
         jTable.setRowSorter(rowSorter);

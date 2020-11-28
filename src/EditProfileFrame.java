@@ -55,11 +55,11 @@ public class EditProfileFrame extends JComponent implements Runnable {
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
-                if (!result.equals("Unique")) {
+                /*if (!result.equals("Unique")) {
                     JOptionPane.showMessageDialog(null, "User Phone Number exists",
                             "User Phone Number Error", JOptionPane.WARNING_MESSAGE);
                     return;
-                }
+                }*/
                 //Pass the data to server
                 printWriter.println("EditOwnProfile");
                 printWriter.println(userId);
@@ -137,7 +137,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
         editProfileButton.setBounds(140, 270 , 120, 30);
         backButton.setBounds(140,310, 120, 30);
 
-        //Add actionLister
+        //Add actionListener
         editProfileButton.addActionListener(actionListener);
         backButton.addActionListener(actionListener);
         printWriter.println("GetProfileContent");
