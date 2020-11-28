@@ -20,10 +20,10 @@ public class UserFrame extends JComponent implements Runnable {
     String userId;
 
     String[] columnName = {"Name", "ID", "About me "};
-    String[][] rowData;
+    String[][] rowData = new String[3][3];
 
     DefaultTableModel model;
-    JTable jTable = new JTable(model);
+    JTable jTable;
     JFrame userFrame;
     TableRowSorter<TableModel> rowSorter;
     JTextField jtfFilter = new JTextField(10);
@@ -31,8 +31,9 @@ public class UserFrame extends JComponent implements Runnable {
     JButton add;
     JButton account;
     JButton back;
+    JPopupMenu actionMenu;
 
-    ActionListener actionListener = new ActionListener() {
+    ActionListener buttonActionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == back) {
@@ -52,6 +53,7 @@ public class UserFrame extends JComponent implements Runnable {
 
     @Override
     public void run() {
+        /*
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             printWriter = new PrintWriter(socket.getOutputStream());
@@ -60,7 +62,7 @@ public class UserFrame extends JComponent implements Runnable {
                     "Unable to initialize", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        //Initialize the 
+        //Initialize the
         printWriter.println("GetFriendList");
         printWriter.println(userId);
         printWriter.flush();
@@ -93,7 +95,27 @@ public class UserFrame extends JComponent implements Runnable {
                 e.printStackTrace();
             }
         }
-        model = new DefaultTableModel(rowData, columnName);
+         */
+        rowData[0][0] = "Name1";
+        rowData[0][1] = "Id1";
+        rowData[0][2] = "AboutMe1";
+        rowData[1][0] = "Name2";
+        rowData[1][1] = "Id2";
+        rowData[1][2] = "AboutMe2";
+        rowData[2][0] = "Name3";
+        rowData[2][1] = "Id3";
+        rowData[2][2] = "AboutMe3";
+        actionMenu = new JPopupMenu();
+        JMenuItem viewProfile = new JMenuItem("View profile");
+        JMenuItem deleteFriend = new JMenuItem("Delete Friend");
+
+        model = new DefaultTableModel(rowData, columnName) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        jTable = new JTable(model);
         rowSorter = new TableRowSorter<>(jTable.getModel());
         userFrame = new JFrame("User Frame");
         userFrame.setLayout(new BorderLayout());
@@ -120,7 +142,7 @@ public class UserFrame extends JComponent implements Runnable {
         panel2.add(jScrollPane, BorderLayout.CENTER);
         panel2.setVisible(true);
         userFrame.add(panel2, BorderLayout.CENTER);
-        back.addActionListener(actionListener);
+        back.addActionListener(buttonActionListener);
 
         jtfFilter.getDocument().addDocumentListener(new DocumentListener(){
             @Override
