@@ -96,6 +96,10 @@ public class UserFrame extends JComponent implements Runnable {
                 SwingUtilities.invokeLater(new AddFriendFrame(socket, userId));
                 userFrame.dispose();
             }
+            if (e.getSource() == account) {
+                SwingUtilities.invokeLater(new AccountMenuFrame(socket, userId));
+                userFrame.dispose();
+            }
         }
     };
 
@@ -137,6 +141,10 @@ public class UserFrame extends JComponent implements Runnable {
         add = new JButton("Add Friend");
         account = new JButton("Edit Profile and Account");
         back = new JButton("Log Out");
+        back.addActionListener(buttonActionListener);
+        add.addActionListener(buttonActionListener);
+        account.addActionListener(buttonActionListener);
+
         panel.add(add);
         panel.add(new JLabel("Find a specific friend"));
         panel.add(jtfFilter);
@@ -151,7 +159,6 @@ public class UserFrame extends JComponent implements Runnable {
         panel2.add(jScrollPane, BorderLayout.CENTER);
         panel2.setVisible(true);
         userFrame.add(panel2, BorderLayout.CENTER);
-        back.addActionListener(buttonActionListener);
 
         jtfFilter.getDocument().addDocumentListener(new DocumentListener() {
             @Override

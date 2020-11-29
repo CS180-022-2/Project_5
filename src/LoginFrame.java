@@ -51,7 +51,7 @@ public class LoginFrame extends JComponent implements Runnable {
                         JOptionPane.showMessageDialog(null,
                                 "Login Successful!", "Login Success",
                                 JOptionPane.INFORMATION_MESSAGE);
-                        SwingUtilities.invokeLater(new ProfileMenuFrame(socket, userId));
+                        SwingUtilities.invokeLater(new UserFrame(socket, userId));
                         loginFrame.dispose();
                     } else {
                         if (result.equals("Invalid")) {
