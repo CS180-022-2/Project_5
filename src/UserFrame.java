@@ -46,7 +46,7 @@ public class UserFrame extends JComponent implements Runnable {
                             "You must first select a line! ", "No selection", JOptionPane.WARNING_MESSAGE);
                     return;
                 } else {
-                    String profileOwnerId = String.valueOf(jTable.getValueAt(selectedRow, 2));
+                    String profileOwnerId = String.valueOf(jTable.getValueAt(selectedRow, 1));
                     SwingUtilities.invokeLater(new ProfileDisplayFrame(socket, userId, profileOwnerId, "UserFrame"));
                     userFrame.dispose();
                 }
@@ -58,7 +58,7 @@ public class UserFrame extends JComponent implements Runnable {
                             "You must first select a line! ", "No selection", JOptionPane.WARNING_MESSAGE);
                     return;
                 } else {
-                    String deleteFriendId = String.valueOf(jTable.getValueAt(selectedRow, 2));
+                    String deleteFriendId = String.valueOf(jTable.getValueAt(selectedRow, 1));
                     printWriter.println("DeleteFriend");
                     printWriter.println(userId);
                     printWriter.println(deleteFriendId);
@@ -199,10 +199,10 @@ public class UserFrame extends JComponent implements Runnable {
             e.printStackTrace();
         }
         if (result.equals("Empty")) {
-            rowData = new String[0][0];
+            rowData = null;
 
         } else if (result.equals("NotFound")) {
-            rowData = new String[0][0];
+            rowData = null;
             JOptionPane.showMessageDialog(null,
                     "Unable to find Id", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
