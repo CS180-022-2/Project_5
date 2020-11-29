@@ -1,3 +1,5 @@
+import jdk.swing.interop.LightweightFrameWrapper;
+
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -68,6 +70,28 @@ public class ProfileServer implements Runnable {
 
     synchronized boolean addFriend(String ownId, String friendId) {
         return false;
+    }
+
+    synchronized boolean deleteFriend(String ownId, String friendId) {
+        User ownUser = null;
+        User friendUser = null;
+        for (User user:userArrayList) {
+            if (user.getUserId().equals(ownId)) {
+                ownUser = user;
+            }
+            if (user.getUserId().equals(friendId)) {
+                friendUser = user;
+            }
+            if (ownUser != null && friendUser != null ) {
+                break;
+            }
+        }
+        if (ownUser == null || friendUser == null) {
+            return false;
+        }
+        boolean existInOwn = ownUser.getFriendList().removeIf(user -> user.getUserId().equals(friendId));
+        boolean existInFriend = friendUser.getFriendList().removeIf(user -> user.getUserId().equals(ownId));
+        return (existInOwn && existInFriend);
     }
 
     synchronized boolean checkFriendRequest() {
@@ -147,6 +171,15 @@ public class ProfileServer implements Runnable {
                     case "AddFriend" -> {
                     }
                     case "DeleteFriend" -> {
+                        String ownId = bufferedReader.readLine();
+                        String friendId = bufferedReader.readLine();
+                        boolean success = deleteFriend(ownId, friendId);
+                        if (success) {
+                            printWriter.println("Success");
+                        } else {
+                            printWriter.println("Failure");
+                        }
+                        printWriter.flush();
                     }
                     case "GetFriendList" -> {
                        String userId = bufferedReader.readLine();
