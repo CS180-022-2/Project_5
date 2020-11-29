@@ -57,7 +57,7 @@ public class RegisterFrame extends JComponent implements Runnable{
                     ioException.printStackTrace();
                 }
                 if (!result.equals("Unique")) {
-                    JOptionPane.showMessageDialog(null, "UserID existed",
+                    JOptionPane.showMessageDialog(null, "UserID exists",
                             "UserID Error", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
@@ -78,8 +78,8 @@ public class RegisterFrame extends JComponent implements Runnable{
                     SwingUtilities.invokeLater(new LoginFrame(socket));
                     registerFrame.dispose();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Oops!" +
-                                    "Unsuccessful register.\n Please retry.",
+                    JOptionPane.showMessageDialog(null, "Oops! " +
+                                    "Unsuccessful register.\nPlease retry.",
                             "Register Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -168,7 +168,7 @@ public class RegisterFrame extends JComponent implements Runnable{
         .{8,}             # anything, at least eight places though
         $                 # end-of-string
          */
-        if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")) {
+        if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$!?%^&+=])(?=\\S+$).{8,}$")) {
             JOptionPane.showMessageDialog(null, "Password must have a length"
                             + " greater than 8 and contain at least one uppercase, one lower case, one digit" +
                             " and one special character.",

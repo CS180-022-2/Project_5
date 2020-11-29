@@ -119,10 +119,6 @@ public class ProfileServer implements Runnable {
         return (existInOwn && existInFriend);
     }
 
-    synchronized boolean checkFriendRequest() {
-        return false;
-    }
-
     synchronized boolean uniquePhoneNoCheck(String phoneNumber) {
         if (userArrayList.isEmpty()) {
             return true;

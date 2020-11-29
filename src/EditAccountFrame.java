@@ -13,9 +13,8 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
     String userId;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
-    JFrame registerFrame;
     JLabel userIdLabel;
-    JTextField userIdTextField;
+    JLabel userIdTextField;
     JLabel passwordLabel;
     JPasswordField passwordField;
     JLabel realNameLabel;
@@ -34,15 +33,14 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
                 editAccountFrame.dispose();
             }
             if (e.getSource() == editAccountButton) {
-                String userId = userIdTextField.getText();
                 StringBuilder rawPassword = new StringBuilder();
                 rawPassword.append(passwordField.getPassword());
                 String realName = realNameTextField.getText();
                 String email = emailTextField.getText();;
-                if (!contentCheck(userId, rawPassword.toString(), realName, email)){
+                if (!contentCheck(rawPassword.toString(), realName, email)){
                     return;
                 }
-                printWriter.println("UniqueIdCheck");
+                /*printWriter.println("UniqueIdCheck");
                 printWriter.println(userId);
                 printWriter.flush();
                 String result = "";
@@ -55,7 +53,7 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
                     JOptionPane.showMessageDialog(null, "UserID exists",
                             "UserID Error", JOptionPane.WARNING_MESSAGE);
                     return;
-                }
+                }*/
                 //Pass the data to server
                 printWriter.println("EditOwnAccount");
                 printWriter.printf("%s, %s, %s, %s\n", userId, rawPassword.toString(), realName, email);
@@ -73,8 +71,8 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
                     SwingUtilities.invokeLater(new LoginFrame(socket));
                     editAccountFrame.dispose();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Oops!" +
-                                    "Unsuccessful attempt. Please retry.",
+                    JOptionPane.showMessageDialog(null, "Oops! " +
+                                    "Unsuccessful attempt.\nPlease retry.",
                             "Edit Account Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -102,14 +100,14 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
         editAccountFrameContentPane.setLayout(null);
         //Initialize components
         userIdLabel = new JLabel("User ID");
-        userIdTextField = new JTextField();
+        userIdTextField = new JLabel(userId);
         passwordLabel = new JLabel("Password");
         passwordField = new JPasswordField();
         realNameLabel = new JLabel("Real Name");
         realNameTextField = new JTextField();
         emailLabel = new JLabel("Email");
         emailTextField = new JTextField();
-        editAccountButton = new JButton("Register");
+        editAccountButton = new JButton("Edit");
         backButton = new JButton("Back to Menu");
         //Set component location
         userIdLabel.setBounds(110, 20 , 80, 30);
@@ -145,14 +143,8 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
         editAccountFrame.setVisible(true);
     }
 
-    public boolean contentCheck(String userId, String password, String realName, String email) {
+    public boolean contentCheck(String password, String realName, String email) {
         boolean correct = true;
-        if (!userId.matches("^[a-zA-Z0-9_-][^%+\\\\/#@*:;`~<>?!.,'\"]+$")) {
-            JOptionPane.showMessageDialog(null, "UserID should at least contain" +
-                            " two characters\nand only contain alphabets and numbers.",
-                    "UserID Error", JOptionPane.WARNING_MESSAGE);
-            correct = false;
-        }
 
         /*
         Regex used for password validation:
@@ -165,7 +157,7 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
         .{8,}             # anything, at least eight places though
         $                 # end-of-string
          */
-        if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")) {
+        if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$!?%^&+=])(?=\\S+$).{8,}$")) {
             JOptionPane.showMessageDialog(null, "Password must have a length"
                             + " greater than 8 and contain\nat least one uppercase, one lower case, one digit" +
                             " and one special character.",
