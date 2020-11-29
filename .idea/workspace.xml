@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AccountProfileFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AccountProfileFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditAccountFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditAccountFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditAccountFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditAccountFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RegisterFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RegisterFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditAccountFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditAccountFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditProfileFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,31 +42,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last.edited.regexp" value="" />
+    <property name="last.edited.regexp" value="Ching-Hsuan Hung" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Application.ProfileClient">
-    <configuration name="ProfileClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfileClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ProfileClient" />
       <module name="Project_5" />
       <method v="2">
@@ -119,12 +104,6 @@
       <updated>1605875331683</updated>
       <workItem from="1605875332972" duration="6147000" />
       <workItem from="1605970834937" duration="1972000" />
-      <workItem from="1606015855705" duration="145000" />
-      <workItem from="1606320517806" duration="1959000" />
-      <workItem from="1606338114781" duration="38174000" />
-      <workItem from="1606456425677" duration="1067000" />
-      <workItem from="1606521577395" duration="9832000" />
-      <workItem from="1606551790501" duration="14189000" />
     </task>
     <servers />
   </component>
@@ -144,65 +123,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="155" key="#Plugins" timestamp="1606338138459">
+    <state width="1663" height="270" key="GridCell.Tab.0.bottom" timestamp="1605981930036">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="446" y="155" key="#Plugins/0.0.1707.1027@0.0.1707.1027" timestamp="1606338138459" />
-    <state x="309" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606426029877">
+    <state width="1663" height="270" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1605981930036" />
+    <state width="1663" height="270" key="GridCell.Tab.0.center" timestamp="1605981930036">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="309" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1606426029877" />
-    <state x="659" y="217" key="#com.intellij.ide.util.MemberChooser" timestamp="1606522608004">
+    <state width="1663" height="270" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1605981930036" />
+    <state width="1663" height="270" key="GridCell.Tab.0.left" timestamp="1605981930036">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="659" y="217" key="#com.intellij.ide.util.MemberChooser/0.0.1707.1027@0.0.1707.1027" timestamp="1606522608004" />
-    <state x="534" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606335377238">
+    <state width="1663" height="270" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1605981930036" />
+    <state width="1663" height="270" key="GridCell.Tab.0.right" timestamp="1605981930036">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="534" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1606335377238" />
-    <state width="1663" height="507" key="GridCell.Tab.0.bottom" timestamp="1606658005954">
+    <state width="1663" height="270" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1605981930036" />
+    <state x="355" y="158" key="SettingsEditor" timestamp="1605973810559">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1491" height="258" key="GridCell.Tab.0.bottom/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="507" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606658005954" />
-    <state width="1663" height="507" key="GridCell.Tab.0.center" timestamp="1606658005954">
-      <screen x="0" y="0" width="1707" height="1027" />
-    </state>
-    <state width="1491" height="258" key="GridCell.Tab.0.center/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="507" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606658005954" />
-    <state width="1663" height="507" key="GridCell.Tab.0.left" timestamp="1606658005954">
-      <screen x="0" y="0" width="1707" height="1027" />
-    </state>
-    <state width="1491" height="258" key="GridCell.Tab.0.left/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="507" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606658005954" />
-    <state width="1663" height="507" key="GridCell.Tab.0.right" timestamp="1606658005954">
-      <screen x="0" y="0" width="1707" height="1027" />
-    </state>
-    <state width="1491" height="258" key="GridCell.Tab.0.right/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="507" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606658005954" />
-    <state width="1491" height="258" key="GridCell.Tab.1.bottom" timestamp="1606322476855">
-      <screen x="0" y="0" width="1549" height="831" />
-    </state>
-    <state width="1491" height="258" key="GridCell.Tab.1.bottom/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1491" height="258" key="GridCell.Tab.1.center" timestamp="1606322476855">
-      <screen x="0" y="0" width="1549" height="831" />
-    </state>
-    <state width="1491" height="258" key="GridCell.Tab.1.center/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1491" height="258" key="GridCell.Tab.1.left" timestamp="1606322476855">
-      <screen x="0" y="0" width="1549" height="831" />
-    </state>
-    <state width="1491" height="258" key="GridCell.Tab.1.left/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1491" height="258" key="GridCell.Tab.1.right" timestamp="1606322476855">
-      <screen x="0" y="0" width="1549" height="831" />
-    </state>
-    <state width="1491" height="258" key="GridCell.Tab.1.right/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state x="355" y="158" key="SettingsEditor" timestamp="1606368812088">
-      <screen x="0" y="0" width="1707" height="1027" />
-    </state>
-    <state x="355" y="158" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1606368812088" />
-    <state x="564" y="402" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606067510672">
-      <screen x="0" y="0" width="1707" height="1027" />
-    </state>
-    <state x="564" y="402" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1707.1027@0.0.1707.1027" timestamp="1606067510672" />
+    <state x="355" y="158" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1605973810559" />
   </component>
 </project>

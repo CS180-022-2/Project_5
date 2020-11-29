@@ -218,22 +218,22 @@ public class EditProfileFrame extends JComponent implements Runnable {
         try {
             long number = Long.parseLong(userPhoneNo);
             if (userPhoneNo.equals("")) {
-                JOptionPane.showMessageDialog(null, "Phone Number cannot be Null",
+                JOptionPane.showMessageDialog(null, "Phone Number cannot be empty",
                         "Input Error", JOptionPane.WARNING_MESSAGE);
                 correct = false;
             }
             if (currentOccupation.equals("")) {
-                JOptionPane.showMessageDialog(null, "Current Occupation cannot be Null",
+                JOptionPane.showMessageDialog(null, "Current Occupation cannot be empty",
                         "Input Error", JOptionPane.WARNING_MESSAGE);
                 correct = false;
             }
             if (aboutMe.equals("")) {
-                JOptionPane.showMessageDialog(null, "About me cannot be Null",
+                JOptionPane.showMessageDialog(null, "About me cannot be empty",
                         "Input Error", JOptionPane.WARNING_MESSAGE);
                 correct = false;
             }
             if (interest.equals("")) {
-                JOptionPane.showMessageDialog(null, "Interest cannot be Null",
+                JOptionPane.showMessageDialog(null, "Interest cannot be empty",
                         "Input Error", JOptionPane.WARNING_MESSAGE);
                 correct = false;
             }
