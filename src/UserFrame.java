@@ -75,7 +75,7 @@ public class UserFrame extends JComponent implements Runnable {
                                 "Success", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                     JOptionPane.showMessageDialog(null,
-                            "Unable to deleteFriend", "Error", JOptionPane.ERROR_MESSAGE);
+                            "Unable to delete friend", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                     model = updateModel(userId);
                     jTable.setModel(model);
@@ -95,6 +95,9 @@ public class UserFrame extends JComponent implements Runnable {
             if (e.getSource() == add) {
                 SwingUtilities.invokeLater(new AddFriendFrame(socket, userId));
                 userFrame.dispose();
+            }
+            if (e.getSource() == account) {
+                SwingUtilities.invokeLater(new AccountMenuFrame(socket, userId));
             }
         }
     };

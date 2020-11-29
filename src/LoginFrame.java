@@ -24,7 +24,6 @@ public class LoginFrame extends JComponent implements Runnable {
     JPasswordField passwordField;
     JButton loginButton;
     JButton registerButton;
-    JButton myAccountButton;
     Socket socket;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
@@ -51,7 +50,7 @@ public class LoginFrame extends JComponent implements Runnable {
                         JOptionPane.showMessageDialog(null,
                                 "Login Successful!", "Login Success",
                                 JOptionPane.INFORMATION_MESSAGE);
-                        SwingUtilities.invokeLater(new ProfileMenuFrame(socket, userId));
+                        SwingUtilities.invokeLater(new UserFrame(socket, userId));
                         loginFrame.dispose();
                     } else {
                         if (result.equals("Invalid")) {
@@ -72,10 +71,6 @@ public class LoginFrame extends JComponent implements Runnable {
             }
             if (e.getSource() == registerButton) {
                 SwingUtilities.invokeLater(new RegisterFrame(socket));
-                loginFrame.dispose();
-            }
-            if (e.getSource() == myAccountButton) {
-                SwingUtilities.invokeLater(new AccountMenuFrame(socket, userId));
                 loginFrame.dispose();
             }
         }
@@ -105,18 +100,14 @@ public class LoginFrame extends JComponent implements Runnable {
         passwordField = new JPasswordField();
         passwordField.setBounds(300, 80, 150, 30);
         loginButton = new JButton("Login");
-        loginButton.setBounds(180, 140, 100 ,30);
+        loginButton.setBounds(180, 160, 100 ,30);
         loginButton.addActionListener(actionListener);
         registerButton = new JButton("Register");
-        registerButton.setBounds(290, 140, 100 ,30);
+        registerButton.setBounds(290, 160, 100 ,30);
         registerButton.addActionListener(actionListener);
-        myAccountButton = new JButton("My Account");
-        myAccountButton.setBounds(225, 190, 120, 30);
-        myAccountButton.addActionListener(actionListener);
 
         loginFrameContentPane.add(registerButton);
         loginFrameContentPane.add(loginButton);
-        loginFrameContentPane.add(myAccountButton);
         loginFrameContentPane.add(userIdLabel);
         loginFrameContentPane.add(userIdField);
         loginFrameContentPane.add(passwordLabel);
