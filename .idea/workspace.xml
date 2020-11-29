@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddFriendFrame2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddFriendFrame2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddFriendFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddFriendFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddFriendFrame2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +85,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.ProfileClient" />
       <item itemvalue="Application.ProfileServer" />
@@ -106,7 +124,7 @@
       <workItem from="1606338114781" duration="38174000" />
       <workItem from="1606456425677" duration="1067000" />
       <workItem from="1606521577395" duration="9832000" />
-      <workItem from="1606551790501" duration="5335000" />
+      <workItem from="1606551790501" duration="7009000" />
     </task>
     <servers />
   </component>
@@ -142,26 +160,26 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="534" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1606335377238" />
-    <state width="1663" height="188" key="GridCell.Tab.0.bottom" timestamp="1606547493616">
+    <state width="1663" height="188" key="GridCell.Tab.0.bottom" timestamp="1606652139778">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.bottom/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="188" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606547493616" />
-    <state width="1663" height="188" key="GridCell.Tab.0.center" timestamp="1606547493614">
+    <state width="1663" height="188" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1606652139778" />
+    <state width="1663" height="188" key="GridCell.Tab.0.center" timestamp="1606652139778">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.center/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="188" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606547493614" />
-    <state width="1663" height="188" key="GridCell.Tab.0.left" timestamp="1606547493612">
+    <state width="1663" height="188" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1606652139778" />
+    <state width="1663" height="188" key="GridCell.Tab.0.left" timestamp="1606652139778">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.left/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="188" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606547493612" />
-    <state width="1663" height="188" key="GridCell.Tab.0.right" timestamp="1606547493615">
+    <state width="1663" height="188" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1606652139778" />
+    <state width="1663" height="188" key="GridCell.Tab.0.right" timestamp="1606652139778">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state width="1491" height="258" key="GridCell.Tab.0.right/0.0.1549.831@0.0.1549.831" timestamp="1606322476855" />
-    <state width="1663" height="188" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606547493615" />
+    <state width="1663" height="188" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1606652139778" />
     <state width="1491" height="258" key="GridCell.Tab.1.bottom" timestamp="1606322476855">
       <screen x="0" y="0" width="1549" height="831" />
     </state>

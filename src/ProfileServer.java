@@ -464,21 +464,6 @@ public class ProfileServer implements Runnable {
                         }
                         printWriter.flush();
                     }
-                    case "ShowFriendRequestList" -> {
-
-                    }
-                    case "ShowPendingList" -> {
-
-                    }
-                    case "ResendFriendRequest" -> {
-
-                    }
-                    case "AcceptFriendRequest" -> {
-
-                    }
-                    case "DenyFriendRequest" -> {
-
-                    }
                     case "UniquePhoneNoCheck" -> {
                         String phoneNo = bufferedReader.readLine();
                         boolean unique = uniquePhoneNoCheck(phoneNo);
