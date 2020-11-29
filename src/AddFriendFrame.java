@@ -155,6 +155,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
                             "Buffer reader error in deny Friend request",
                             "Accept Friend Error", JOptionPane.ERROR_MESSAGE);
                 }
+                assert result != null;
                 if (result.equals("DenySuccess")) {
                     JOptionPane.showMessageDialog(null,
                             "You have successfully deny a request",
@@ -185,6 +186,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
                             "Buffer reader error in deny Friend request",
                             "Accept Friend Error", JOptionPane.ERROR_MESSAGE);
                 }
+                assert result != null;
                 if (result.equals("ResendSuccess")) {
                     JOptionPane.showMessageDialog(null,
                             "You have successfully resend a request",
@@ -318,7 +320,6 @@ public class AddFriendFrame extends JPanel implements Runnable {
             public void changedUpdate(DocumentEvent e) {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
-
         });
 
         //ActionListener
@@ -345,6 +346,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        assert result != null;
         if (result.equals("Empty")) {
             rowData = null;
         } else {
@@ -381,6 +383,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        assert result != null;
         if (result.equals("Empty")) {
             rowData = null;
 
@@ -422,6 +425,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        assert result != null;
         if (result.equals("Empty")) {
             rowData = null;
 

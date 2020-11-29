@@ -56,7 +56,6 @@ public class UserFrame extends JComponent implements Runnable {
                 if (selectedRow == -1) {
                     JOptionPane.showMessageDialog(null,
                             "You must first select a line! ", "No selection", JOptionPane.WARNING_MESSAGE);
-                    return;
                 } else {
                     String deleteFriendId = String.valueOf(jTable.getValueAt(selectedRow, 1));
                     printWriter.println("DeleteFriend");
@@ -69,6 +68,7 @@ public class UserFrame extends JComponent implements Runnable {
                     } catch (IOException ioException) {
                         ioException.printStackTrace();
                     }
+                    assert success != null;
                     if (success.equals("Success")) {
                         JOptionPane.showMessageDialog(null,
                                 "You have successfully deleted a friend",
@@ -205,6 +205,7 @@ public class UserFrame extends JComponent implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        assert result != null;
         if (result.equals("Empty")) {
             rowData = null;
 
