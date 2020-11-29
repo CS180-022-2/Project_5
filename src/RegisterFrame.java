@@ -179,7 +179,7 @@ public class RegisterFrame extends JComponent implements Runnable{
             !realName.matches("[A-Za-z]+ [A-Za-z]+ ?[A-Za-z]+")) {
             JOptionPane.showMessageDialog(null, "Real Name must have a first"
                             + " name and a last name.\nA space needs to appear between the first name and next"
-                            + " name\nMiddle name can be included ",
+                            + " name\nMiddle name can be included.",
                     "Real Name Error", JOptionPane.WARNING_MESSAGE);
             correct = false;
         }

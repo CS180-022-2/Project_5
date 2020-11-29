@@ -164,10 +164,11 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
                     "Password Error", JOptionPane.WARNING_MESSAGE);
             correct = false;
         }
-        if (!realName.matches("[A-Za-z]+ [A-Za-z]+ ?[A-Za-z]+")) {
+        if (!realName.matches("[A-Za-z]+?[\\-]+?[A-Za-z]+ ?[A-Za-z]+") &&
+            !realName.matches("[A-Za-z]+ [A-Za-z]+ ?[A-Za-z]+")) {
             JOptionPane.showMessageDialog(null, "Real Name must have a first"
-                            + "Name and a lastName.\nA space needs to appear between the first name and next"
-                            + "Name.\nMiddle name can be included.",
+                            + " name and a last name.\nA space needs to appear between the first name and next"
+                            + " name.\nMiddle name can be included.",
                     "Real Name Error", JOptionPane.WARNING_MESSAGE);
             correct = false;
         }
