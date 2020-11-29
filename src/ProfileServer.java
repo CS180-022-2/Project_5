@@ -1,3 +1,4 @@
+
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -5,8 +6,7 @@ import java.io.*;
 
 public class ProfileServer implements Runnable {
     Socket socket;
-    public static ArrayList<User> userArrayList;
-    public static ArrayList<Profile> profileArrayList;
+     public static  ArrayList<User> userArrayList;
 
     public ProfileServer(Socket socket) {
         this.socket = socket;
@@ -46,41 +46,86 @@ public class ProfileServer implements Runnable {
         }
     }
 
-    synchronized boolean register(String username, String password, String name, String email) {
-        if (userArrayList.isEmpty()) {
-            return true;
-        }
+    synchronized Profile getProfile(String userId) {
+        Profile profile = null;
         for (User user : userArrayList) {
-            if (user.getUserId().equals(username)) {
-                return false;
+            if (user.getUserId().equals(userId)) {
+                profile = user.getUserProfile();
             }
         }
-        return true;
+        return profile;
     }
 
-    synchronized boolean setUserProfile(Profile profile, String userId) {
-        return false;
+    synchronized boolean setUserProfile(Profile userProfile, String userId) {
+        boolean success = false;
+        for (User user : userArrayList) {
+            if (user.getUserId().equals(userId)) {
+                user.setUserProfile(userProfile);
+                success = true;
+            }
+        }
+        return success;
     }
 
-    synchronized Profile viewProfile(String userId) {
-        return null;
+    synchronized String requestFriend(String ownId, String friendId) {
+        User own = null;
+        User friend = null;
+        for (User user:userArrayList) {
+            if (user.getUserId().equals(ownId)) {
+                own = user;
+            } else if (user.getUserId().equals(friendId)) {
+                friend = user;
+            }
+            if (own != null && friend != null) {
+                break;
+            }
+        }
+        if (own != null && friend != null) {
+            if (own.getFriendList().contains(friend) && friend.getFriendList().contains(own)) {
+                return "AlreadyFriend";
+            } else if (own.getRequestList().contains(friend) && friend.getPendingList().contains(own)) {
+                return "AlreadyRequested";
+            } else if (own.getPendingList().contains(friend) && friend.getRequestList().contains(own)) {
+                return "AlreadyBeingRequested";
+            } else {
+                own.getRequestList().add(friend);
+                friend.getPendingList().add(own);
+                return "RequestSuccess";
+            }
+        } else {
+            return "UserNotFound";
+        }
     }
 
-    synchronized boolean addFriend(String userId) {
-        return false;
-    }
-
-    synchronized boolean checkFriendRequest() {
-        return false;
+    synchronized boolean deleteFriend(String ownId, String friendId) {
+        User ownUser = null;
+        User friendUser = null;
+        for (User user:userArrayList) {
+            if (user.getUserId().equals(ownId)) {
+                ownUser = user;
+            }
+            if (user.getUserId().equals(friendId)) {
+                friendUser = user;
+            }
+            if (ownUser != null && friendUser != null ) {
+                break;
+            }
+        }
+        if (ownUser == null || friendUser == null) {
+            return false;
+        }
+        boolean existInOwn = ownUser.getFriendList().removeIf(user -> user.getUserId().equals(friendId));
+        boolean existInFriend = friendUser.getFriendList().removeIf(user -> user.getUserId().equals(ownId));
+        return (existInOwn && existInFriend);
     }
 
     synchronized boolean uniquePhoneNoCheck(String phoneNumber) {
-        if (profileArrayList.isEmpty()) {
+        if (userArrayList.isEmpty()) {
             return true;
         }
-        boolean unique = false;
-        for (Profile profile : profileArrayList) {
-            if (profile.getPhoneNumber().equals(phoneNumber)) {
+        boolean unique = true;
+        for (User user : userArrayList) {
+            if (user.getUserProfile().getPhoneNumber().equals(phoneNumber)) {
                 unique = false;
                 break;
             }
@@ -101,6 +146,86 @@ public class ProfileServer implements Runnable {
         }
         return unique;
     }
+    synchronized String acceptFriend(String ownId, String friendId) {
+        User own = null;
+        User friend = null;
+        for (User user:userArrayList) {
+            if (user.getUserId().equals(ownId)) {
+                own = user;
+            } else if (user.getUserId().equals(friendId)) {
+                friend = user;
+            }
+            if (own != null && friend != null) {
+                break;
+            }
+        }
+        if (own != null && friend != null) {
+            if (own.getPendingList().contains(friend) && friend.getRequestList().contains(own)) {
+                own.getFriendList().add(friend);
+                friend.getFriendList().add(own);
+                own.getPendingList().remove(friend);
+                friend.getRequestList().remove(own);
+                return "AcceptSuccess";
+            } else {
+                return "NoRequestFound";
+            }
+        } else {
+            return "UserUnfounded";
+        }
+    }
+    synchronized String denyFriend(String ownId, String friendId) {
+        User own = null;
+        User friend = null;
+        for (User user:userArrayList) {
+            if (user.getUserId().equals(ownId)) {
+                own = user;
+            } else if (user.getUserId().equals(friendId)) {
+                friend = user;
+            }
+            if (own != null && friend != null) {
+                break;
+            }
+        }
+        if (own != null && friend != null) {
+            if (own.getPendingList().contains(friend) && friend.getRequestList().contains(own)) {
+                own.getPendingList().remove(friend);
+                friend.getRequestList().remove(own);
+                return "DenySuccess";
+            } else {
+                return "NoRequestFound";
+            }
+        } else {
+            return "UserUnfounded";
+        }
+    }
+    synchronized String resendRequest(String ownId, String friendId) {
+        User own = null;
+        User friend = null;
+        for (User user:userArrayList) {
+            if (user.getUserId().equals(ownId)) {
+                own = user;
+            } else if (user.getUserId().equals(friendId)) {
+                friend = user;
+            }
+            if (own != null && friend != null) {
+                break;
+            }
+        }
+        if (own != null && friend != null) {
+            if (friend.getPendingList().contains(own) && own.getRequestList().contains(friend)) {
+                return "RequestExisted";
+            } else {
+                if (friend.getPendingList().contains(own)) {
+                    own.getRequestList().add(friend);
+                } else if (own.getRequestList().contains(friend)){
+                    friend.getPendingList().add(own);
+                }
+                return "ResendSuccess";
+            }
+        } else {
+            return "UserUnfounded";
+        }
+    }
 
     @Override
     public void run() {
@@ -118,14 +243,6 @@ public class ProfileServer implements Runnable {
                 switch (command) {
                     case "Login" -> {
                         String loginUser  = bufferedReader.readLine();
-                        String[] splitLoginUser = loginUser.split(", ");
-                    }
-                    case "Register" -> {
-                        //The User would send the content in a string
-                        String newUser  = bufferedReader.readLine();
-                        String[] splitNewUser = newUser.split(", ");
-                        userArrayList.add(new User(splitNewUser[0], splitNewUser[1],
-                                splitNewUser[2], splitNewUser[3]));
                         String password = bufferedReader.readLine();
                         boolean hasAccount = login(loginUser, password);
                         /*
@@ -140,61 +257,208 @@ public class ProfileServer implements Runnable {
                             printWriter.println("Invalid");
                         }
                         printWriter.flush();
-
                     }
                     case "Register" -> {
                         //The User would send the user account info in a string
                         String newUser  = bufferedReader.readLine();
                         String[] splitNewUser = newUser.split(", ");
                         userArrayList.add(new User(splitNewUser[0], splitNewUser[1],
-                            splitNewUser[2], splitNewUser[3]));
+                                splitNewUser[2], splitNewUser[3]));
                         printWriter.println("Success");
                         printWriter.flush();
                     }
-                    case "ShowOwnInfo" -> {
-
+                    case "AcceptFriend" -> {
+                        String ownId = bufferedReader.readLine();
+                        String friendId = bufferedReader.readLine();
+                        String result = acceptFriend(ownId, friendId);
+                        printWriter.println(result);
+                        printWriter.flush();
                     }
-                    case "AddFriend" -> {
-
+                    case "DenyFriend" -> {
+                        String ownId = bufferedReader.readLine();
+                        String friendId = bufferedReader.readLine();
+                        String result = denyFriend(ownId, friendId);
+                        printWriter.println(result);
+                        printWriter.flush();
+                    }
+                    case "RequestFriend" -> {
+                        String ownId = bufferedReader.readLine();
+                        String friendId = bufferedReader.readLine();
+                        String result = requestFriend(ownId, friendId);
+                        printWriter.println(result);
+                        printWriter.flush();
+                    }
+                    case "ResendRequest" -> {
+                        String ownId = bufferedReader.readLine();
+                        String friendId = bufferedReader.readLine();
+                        String result = resendRequest(ownId, friendId);
+                        printWriter.println(result);
+                        printWriter.flush();
                     }
                     case "DeleteFriend" -> {
-
+                        String ownId = bufferedReader.readLine();
+                        String friendId = bufferedReader.readLine();
+                        boolean success = deleteFriend(ownId, friendId);
+                        if (success) {
+                            printWriter.println("Success");
+                        } else {
+                            printWriter.println("Failure");
+                        }
+                        printWriter.flush();
                     }
-                    case "ShowFriendList" -> {
-
+                    case "GetFriendList" -> {
+                       String userId = bufferedReader.readLine();
+                       ArrayList<User> currentFriendList = null;
+                       boolean found = false;
+                       for (User user : userArrayList) {
+                           if (user.getUserId().equals(userId)) {
+                               currentFriendList = user.getFriendList();
+                               found = true;
+                               break;
+                           }
+                       }
+                       if (found) {
+                           if (!currentFriendList.isEmpty()) {
+                               printWriter.println(currentFriendList.size());
+                               for (User user : currentFriendList) {
+                                   printWriter.println(user.getName());
+                                   printWriter.println(user.getUserId());
+                                   printWriter.println(user.getUserProfile().getAboutMe());
+                               }
+                           } else {
+                               printWriter.println("Empty");
+                           }
+                       } else {
+                           printWriter.println("NotFound");
+                       }
+                       printWriter.flush();
                     }
                     case "EditOwnAccount" -> {
-
+                        String userEdit  = bufferedReader.readLine();
+                        String[] splitUserEdit = userEdit.split(", ");
+                        userArrayList.removeIf(user -> user.getUserId().equals(splitUserEdit[0]));
+                        userArrayList.add(new User(splitUserEdit[0], splitUserEdit[1],
+                                splitUserEdit[2], splitUserEdit[3]));
+                        printWriter.println("Success");
+                        printWriter.flush();
                     }
                     case "DeleteOwnAccount" -> {
-
+                        boolean flag = false;
+                        String userId = bufferedReader.readLine();
+                        for (User user : userArrayList) {
+                            if (user.getUserId().equals(userId)) {
+                                flag = true;
+                                userArrayList.remove(user);
+                                break;
+                            }
+                        }
+                        if (!flag) {
+                            printWriter.println("Failure");
+                        } else {
+                            printWriter.println("Success");
+                        }
+                        printWriter.flush();
                     }
-                    case "ShowAllUser" -> {
-
+                    case "GetUserList" -> {
+                        String userId = bufferedReader.readLine();
+                        if (userArrayList.size() > 1) {
+                            printWriter.println(userArrayList.size() - 1);
+                            for (User user: userArrayList) {
+                                if (!user.getUserId().equals(userId)) {
+                                    printWriter.println(user.getName());
+                                    printWriter.println(user.getUserId());
+                                    printWriter.println(user.getUserProfile().getAboutMe());
+                                }
+                            }
+                        } else {
+                            printWriter.println("Empty");
+                        }
+                        printWriter.flush();
                     }
-                    case "ViewOwnProfile" -> {
-
+                    case "GetPendingList" -> {
+                        String userId = bufferedReader.readLine();
+                        boolean found = false;
+                        User ownUser = null;
+                        for (User user:userArrayList) {
+                            if (user.getUserId().equals(userId)) {
+                                ownUser = user;
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (found) {
+                            if (!ownUser.getPendingList().isEmpty()) {
+                                printWriter.println(ownUser.getPendingList().size());
+                                for (User user: ownUser.getPendingList()) {
+                                    printWriter.println(user.getName());
+                                    printWriter.println(user.getUserId());
+                                    printWriter.println(user.getUserProfile().getAboutMe());
+                                }
+                            } else {
+                                printWriter.println("Empty");
+                            }
+                        } else {
+                            printWriter.println("NotFound");
+                        }
+                        printWriter.flush();
+                    }
+                    case "GetRequestList" -> {
+                        String userId = bufferedReader.readLine();
+                        boolean found = false;
+                        User ownUser = null;
+                        for (User user:userArrayList) {
+                            if (user.getUserId().equals(userId)) {
+                                ownUser = user;
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (found) {
+                            if (!ownUser.getRequestList().isEmpty()) {
+                                printWriter.println(ownUser.getRequestList().size());
+                                for (User user: ownUser.getRequestList()) {
+                                    printWriter.println(user.getName());
+                                    printWriter.println(user.getUserId());
+                                    printWriter.println(user.getUserProfile().getAboutMe());
+                                }
+                            } else {
+                                printWriter.println("Empty");
+                            }
+                        } else {
+                            printWriter.println("NotFound");
+                        }
+                        printWriter.flush();
                     }
                     case "EditOwnProfile" -> {
-
+                        String userId = bufferedReader.readLine();
+                        String[] splitProfile = bufferedReader.readLine().split(", ");
+                        Profile userProfile = new Profile(splitProfile[0], splitProfile[1], splitProfile[2],
+                                splitProfile[3], splitProfile[4], splitProfile[5]);
+                        boolean success = setUserProfile(userProfile,userId);
+                        if (success) {
+                            printWriter.println("Success");
+                        } else {
+                            printWriter.println("Failure");
+                        }
+                        printWriter.flush();
                     }
-                    case "ViewOtherProfile" -> {
-
-                    }
-                    case "ShowFriendRequestList" -> {
-
-                    }
-                    case "ShowPendingList" -> {
-
-                    }
-                    case "ResendFriendRequest" -> {
-
-                    }
-                    case "AcceptFriendRequest" -> {
-
-                    }
-                    case "DenyFriendRequest" -> {
-
+                    case "DeleteOwnProfile" -> {
+                        String userId = bufferedReader.readLine();
+                        if (getProfile(userId).getPhoneNumber().equals("") && getProfile(userId).getAboutMe().equals("")
+                        && getProfile(userId).getCurrentOccupation().equals("") && getProfile(userId).getInterest().equals("")) {
+                            printWriter.println("No Profile");
+                            printWriter.flush();
+                            break;
+                        }
+                        boolean success = setUserProfile(
+                                new Profile("", "", "", "","",
+                                        ""), userId);
+                        if (success) {
+                            printWriter.println("Success");
+                        } else {
+                            printWriter.println("Failure");
+                        }
+                        printWriter.flush();
                     }
                     case "UniquePhoneNoCheck" -> {
                         String phoneNo = bufferedReader.readLine();
@@ -215,14 +479,22 @@ public class ProfileServer implements Runnable {
                             printWriter.println("Exists");
                         }
                         printWriter.flush();
-
+                    }
+                    case "GetProfileContent" -> {
+                        String userId = bufferedReader.readLine();
+                        Profile profile = getProfile(userId);
+                        printWriter.println(profile.getPhoneNumber());
+                        printWriter.println(profile.getCurrentOccupation());
+                        printWriter.println(profile.getGender());
+                        printWriter.println(profile.getAboutMe());
+                        printWriter.println(profile.getInterest());
+                        printWriter.println(profile.getRelationship());
+                        printWriter.flush();
                     }
                 }
             }
-
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
-
     }
 }

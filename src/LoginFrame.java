@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class LoginFrame extends JComponent implements Runnable {
+    String userId;
     JFrame loginFrame;
     JLabel userIdLabel;
     JTextField userIdField;
@@ -35,7 +36,7 @@ public class LoginFrame extends JComponent implements Runnable {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == loginButton ) {
-                String userId = userIdField.getText();
+                userId = userIdField.getText();
                 char[] rawPassword = passwordField.getPassword();
                 StringBuilder actualPassword = new StringBuilder();
                 actualPassword.append(rawPassword);
@@ -49,10 +50,7 @@ public class LoginFrame extends JComponent implements Runnable {
                         JOptionPane.showMessageDialog(null,
                                 "Login Successful!", "Login Success",
                                 JOptionPane.INFORMATION_MESSAGE);
-                        //SwingUtilities.invokeLater(new UserFrame(socket, userId));
-                        //bufferedReader.close();
-                        //printWriter.close();
-                        SwingUtilities.invokeLater(new MenuFrame(socket));
+                        SwingUtilities.invokeLater(new UserFrame(socket, userId));
                         loginFrame.dispose();
                     } else {
                         if (result.equals("Invalid")) {
@@ -102,17 +100,19 @@ public class LoginFrame extends JComponent implements Runnable {
         passwordField = new JPasswordField();
         passwordField.setBounds(300, 80, 150, 30);
         loginButton = new JButton("Login");
-        loginButton.setBounds(250, 140, 100 ,30);
+        loginButton.setBounds(180, 160, 100 ,30);
         loginButton.addActionListener(actionListener);
         registerButton = new JButton("Register");
-        registerButton.setBounds(250, 180, 100 ,30);
+        registerButton.setBounds(290, 160, 100 ,30);
         registerButton.addActionListener(actionListener);
+
         loginFrameContentPane.add(registerButton);
         loginFrameContentPane.add(loginButton);
         loginFrameContentPane.add(userIdLabel);
         loginFrameContentPane.add(userIdField);
         loginFrameContentPane.add(passwordLabel);
         loginFrameContentPane.add(passwordField);
+
         loginFrame.setSize(600, 300);
         loginFrame.setLocationRelativeTo(null);
         loginFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
