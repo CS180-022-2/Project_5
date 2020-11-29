@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AccountMenuFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AccountMenuFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditAccountFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditAccountFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddFriendFrame2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddFriendFrame2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +106,7 @@
       <workItem from="1606338114781" duration="38174000" />
       <workItem from="1606456425677" duration="1067000" />
       <workItem from="1606521577395" duration="9832000" />
-      <workItem from="1606551790501" duration="2084000" />
+      <workItem from="1606551790501" duration="5335000" />
     </task>
     <servers />
   </component>

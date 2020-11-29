@@ -5,8 +5,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -75,7 +74,7 @@ public class AddFriendFrame2 extends JPanel implements Runnable, ActionListener{
     PrintWriter printWriter;
     String userId;
 
-    public AddFriendFrame(Socket socket, String userId) {
+    public AddFriendFrame2(Socket socket, String userId) {
         this.socket = socket;
         this.userId = userId;
     }
@@ -108,7 +107,7 @@ public class AddFriendFrame2 extends JPanel implements Runnable, ActionListener{
         popupMenu.add(sendFriendRequest);
         popupMenu.add(removeFriend);
         jTable.setComponentPopupMenu(popupMenu);
-        jTable.addMouseListener(new TableMouseListener(jTable));
+        jTable.addMouseListener(new TableMouseLister(jTable));
 
         //JPopupMenu on pending list
         JPopupMenu popupMenu2 = new JPopupMenu();
@@ -187,7 +186,7 @@ public class AddFriendFrame2 extends JPanel implements Runnable, ActionListener{
 
         });
 
-        //Actionlistener
+        //ActionListener
         back.addActionListener(actionListener);
         accept.addActionListener(actionListener);
         deny.addActionListener(actionListener);
