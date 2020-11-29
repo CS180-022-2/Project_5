@@ -59,9 +59,9 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
         profileButton = new JButton("Profile");
         backButton = new JButton("Back to User Frame");
         //Set component location
-        accountButton.setBounds(120, 40, 150, 30);
-        profileButton.setBounds(120, 90 , 150, 30);
-        backButton.setBounds(120,140, 140, 30);
+        accountButton.setBounds(120, 50, 150, 30);
+        profileButton.setBounds(120, 100 , 150, 30);
+        backButton.setBounds(120,150, 150, 30);
 
         //Add actionLister
         accountButton.addActionListener(actionListener);

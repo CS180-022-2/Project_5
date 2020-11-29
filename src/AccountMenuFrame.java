@@ -22,7 +22,7 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
-                SwingUtilities.invokeLater(new LoginFrame(socket));
+                SwingUtilities.invokeLater(new AccountProfileFrame(socket, userId));
                 accountMenuFrame.dispose();
             }
             if (e.getSource() == editAccountButton) {
@@ -44,9 +44,14 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
                         ioException.printStackTrace();
                     }
                     switch (success) {
-                        case "Success" -> JOptionPane.showMessageDialog(null, "Congratulations! " +
-                                        "You have successfully deleted your account!",
-                                "Account deletion Successful", JOptionPane.INFORMATION_MESSAGE);
+                        case "Success" -> {
+                            JOptionPane.showMessageDialog(null, "Congratulations! " +
+                                            "You have successfully deleted your account!\n" +
+                                    "You will be redirected to Login Page.",
+                                    "Account deletion Successful", JOptionPane.INFORMATION_MESSAGE);
+                            SwingUtilities.invokeLater(new LoginFrame(socket));
+                            accountMenuFrame.dispose();
+                        }
                         case "Failure" -> JOptionPane.showMessageDialog(null, "Oops!" +
                                         " Unsuccessful deletion. Please check if the userID is valid.",
                                 "Delete Account Error", JOptionPane.ERROR_MESSAGE);
@@ -77,11 +82,11 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
         AccountMenuFrameContentPane.setLayout(null);
         editAccountButton = new JButton("Edit Account");
         deleteAccountButton = new JButton("Delete Account");
-        backButton = new JButton("Back to Login");
+        backButton = new JButton("Back to Menu Frame");
         //Set component location
-        editAccountButton.setBounds(120, 40, 150, 30);
-        deleteAccountButton.setBounds(120, 90 , 150, 30);
-        backButton.setBounds(120,180, 140, 30);
+        editAccountButton.setBounds(120, 50, 160, 30);
+        deleteAccountButton.setBounds(120, 100 , 160, 30);
+        backButton.setBounds(120,150, 160, 30);
 
         //Add actionLister
         editAccountButton.addActionListener(actionListener);

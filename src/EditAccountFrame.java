@@ -67,11 +67,11 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
                     ioException.printStackTrace();
                 }
                 if (success.equals("Success")) {
-                    JOptionPane.showMessageDialog(null, "Congratulation! " +
+                    JOptionPane.showMessageDialog(null, "Congratulation!\n" +
                                     "You have successfully edited your account details.",
                             "Edit Account Successful", JOptionPane.INFORMATION_MESSAGE);
                     SwingUtilities.invokeLater(new LoginFrame(socket));
-                    registerFrame.dispose();
+                    editAccountFrame.dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Oops!" +
                                     "Unsuccessful attempt. Please retry.",
@@ -149,7 +149,7 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
         boolean correct = true;
         if (!userId.matches("^[a-zA-Z0-9_-][^%+\\\\/#@*:;`~<>?!.,'\"]+$")) {
             JOptionPane.showMessageDialog(null, "UserID should at least contain" +
-                            " two characters and only contain alphabets and numbers.",
+                            " two characters\nand only contain alphabets and numbers.",
                     "UserID Error", JOptionPane.WARNING_MESSAGE);
             correct = false;
         }
@@ -167,21 +167,21 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
          */
         if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")) {
             JOptionPane.showMessageDialog(null, "Password must have a length"
-                            + " greater than 8 and contain at least one uppercase, one lower case, one digit" +
+                            + " greater than 8 and contain\nat least one uppercase, one lower case, one digit" +
                             " and one special character.",
                     "Password Error", JOptionPane.WARNING_MESSAGE);
             correct = false;
         }
         if (!realName.matches("[A-Za-z]+ [A-Za-z]+ ?[A-Za-z]+")) {
             JOptionPane.showMessageDialog(null, "Real Name must have a first"
-                            + "Name and a lastName. A space needs to appear between the first name and next"
-                            + "Name. Middle name can be included ",
+                            + "Name and a lastName.\nA space needs to appear between the first name and next"
+                            + "Name.\nMiddle name can be included.",
                     "Real Name Error", JOptionPane.WARNING_MESSAGE);
             correct = false;
         }
         if (!email.matches("\\w+@\\w+.\\w+")) {
             JOptionPane.showMessageDialog(null, "The email"
-                            + " must have one '@' sign and one '.', no other special sign allowed",
+                            + " must have one '@' sign and one '.', no other special sign allowed.",
                     "Email", JOptionPane.WARNING_MESSAGE);
             correct = false;
         }

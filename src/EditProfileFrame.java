@@ -73,14 +73,14 @@ public class EditProfileFrame extends JComponent implements Runnable {
                     ioException.printStackTrace();
                 }
                 if (success.equals("Success")) {
-                    JOptionPane.showMessageDialog(null, "Congratulations! " +
+                    JOptionPane.showMessageDialog(null, "Congratulations!\n" +
                                     "You have successfully created your profile!",
                             "Profile Creation Successful", JOptionPane.INFORMATION_MESSAGE);
                     SwingUtilities.invokeLater(new ProfileMenuFrame(socket, userId));
                     editProfileFrame.dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Oops!" +
-                                    "Unsuccessful creation./n Please retry.",
+                                    "Unsuccessful creation.\nPlease retry.",
                             "EditProfile Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -99,7 +99,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
             printWriter = new PrintWriter(socket.getOutputStream());
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null,
-                    "Unable to initialize in EditProfile frame", "Error", JOptionPane.ERROR_MESSAGE);
+                    "Unable to initialize in Edit Profile frame", "Error", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
             return;
         }

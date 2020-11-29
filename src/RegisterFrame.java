@@ -79,7 +79,7 @@ public class RegisterFrame extends JComponent implements Runnable{
                     registerFrame.dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Oops!" +
-                                    "Unsuccessful register./n Please retry.",
+                                    "Unsuccessful register.\n Please retry.",
                             "Register Error", JOptionPane.ERROR_MESSAGE);
                 }
             }

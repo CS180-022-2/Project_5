@@ -23,27 +23,8 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
-                SwingUtilities.invokeLater(new LoginFrame(socket));
+                SwingUtilities.invokeLater(new AccountProfileFrame(socket, userId));
                 profileMenuFrame.dispose();
-            }
-            if (e.getSource() == userFrameButton) {
-                printWriter.println("DeleteOwnProfile");
-                printWriter.println(userId);
-                printWriter.flush();
-                String success = "";
-                try {
-                    success = bufferedReader.readLine();
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-                if (success.equals("No Profile")) {
-                    JOptionPane.showMessageDialog(null,
-                            "First create your profile in order to view friend list.", "Profile Error",
-                            JOptionPane.ERROR_MESSAGE);
-                } else {
-                    SwingUtilities.invokeLater(new UserFrame(socket,userId));
-                    profileMenuFrame.dispose();
-                }
             }
             if (e.getSource() == editProfileButton) {
                 SwingUtilities.invokeLater(new EditProfileFrame(socket, userId));
@@ -71,7 +52,7 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
                                         "You have successfully delete your profile!",
                                 "Profile deletion Successful", JOptionPane.INFORMATION_MESSAGE);
                         case "Failure" -> JOptionPane.showMessageDialog(null, "Oops!" +
-                                        "Unsuccessful deletion./n Please retry.",
+                                        "Unsuccessful deletion.\nPlease retry.",
                                 "Delete Profile Error", JOptionPane.ERROR_MESSAGE);
                     }
                 }
@@ -98,24 +79,20 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         profileMenuFrame = new JFrame("Profile Menu Frame");
         Container profileMenuFrameContentPane = profileMenuFrame.getContentPane();
         profileMenuFrameContentPane.setLayout(null);
-        userFrameButton = new JButton("See Friend List");
         deleteProfileButton = new JButton("Delete Profile");
         editProfileButton = new JButton("Create / Edit Profile");
-        backButton = new JButton("Back to Login");
+        backButton = new JButton("Back to Menu Frame");
         //Set component location
-        userFrameButton.setBounds(120, 30, 150, 30);
-        deleteProfileButton.setBounds(120, 80 , 150, 30);
-        editProfileButton.setBounds(120, 130 , 150, 30);
-        backButton.setBounds(120,180, 150, 30);
+        editProfileButton.setBounds(120, 50 , 160, 30);
+        deleteProfileButton.setBounds(120, 100 , 160, 30);
+        backButton.setBounds(120,150, 160, 30);
 
         //Add actionLister
-        userFrameButton.addActionListener(actionListener);
         deleteProfileButton.addActionListener(actionListener);
         editProfileButton.addActionListener(actionListener);
         backButton.addActionListener(actionListener);
 
         //Add all components into the Frame;
-        profileMenuFrameContentPane.add(userFrameButton);
         profileMenuFrameContentPane.add(editProfileButton);
         profileMenuFrameContentPane.add(deleteProfileButton);
         profileMenuFrameContentPane.add(backButton);
