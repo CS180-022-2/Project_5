@@ -235,8 +235,8 @@ public class AddFriendFrame extends JPanel implements Runnable {
         allUserTable.setRowSorter(rowSorter);
 
         jScrollPane = new JScrollPane(allUserTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScrollPane2 = new JScrollPane(requestTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScrollPane3 = new JScrollPane(pendingTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane2 = new JScrollPane(pendingTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane3 = new JScrollPane(requestTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
         //JPopupMenu on user list
         JPopupMenu popupMenu = new JPopupMenu();
@@ -252,12 +252,12 @@ public class AddFriendFrame extends JPanel implements Runnable {
         deny = new JMenuItem("Deny");
         popupMenu2.add(accept);
         popupMenu2.add(deny);
-        requestTable.setComponentPopupMenu(popupMenu2);
+        pendingTable.setComponentPopupMenu(popupMenu2);
 
         JPopupMenu popupMenu3 = new JPopupMenu();
         resendRequest = new JMenuItem("Resend request");
         popupMenu3.add(resendRequest);
-        pendingTable.setComponentPopupMenu(popupMenu3);
+        requestTable.setComponentPopupMenu(popupMenu3);
 
         JLabel friend = new JLabel("Requested Friend", SwingConstants.CENTER);
         JLabel sentRequest = new JLabel("Pending List", SwingConstants.CENTER);
@@ -266,7 +266,6 @@ public class AddFriendFrame extends JPanel implements Runnable {
         addFriendFrame.setLayout(new BorderLayout());
         JPanel top = new JPanel(new FlowLayout());
         back = new JButton("Back");
-        back.addActionListener(actionListener);
         top.add(new JLabel("Find a specific friend"));
         top.add(jtfFilter);
         top.add(back);
@@ -330,6 +329,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
         deny.addActionListener(actionListener);
         viewProfile.addActionListener(actionListener);
         sendFriendRequest.addActionListener(actionListener);
+        resendRequest.addActionListener(actionListener);
 
         addFriendFrame.pack();
         addFriendFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

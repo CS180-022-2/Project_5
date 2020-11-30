@@ -39,6 +39,7 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
                     profileDisplayFrame.dispose();
                 } else if (tracker.equals("AddFriendFrame")) {
                     SwingUtilities.invokeLater(new AddFriendFrame(socket, viewerId));
+                    profileDisplayFrame.dispose();
                 }
             }
         }};
