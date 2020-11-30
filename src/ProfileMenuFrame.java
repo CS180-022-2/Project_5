@@ -14,7 +14,6 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
     BufferedReader bufferedReader;
     PrintWriter printWriter;
     JFrame profileMenuFrame;
-    JButton userFrameButton;
     JButton editProfileButton;
     JButton deleteProfileButton;
     JButton backButton;

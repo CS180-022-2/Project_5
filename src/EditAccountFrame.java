@@ -181,6 +181,3 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
         return correct;
     }
 }
-
-
-
