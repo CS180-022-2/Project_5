@@ -1,4 +1,6 @@
-public class Profile {
+import java.io.Serializable;
+
+public class Profile implements Serializable {
     private String phoneNumber;
     private String relationship;
     private String gender;

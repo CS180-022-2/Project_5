@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.fail;
 
-public class RunLocalTest {
+public class  RunLocalTest {
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(TestCase.class);
         if (result.wasSuccessful()) {

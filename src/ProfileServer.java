@@ -7,6 +7,7 @@ import java.io.*;
 public class ProfileServer implements Runnable {
     Socket socket;
      public static  ArrayList<User> userArrayList;
+     public static File f;
 
     public ProfileServer(Socket socket) {
         this.socket = socket;
@@ -14,6 +15,24 @@ public class ProfileServer implements Runnable {
 
     public static void main(String[] args) {
         userArrayList = new ArrayList<>();
+        f = new File("MainData.dat");
+        if (!f.exists()) {
+            try {
+                f.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(f))) {
+                Object readObject = objectInputStream.readObject();
+                while (readObject != null) {
+                    userArrayList.add((User) readObject);
+                    readObject = objectInputStream.readObject();
+                }
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
         try {
             ServerSocket serverSocket = new ServerSocket(1112);
             while (true) {
@@ -22,6 +41,7 @@ public class ProfileServer implements Runnable {
                 new Thread(server).start();
             }
         } catch (IOException e) {
+
             e.printStackTrace();
         }
     }
@@ -495,6 +515,13 @@ public class ProfileServer implements Runnable {
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
+            try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(f))) {
+                for (User user : userArrayList) {
+                    objectOutputStream.writeObject(user);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
