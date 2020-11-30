@@ -38,9 +38,9 @@ public class AddFriendFrame extends JPanel implements Runnable {
     DefaultTableModel requestModel;
     DefaultTableModel pendingModel;
 
-    JTable jTable;
-    JTable jTable2;
-    JTable jTable3;
+    JTable allUserTable;
+    JTable requestTable;
+    JTable pendingTable;
     TableRowSorter<TableModel> rowSorter;
     JTextField jtfFilter;
     JMenuItem sendFriendRequest;
@@ -59,27 +59,28 @@ public class AddFriendFrame extends JPanel implements Runnable {
             if (e.getSource() == back) {
                 SwingUtilities.invokeLater(new UserFrame(socket, userId));
                 addFriendFrame.dispose();
+                return;
             }
             if (e.getSource() == viewProfile) {
-                int selectedRow = jTable.getSelectedRow();
+                int selectedRow = allUserTable.getSelectedRow();
                 if (selectedRow == -1) {
                     JOptionPane.showMessageDialog(null,
                             "You must first select a line! ", "No selection", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-                String profileOwnerId = String.valueOf(jTable.getValueAt(selectedRow, 1));
+                String profileOwnerId = String.valueOf(allUserTable.getValueAt(selectedRow, 1));
                 SwingUtilities.invokeLater(new ProfileDisplayFrame(socket, userId,
                         profileOwnerId, "AddFriendFrame"));
                 addFriendFrame.dispose();
             }
             if (e.getSource() == sendFriendRequest) {
-                int selectedRow = jTable.getSelectedRow();
+                int selectedRow = allUserTable.getSelectedRow();
                 if (selectedRow == -1) {
                     JOptionPane.showMessageDialog(null,
                             "You must first select a line! ", "No selection", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-                String friendId = String.valueOf(jTable.getValueAt(selectedRow, 1));
+                String friendId = String.valueOf(allUserTable.getValueAt(selectedRow, 1));
                 printWriter.println("RequestFriend");
                 printWriter.println(userId);
                 printWriter.println(friendId);
@@ -105,13 +106,13 @@ public class AddFriendFrame extends JPanel implements Runnable {
                 }
             }
             if (e.getSource() == accept) {
-                int selectedRow = jTable3.getSelectedRow();
+                int selectedRow = pendingTable.getSelectedRow();
                 if (selectedRow == -1) {
                     JOptionPane.showMessageDialog(null,
                             "You must first select a line! ", "No selection", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-                String friendId = String.valueOf(jTable3.getValueAt(selectedRow, 1));
+                String friendId = String.valueOf(pendingTable.getValueAt(selectedRow, 1));
                 printWriter.println("AcceptFriend");
                 printWriter.println(userId);
                 printWriter.println(friendId);
@@ -135,13 +136,13 @@ public class AddFriendFrame extends JPanel implements Runnable {
                 }
             }
             if (e.getSource() == deny) {
-                int selectedRow = jTable3.getSelectedRow();
+                int selectedRow = pendingTable.getSelectedRow();
                 if (selectedRow == -1) {
                     JOptionPane.showMessageDialog(null,
                             "You must first select a line! ", "No selection", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-                String friendId = String.valueOf(jTable3.getValueAt(selectedRow, 1));
+                String friendId = String.valueOf(pendingTable.getValueAt(selectedRow, 1));
                 printWriter.println("DenyFriend");
                 printWriter.println(userId);
                 printWriter.println(friendId);
@@ -166,13 +167,13 @@ public class AddFriendFrame extends JPanel implements Runnable {
                 }
             }
             if (e.getSource() == resendRequest) {
-                int selectedRow = jTable2.getSelectedRow();
+                int selectedRow = requestTable.getSelectedRow();
                 if (selectedRow == -1) {
                     JOptionPane.showMessageDialog(null,
                             "You must first select a line! ", "No selection", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
-                String friendId = String.valueOf(jTable2.getValueAt(selectedRow, 1));
+                String friendId = String.valueOf(requestTable.getValueAt(selectedRow, 1));
                 printWriter.println("ResendRequest");
                 printWriter.println(userId);
                 printWriter.println(friendId);
@@ -223,19 +224,19 @@ public class AddFriendFrame extends JPanel implements Runnable {
         requestModel = updateRequestModel();
         pendingModel = updatePendingModel();
 
-        jTable = new JTable(allUserModel);
-        jTable2 = new JTable(requestModel);
-        jTable3 = new JTable(pendingModel);
+        allUserTable = new JTable(allUserModel);
+        requestTable = new JTable(requestModel);
+        pendingTable = new JTable(pendingModel);
 
-        rowSorter = new TableRowSorter<>(jTable.getModel());
+        rowSorter = new TableRowSorter<>(allUserTable.getModel());
         jtfFilter = new JTextField(10);
 
         addFriendFrame = new JFrame("Add Friend");
-        jTable.setRowSorter(rowSorter);
+        allUserTable.setRowSorter(rowSorter);
 
-        jScrollPane = new JScrollPane(jTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScrollPane2 = new JScrollPane(jTable2,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScrollPane3 = new JScrollPane(jTable3,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane = new JScrollPane(allUserTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane2 = new JScrollPane(requestTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane3 = new JScrollPane(pendingTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
         //JPopupMenu on user list
         JPopupMenu popupMenu = new JPopupMenu();
@@ -243,7 +244,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
         viewProfile = new JMenuItem("View Profile");
         popupMenu.add(viewProfile);
         popupMenu.add(sendFriendRequest);
-        jTable.setComponentPopupMenu(popupMenu);
+        allUserTable.setComponentPopupMenu(popupMenu);
 
         //JPopupMenu on pending list
         JPopupMenu popupMenu2 = new JPopupMenu();
@@ -251,12 +252,12 @@ public class AddFriendFrame extends JPanel implements Runnable {
         deny = new JMenuItem("Deny");
         popupMenu2.add(accept);
         popupMenu2.add(deny);
-        jTable2.setComponentPopupMenu(popupMenu2);
+        requestTable.setComponentPopupMenu(popupMenu2);
 
         JPopupMenu popupMenu3 = new JPopupMenu();
         resendRequest = new JMenuItem("Resend request");
         popupMenu3.add(resendRequest);
-        jTable3.setComponentPopupMenu(popupMenu3);
+        pendingTable.setComponentPopupMenu(popupMenu3);
 
         JLabel friend = new JLabel("Requested Friend", SwingConstants.CENTER);
         JLabel sentRequest = new JLabel("Pending List", SwingConstants.CENTER);
@@ -265,6 +266,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
         addFriendFrame.setLayout(new BorderLayout());
         JPanel top = new JPanel(new FlowLayout());
         back = new JButton("Back");
+        back.addActionListener(actionListener);
         top.add(new JLabel("Find a specific friend"));
         top.add(jtfFilter);
         top.add(back);
@@ -457,9 +459,9 @@ public class AddFriendFrame extends JPanel implements Runnable {
         };
     }
     public void updateAll() {
-        jTable.setModel(updateAllUserModel());
-        jTable2.setModel(updateRequestModel());
-        jTable3.setModel(updatePendingModel());
+        allUserTable.setModel(updateAllUserModel());
+        requestTable.setModel(updateRequestModel());
+        pendingTable.setModel(updatePendingModel());
         addFriendFrame.repaint();
     }
 }
