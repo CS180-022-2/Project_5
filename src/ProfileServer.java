@@ -40,7 +40,6 @@ public class ProfileServer implements Runnable {
                 new Thread(server).start();
             }
         } catch (IOException e) {
-
             e.printStackTrace();
         }
     }
@@ -101,11 +100,11 @@ public class ProfileServer implements Runnable {
         }
         if (own != null && friend != null) {
             if (own.getFriendList().contains(friend) && friend.getFriendList().contains(own)) {
-                return "AlreadyFriend";
+                return "Already friend!";
             } else if (own.getRequestList().contains(friend) && friend.getPendingList().contains(own)) {
-                return "AlreadyRequested";
+                return "Already requested!";
             } else if (own.getPendingList().contains(friend) && friend.getRequestList().contains(own)) {
-                return "AlreadyBeingRequested";
+                return "Already being requested!";
             } else {
                 own.getRequestList().add(friend);
                 friend.getPendingList().add(own);
@@ -186,10 +185,10 @@ public class ProfileServer implements Runnable {
                 friend.getRequestList().remove(own);
                 return "AcceptSuccess";
             } else {
-                return "NoRequestFound";
+                return "No request found.";
             }
         } else {
-            return "UserUnfounded";
+            return "No such user found.";
         }
     }
     synchronized String denyFriend(String ownId, String friendId) {
@@ -211,10 +210,10 @@ public class ProfileServer implements Runnable {
                 friend.getRequestList().remove(own);
                 return "DenySuccess";
             } else {
-                return "NoRequestFound";
+                return "No request found";
             }
         } else {
-            return "UserUnfounded";
+            return "No such user found.";
         }
     }
     synchronized String resendRequest(String ownId, String friendId) {
@@ -242,7 +241,7 @@ public class ProfileServer implements Runnable {
                 return "ResendSuccess";
             }
         } else {
-            return "UserUnfounded";
+            return "No such user found.";
         }
     }
 

@@ -97,7 +97,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
                 if (result != null) {
                     if (result.equals("RequestSuccess")) {
                         JOptionPane.showMessageDialog(null,
-                                "You have successfully request a friend",
+                                "You have successfully sent a friend request!",
                                 "Success", JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null,
@@ -126,9 +126,10 @@ public class AddFriendFrame extends JPanel implements Runnable {
                             "Buffer reader error in accept Friend request",
                             "Accept Friend Error", JOptionPane.ERROR_MESSAGE);
                 }
+                assert result != null;
                 if (result.equals("AcceptSuccess")) {
                     JOptionPane.showMessageDialog(null,
-                            "You have successfully accept a request",
+                            "You have successfully accepted a request!",
                             "Success", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(null,
@@ -159,7 +160,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
                 assert result != null;
                 if (result.equals("DenySuccess")) {
                     JOptionPane.showMessageDialog(null,
-                            "You have successfully deny a request",
+                            "You have successfully denied a request!",
                             "Success", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(null,
@@ -190,12 +191,12 @@ public class AddFriendFrame extends JPanel implements Runnable {
                 assert result != null;
                 if (result.equals("ResendSuccess")) {
                     JOptionPane.showMessageDialog(null,
-                            "You have successfully resend a request",
+                            "You have successfully resent a friend request!",
                             "Success", JOptionPane.INFORMATION_MESSAGE);
                 } else if (result.equals("RequestExisted")) {
                     JOptionPane.showMessageDialog(null,
-                            "Be patient, you request is received",
-                            "Request Existed", JOptionPane.INFORMATION_MESSAGE);
+                            "Be patient, your request is already received.",
+                            "Request Exists", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(null,
                             result, "Wrong Function", JOptionPane.WARNING_MESSAGE);
