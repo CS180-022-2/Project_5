@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -200,8 +202,27 @@ public class UserFrame extends JComponent implements Runnable {
 
         });
         userFrame.pack();
-        userFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        userFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         userFrame.setLocationRelativeTo(null);
+        userFrame.addWindowListener(new WindowAdapter() {
+            /**
+             * Invoked when a window is in the process of being closed.
+             * The close operation can be overridden at this point.
+             *
+             * @param e
+             */
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    bufferedReader.close();
+                    printWriter.close();
+                    socket.close();
+                    userFrame.dispose();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        });
         userFrame.setVisible(true);
     }
 

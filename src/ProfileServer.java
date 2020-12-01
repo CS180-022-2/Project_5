@@ -38,6 +38,9 @@ public class ProfileServer implements Runnable {
                     userArrayList.add((User) readObject);
                     readObject = objectInputStream.readObject();
                 }
+                // catch EOF exception which indicates that the objectInputStream has reached an end.
+            } catch (EOFException eofException) {
+
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -263,9 +266,19 @@ public class ProfileServer implements Runnable {
             while (true) {
                 String command = bufferedReader.readLine();
                 if (command == null) {
+
                     printWriter.close();
                     bufferedReader.close();
                     socket.close();
+                    if (!userArrayList.isEmpty()) {
+                        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(f))) {
+                            for (User user : userArrayList) {
+                                objectOutputStream.writeObject(user);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                     return;
                 }
                 switch (command) {
@@ -523,13 +536,6 @@ public class ProfileServer implements Runnable {
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
-            try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(f))) {
-                for (User user : userArrayList) {
-                    objectOutputStream.writeObject(user);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }

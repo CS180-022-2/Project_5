@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -109,7 +111,26 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         //Finalize the Frame
         profileMenuFrame.setSize(400, 300);
         profileMenuFrame.setLocationRelativeTo(null);
-        profileMenuFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        profileMenuFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        profileMenuFrame.addWindowListener(new WindowAdapter() {
+            /**
+             * Invoked when a window is in the process of being closed.
+             * The close operation can be overridden at this point.
+             *
+             * @param e
+             */
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    bufferedReader.close();
+                    printWriter.close();
+                    socket.close();
+                    profileMenuFrame.dispose();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        });
         profileMenuFrame.setVisible(true);
     }
 }

@@ -7,6 +7,8 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -341,8 +343,27 @@ public class AddFriendFrame extends JPanel implements Runnable {
         resendRequest.addActionListener(actionListener);
 
         addFriendFrame.pack();
-        addFriendFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        addFriendFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addFriendFrame.setLocationRelativeTo(null);
+        addFriendFrame.addWindowListener(new WindowAdapter() {
+            /**
+             * Invoked when a window is in the process of being closed.
+             * The close operation can be overridden at this point.
+             *
+             * @param e
+             */
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    bufferedReader.close();
+                    printWriter.close();
+                    socket.close();
+                    addFriendFrame.dispose();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        });
         addFriendFrame.setVisible(true);
     }
 

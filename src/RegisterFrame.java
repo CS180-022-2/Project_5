@@ -1,6 +1,8 @@
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -159,7 +161,26 @@ public class RegisterFrame extends JComponent implements Runnable{
         //Finalize the Frame
         registerFrame.setSize(400, 300);
         registerFrame.setLocationRelativeTo(null);
-        registerFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        registerFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        registerFrame.addWindowListener(new WindowAdapter() {
+            /**
+             * Invoked when a window is in the process of being closed.
+             * The close operation can be overridden at this point.
+             *
+             * @param e
+             */
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    bufferedReader.close();
+                    printWriter.close();
+                    socket.close();
+                    registerFrame.dispose();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        });
         registerFrame.setVisible(true);
     }
     public boolean contentCheck(String userId, String password, String realName, String email) {
