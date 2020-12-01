@@ -14,6 +14,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A class representing the frame that allows the users to register for this application.
+ * All users must register before being able to login to the application.
+ *
+ * Note that the user ID they set for the first time will be permanent throughout - they cannot change their user ID
+ * by editing their account details.
+ *
+ * All the account details must conform to the respective validation rules.
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class RegisterFrame extends JComponent implements Runnable{
     Socket socket;

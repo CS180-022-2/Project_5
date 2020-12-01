@@ -7,6 +7,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A class representing the profile details of the user in a separate frame.
+ *
+ * Profile details include: Phone Number, Current Occupation, About Me, Interests, Gender, and Relationship Status
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class ProfileDisplayFrame extends JComponent implements Runnable {
     Socket socket;

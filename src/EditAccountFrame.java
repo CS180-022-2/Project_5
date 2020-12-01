@@ -7,6 +7,17 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import javax.swing.*;
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A class representing the frame to edit the user account details.
+ *
+ * Users can change their name, email address, and password except the user ID.
+ * All the changed account details must conform to the respective validation rules.
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class EditAccountFrame extends JOptionPane implements Runnable{
     Socket socket;

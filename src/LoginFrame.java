@@ -14,6 +14,18 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A class representing the frame that will appear at the very beginning when the user starts the application.
+ *
+ * Users will be able to login using their User ID and Password.
+ *
+ * Note that they must first register before be able to login to the application.
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class LoginFrame extends JComponent implements Runnable {
     String userId;

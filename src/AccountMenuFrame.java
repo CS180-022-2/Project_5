@@ -7,6 +7,17 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import javax.swing.*;
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A class representing the frame that gives users the option to either edit, or delete their accounts.
+ *
+ * Note that this only provides an option by displaying buttons. Details of edition, or deletion
+ * happens in a separate frame when the user clicks the respective button to function.
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class AccountMenuFrame extends JOptionPane implements Runnable {
     Socket socket;

@@ -17,7 +17,15 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A class representing the frame to send friend requests to another users, view a list of all the application's users,
+ * search a specific user among all the application's users, view the requested friend list and the pending friend list.
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class AddFriendFrame extends JPanel implements Runnable {
 

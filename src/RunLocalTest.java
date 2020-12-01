@@ -8,18 +8,33 @@ import org.junit.runner.notification.Failure;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.lang.reflect.*;
 
 import java.net.Socket;
-import java.nio.Buffer;
 import java.util.ArrayList;
-
-import static org.junit.Assert.fail;
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A set of public test cases to test whether:
+ *
+ *  1. Each class have a test verifying that it exists and inherits from the correct superclass.
+ *
+ *  2. Each field in every class must have a test verifying that it exists, along with verifying it has the
+ *     correct type and access modifier.
+ *
+ *  3.Each method in every class must have a test verifying that it exists, along with verifying it has the
+ *     correct return type and access modifier.
+ *
+ *  4.Each method in every class must have two implementation tests:
+ *      - That verifies it works correctly with proper input
+ *      - That tests that it fails with improper input.
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class  RunLocalTest {
     public static void main(String[] args) {
@@ -32,15 +47,6 @@ public class  RunLocalTest {
             }
         }
     }
-
-    /**
-     * A set of public test cases.
-     *
-     * <p>Purdue University -- CS18000 -- Fall 2020</p>
-     *
-     * @author Purdue CS
-     * @version August 24, 2020
-     */
 
     public static class TestCase {
         private final PrintStream originalOutput = System.out;

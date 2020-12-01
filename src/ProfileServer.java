@@ -2,6 +2,16 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.io.*;
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A class representing the backend server-side of our application.
+ *
+ * All the processing of data, connecting to the client, and including the file I/O happens here.
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class ProfileServer implements Runnable {
     Socket socket;

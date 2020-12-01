@@ -12,6 +12,16 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A class representing the frame displaying the friend list of the user in the application.
+ *
+ * The user is able to see the profile of users in the friend list and delete them from the friend list.
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class UserFrame extends JComponent implements Runnable {
     Socket socket;

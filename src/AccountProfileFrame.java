@@ -7,6 +7,18 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import javax.swing.*;
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A class representing the frame that serves as an intermediary for creation, edition, and deletion of
+ * both user account and profile.
+ *
+ * When the user wants to edit or delete their account, they can click "Account" button
+ * and vice versa for their profile.
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class AccountProfileFrame extends JOptionPane implements Runnable {
     Socket socket;

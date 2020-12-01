@@ -1,4 +1,12 @@
 import java.io.Serializable;
+/**
+ * Project 05 - Social Network "Profile" Application
+ *
+ * A class representing the profile of the registered user.
+ *
+ * @author Group 022-2
+ * @version November 30, 2020
+ */
 
 public class Profile implements Serializable {
     private String phoneNumber;
