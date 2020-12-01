@@ -386,9 +386,11 @@ public class ProfileServer implements Runnable {
                     case "DeleteOwnAccount" -> {
                         boolean flag = false;
                         String userId = bufferedReader.readLine();
+                        User deletedUser = null;
                         for (User user : userArrayList) {
                             if (user.getUserId().equals(userId)) {
                                 flag = true;
+                                deletedUser = user;
                                 userArrayList.remove(user);
                                 break;
                             }
@@ -396,6 +398,11 @@ public class ProfileServer implements Runnable {
                         if (!flag) {
                             printWriter.println("Failure");
                         } else {
+                            for (User user: userArrayList) {
+                                user.getRequestList().remove(deletedUser);
+                                user.getPendingList().remove(deletedUser);
+                                user.getFriendList().remove(deletedUser);
+                            }
                             printWriter.println("Success");
                         }
                         printWriter.flush();
