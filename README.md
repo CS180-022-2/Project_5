@@ -66,6 +66,8 @@ Test Edit
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
 ##### Run() method
+This method set up the appearance of the frame
+![alt text](https://github.com/dereksun105/CS180-022-2/Project_5/images/loginFrame.png "Login Frame")
 ### Profile Class
 #### Description
 #### Testing
