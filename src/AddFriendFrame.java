@@ -19,6 +19,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
 /**
  * Project 05 - Social Network "Profile" Application
  *
@@ -28,7 +29,6 @@ import javax.swing.JTable;
  * @author Group 022-2
  * @version November 30, 2020
  */
-
 public class AddFriendFrame extends JPanel implements Runnable {
 
     private  final String[] columnName = {"Name", "ID", "About Me"};

@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import javax.swing.*;
+
 /**
  * Project 05 - Social Network "Profile" Application
  *
@@ -19,7 +20,6 @@ import javax.swing.*;
  * @author Group 022-2
  * @version November 30, 2020
  */
-
 public class EditProfileFrame extends JComponent implements Runnable {
     Socket socket;
     String userId;
