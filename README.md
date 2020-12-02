@@ -19,6 +19,7 @@ Test Edit
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### GUI
 ### AccountProfileFrame Class
 #### Description
 #### Testing
@@ -26,6 +27,7 @@ Test Edit
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### GUI
 ### AddFriendFrame Class
 #### Description
 #### Testing
@@ -33,6 +35,7 @@ Test Edit
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### GUI
 ### EditAccountFrame Class
 #### Description
 #### Testing
@@ -40,6 +43,7 @@ Test Edit
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### GUI
 ### EditProfileFrame Class
 #### Description
 #### Testing
@@ -47,6 +51,7 @@ Test Edit
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### GUI
 ### LoginFrame Class
 #### Description
 #### Testing
@@ -54,6 +59,7 @@ Test Edit
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### GUI
 ### Profile Class
 #### Description
 #### Testing
@@ -75,6 +81,7 @@ Test Edit
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### GUI
 ### ProfileMenuFrame Class
 #### Description
 #### Testing
@@ -82,6 +89,7 @@ Test Edit
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### GUI
 ### ProfileServer Class
 #### Description
 #### Testing
@@ -96,6 +104,7 @@ Test Edit
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### GUI
 ### User Class
 #### Description
 #### Testing
@@ -110,3 +119,4 @@ Test Edit
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### GUI
