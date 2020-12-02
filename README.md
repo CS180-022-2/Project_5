@@ -20,6 +20,7 @@ Test Edit
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
+##### Run() method
 ### AccountProfileFrame Class
 #### Description
 #### Testing
@@ -28,6 +29,7 @@ Test Edit
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
+##### Run() method
 ### AddFriendFrame Class
 #### Description
 #### Testing
@@ -36,6 +38,7 @@ Test Edit
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
+##### Run() method
 ### EditAccountFrame Class
 #### Description
 #### Testing
@@ -44,6 +47,7 @@ Test Edit
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
+##### Run() method
 ### EditProfileFrame Class
 #### Description
 #### Testing
@@ -52,6 +56,7 @@ Test Edit
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
+##### Run() method
 ### LoginFrame Class
 #### Description
 #### Testing
@@ -60,6 +65,7 @@ Test Edit
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
+##### Run() method
 ### Profile Class
 #### Description
 #### Testing
@@ -82,6 +88,7 @@ Test Edit
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
+##### Run() method
 ### ProfileMenuFrame Class
 #### Description
 #### Testing
@@ -90,6 +97,7 @@ Test Edit
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
+##### Run() method
 ### ProfileServer Class
 #### Description
 #### Testing
@@ -105,6 +113,7 @@ Test Edit
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
+##### Run() method
 ### User Class
 #### Description
 #### Testing
@@ -120,3 +129,4 @@ Test Edit
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
+##### Run() method
