@@ -17,7 +17,7 @@ public class Profile implements Serializable {
     private String aboutMe;
 
     /**
-     * Creates a new Profile with the provided details
+     * creates a new Profile with the provided details
      *
      * @param phoneNumber       phone number of the user
      * @param relationship      relationship status of the user
@@ -37,7 +37,7 @@ public class Profile implements Serializable {
     }
 
     /**
-     * Gets phone number
+     * gets phone number
      *
      * @return phoneNumber
      */
@@ -46,7 +46,7 @@ public class Profile implements Serializable {
     }
 
     /**
-     * Gets relationship status
+     * gets relationship status
      *
      * @return relationship
      */
@@ -55,7 +55,7 @@ public class Profile implements Serializable {
     }
 
     /**
-     * Gets gender
+     * gets gender
      *
      * @return gender
      */
@@ -64,7 +64,7 @@ public class Profile implements Serializable {
     }
 
     /**
-     * Gets current occupation
+     * gets current occupation
      *
      * @return currentOccupation
      */
@@ -73,7 +73,7 @@ public class Profile implements Serializable {
     }
 
     /**
-     * Gets interest
+     * gets interest
      *
      * @return interest
      */
@@ -82,7 +82,7 @@ public class Profile implements Serializable {
     }
 
     /**
-     * Gets about me page
+     * gets about me page
      *
      * @return aboutMe
      */
@@ -91,42 +91,54 @@ public class Profile implements Serializable {
     }
 
     /**
-     * Sets phone number
+     * sets phone number
+     *
+     * @param phoneNumber new phone number to set
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     /**
-     * Sets relationship status
+     * sets relationship status
+     *
+     * @param relationship new relationship status
      */
     public void setRelationship(String relationship) {
         this.relationship = relationship;
     }
 
     /**
-     * Sets gender
+     * sets gender
+     *
+     * @param gender new gender to set
      */
     public void setGender(String gender) {
         this.gender = gender;
     }
 
     /**
-     * Sets new current occupation
+     * sets new current occupation
+     *
+     * @param currentOccupation new occupation to set
      */
     public void setCurrentOccupation(String currentOccupation) {
         this.currentOccupation = currentOccupation;
     }
 
     /**
-     * Sets interest
+     * sets interest
+     *
+     * @param interest new interests to set
      */
     public void setInterest(String interest) {
         this.interest = interest;
     }
 
     /**
-     * Sets about me page
+     * sets about me page
+     *
+     * @param aboutMe new about me page to set
      */
     public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;

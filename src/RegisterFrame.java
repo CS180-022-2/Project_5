@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+
 /**
  * Project 05 - Social Network "Profile" Application
  *
@@ -30,7 +31,6 @@ import javax.swing.SwingUtilities;
  * @author Group 022-2
  * @version November 30, 2020
  */
-
 public class RegisterFrame extends JComponent implements Runnable{
     Socket socket;
     BufferedReader bufferedReader;

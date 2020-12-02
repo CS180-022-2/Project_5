@@ -9,17 +9,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the profile details of the user in a separate frame.
- *
+ * <p>
  * Profile details include: Phone Number, Current Occupation, About Me, Interests, Gender, and Relationship Status
  *
  * @author Group 022-2
  * @version November 30, 2020
  */
-
 public class ProfileDisplayFrame extends JComponent implements Runnable {
     Socket socket;
     String viewerId;
@@ -54,7 +54,9 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
                     profileDisplayFrame.dispose();
                 }
             }
-        }};
+        }
+    };
+
     public ProfileDisplayFrame(Socket socket, String viewerId, String profileOwnerId, String tracker) {
         this.socket = socket;
         this.viewerId = viewerId;
@@ -84,26 +86,26 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
         aboutMeTextField = new JTextField();
         interestLabel = new JLabel("Interests");
         interestField = new JTextField();
-        relationshipLabel  = new JLabel("Relationship Status");
-        relationshipList = new JComboBox<>(new String[] {"Single", "In relationship"});
+        relationshipLabel = new JLabel("Relationship Status");
+        relationshipList = new JComboBox<>(new String[]{"Single", "In relationship"});
         genderLabel = new JLabel("Gender");
-        genderList = new JComboBox<>(new String[] {"Male", "Female", "I do not wish to identify"});
+        genderList = new JComboBox<>(new String[]{"Male", "Female", "I do not wish to identify"});
         backButton = new JButton("Back");
 
         //Locate all components
         userPhoneNoLabel.setBounds(90, 10, 100, 30);
-        userPhoneNoTextField.setBounds(220, 10 , 100, 30);
-        currentOccupationLabel.setBounds(90, 50 , 120, 30);
-        currentOccupationTextField.setBounds(220, 50 , 100, 30);
+        userPhoneNoTextField.setBounds(220, 10, 100, 30);
+        currentOccupationLabel.setBounds(90, 50, 120, 30);
+        currentOccupationTextField.setBounds(220, 50, 100, 30);
         aboutMeLabel.setBounds(90, 90, 80, 30);
-        aboutMeTextField.setBounds(220, 90 , 100, 30);
+        aboutMeTextField.setBounds(220, 90, 100, 30);
         genderLabel.setBounds(90, 130, 100, 30);
         genderList.setBounds(220, 130, 100, 30);
         relationshipLabel.setBounds(90, 170, 120, 30);
         relationshipList.setBounds(220, 170, 100, 30);
-        interestLabel.setBounds(90, 210 , 100, 30);
-        interestField.setBounds(220, 210 , 100, 30);
-        backButton.setBounds(140,310, 120, 30);
+        interestLabel.setBounds(90, 210, 100, 30);
+        interestField.setBounds(220, 210, 100, 30);
+        backButton.setBounds(140, 310, 120, 30);
         backButton.addActionListener(actionListener);
 
         printWriter.println("GetProfileContent");

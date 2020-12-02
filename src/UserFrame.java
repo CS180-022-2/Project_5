@@ -14,17 +14,17 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the frame displaying the friend list of the user in the application.
- *
+ * <p>
  * The user is able to see the profile of users in the friend list and delete them from the friend list.
  *
  * @author Group 022-2
  * @version November 30, 2020
  */
-
 public class UserFrame extends JComponent implements Runnable {
     Socket socket;
     BufferedReader bufferedReader;
@@ -86,8 +86,8 @@ public class UserFrame extends JComponent implements Runnable {
                                 "You have successfully deleted a friend",
                                 "Success", JOptionPane.INFORMATION_MESSAGE);
                     } else {
-                    JOptionPane.showMessageDialog(null,
-                            "Unable to delete friend", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null,
+                                "Unable to delete friend", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                     model = updateModel(userId);
                     jTable.setModel(model);
@@ -260,7 +260,7 @@ public class UserFrame extends JComponent implements Runnable {
                 e.printStackTrace();
             }
         }
-        return new DefaultTableModel(rowData, columnName){
+        return new DefaultTableModel(rowData, columnName) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
