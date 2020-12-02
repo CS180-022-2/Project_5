@@ -48,6 +48,11 @@ public class UserFrame extends JComponent implements Runnable {
     JMenuItem deleteFriend;
 
     ActionListener popupItemListener = new ActionListener() {
+        /**
+         *
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             JMenuItem menuChoice = (JMenuItem) e.getSource();
@@ -98,6 +103,11 @@ public class UserFrame extends JComponent implements Runnable {
     };
 
     ActionListener buttonActionListener = new ActionListener() {
+        /**
+         *
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == back) {
@@ -115,11 +125,20 @@ public class UserFrame extends JComponent implements Runnable {
         }
     };
 
+    /**
+     *
+     *
+     * @param socket
+     * @param userId
+     */
     public UserFrame(Socket socket, String userId) {
         this.socket = socket;
         this.userId = userId;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
 
@@ -173,6 +192,11 @@ public class UserFrame extends JComponent implements Runnable {
         userFrame.add(panel2, BorderLayout.CENTER);
 
         jtfFilter.getDocument().addDocumentListener(new DocumentListener() {
+            /**
+             *
+             *
+             * @param e
+             */
             @Override
             public void insertUpdate(DocumentEvent e) {
                 String text = jtfFilter.getText();
@@ -184,6 +208,11 @@ public class UserFrame extends JComponent implements Runnable {
                 }
             }
 
+            /**
+             *
+             *
+             * @param e
+             */
             @Override
             public void removeUpdate(DocumentEvent e) {
                 String text = jtfFilter.getText();
@@ -195,6 +224,11 @@ public class UserFrame extends JComponent implements Runnable {
                 }
             }
 
+            /**
+             *
+             *
+             * @param e
+             */
             @Override
             public void changedUpdate(DocumentEvent e) {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -226,6 +260,12 @@ public class UserFrame extends JComponent implements Runnable {
         userFrame.setVisible(true);
     }
 
+    /**
+     *
+     *
+     * @param userId
+     * @return
+     */
     public DefaultTableModel updateModel(String userId) {
         printWriter.println("GetFriendList");
         printWriter.println(userId);
@@ -261,6 +301,13 @@ public class UserFrame extends JComponent implements Runnable {
             }
         }
         return new DefaultTableModel(rowData, columnName) {
+            /**
+             *
+             *
+             * @param row
+             * @param column
+             * @return
+             */
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;

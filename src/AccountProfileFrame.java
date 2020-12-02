@@ -9,19 +9,19 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import javax.swing.*;
+
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the frame that serves as an intermediary for creation, edition, and deletion of
  * both user account and profile.
- *
+ * <p>
  * When the user wants to edit or delete their account, they can click "Account" button
  * and vice versa for their profile.
  *
  * @author Group 022-2
  * @version November 30, 2020
  */
-
 public class AccountProfileFrame extends JOptionPane implements Runnable {
     Socket socket;
     String userId;
@@ -33,6 +33,11 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
     JButton backButton;
 
     ActionListener actionListener = new ActionListener() {
+        /**
+         *
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
@@ -50,11 +55,20 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
         }
     };
 
+    /**
+     *
+     *
+     * @param socket
+     * @param userId
+     */
     public AccountProfileFrame(Socket socket, String userId) {
         this.socket = socket;
         this.userId = userId;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         try {
@@ -74,8 +88,8 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
         backButton = new JButton("Back to User Frame");
         //Set component location
         accountButton.setBounds(120, 50, 150, 30);
-        profileButton.setBounds(120, 100 , 150, 30);
-        backButton.setBounds(120,150, 150, 30);
+        profileButton.setBounds(120, 100, 150, 30);
+        backButton.setBounds(120, 150, 150, 30);
 
         //Add actionLister
         accountButton.addActionListener(actionListener);

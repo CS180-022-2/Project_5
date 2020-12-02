@@ -19,11 +19,11 @@ import javax.swing.SwingUtilities;
 
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the frame that will appear at the very beginning when the user starts the application.
- *
+ * <p>
  * Users will be able to login using their User ID and Password.
- *
+ * <p>
  * Note that they must first register before be able to login to the application.
  *
  * @author Group 022-2
@@ -42,14 +42,24 @@ public class LoginFrame extends JComponent implements Runnable {
     BufferedReader bufferedReader;
     PrintWriter printWriter;
 
+    /**
+     *
+     *
+     * @param socket
+     */
     public LoginFrame(Socket socket) {
         this.socket = socket;
     }
 
     ActionListener actionListener = new ActionListener() {
+        /**
+         *
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (e.getSource() == loginButton ) {
+            if (e.getSource() == loginButton) {
                 userId = userIdField.getText();
                 char[] rawPassword = passwordField.getPassword();
                 StringBuilder actualPassword = new StringBuilder();
@@ -72,8 +82,7 @@ public class LoginFrame extends JComponent implements Runnable {
                                     "Invalid username/password", "Login Failure",
                                     JOptionPane.INFORMATION_MESSAGE);
                             return;
-                        }
-                        else if (result.equals("DualLogin")) {
+                        } else if (result.equals("DualLogin")) {
                             JOptionPane.showMessageDialog(null,
                                     "Your account has already logged in ", "Login Failure",
                                     JOptionPane.INFORMATION_MESSAGE);
@@ -90,6 +99,9 @@ public class LoginFrame extends JComponent implements Runnable {
         }
     };
 
+    /**
+     *
+     */
     @Override
     public void run() {
         try {
@@ -106,18 +118,18 @@ public class LoginFrame extends JComponent implements Runnable {
         Container loginFrameContentPane = loginFrame.getContentPane();
         loginFrameContentPane.setLayout(null);
         userIdLabel = new JLabel("User ID");
-        userIdLabel.setBounds(150, 30 , 100, 30);
+        userIdLabel.setBounds(150, 30, 100, 30);
         userIdField = new JTextField();
         userIdField.setBounds(300, 30, 150, 30);
         passwordLabel = new JLabel("Password");
-        passwordLabel.setBounds(150, 80 , 100, 30);
+        passwordLabel.setBounds(150, 80, 100, 30);
         passwordField = new JPasswordField();
         passwordField.setBounds(300, 80, 150, 30);
         loginButton = new JButton("Login");
-        loginButton.setBounds(180, 160, 100 ,30);
+        loginButton.setBounds(180, 160, 100, 30);
         loginButton.addActionListener(actionListener);
         registerButton = new JButton("Register");
-        registerButton.setBounds(290, 160, 100 ,30);
+        registerButton.setBounds(290, 160, 100, 30);
         registerButton.addActionListener(actionListener);
 
         loginFrameContentPane.add(registerButton);

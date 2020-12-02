@@ -12,16 +12,16 @@ import javax.swing.*;
 
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the frame to edit the user account details.
- *
+ * <p>
  * Users can change their name, email address, and password except the user ID.
  * All the changed account details must conform to the respective validation rules.
  *
  * @author Group 022-2
  * @version November 30, 2020
  */
-public class EditAccountFrame extends JOptionPane implements Runnable{
+public class EditAccountFrame extends JOptionPane implements Runnable {
     Socket socket;
     String userId;
     BufferedReader bufferedReader;
@@ -39,6 +39,11 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
     JFrame editAccountFrame;
 
     ActionListener actionListener = new ActionListener() {
+        /**
+         *
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
@@ -49,8 +54,9 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
                 StringBuilder rawPassword = new StringBuilder();
                 rawPassword.append(passwordField.getPassword());
                 String realName = realNameTextField.getText();
-                String email = emailTextField.getText();;
-                if (!contentCheck(rawPassword.toString(), realName, email)){
+                String email = emailTextField.getText();
+                ;
+                if (!contentCheck(rawPassword.toString(), realName, email)) {
                     return;
                 }
                 /*printWriter.println("UniqueIdCheck");
@@ -92,11 +98,20 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
         }
     };
 
+    /**
+     *
+     *
+     * @param socket
+     * @param userId
+     */
     public EditAccountFrame(Socket socket, String userId) {
         this.socket = socket;
         this.userId = userId;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         try {
@@ -123,16 +138,16 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
         editAccountButton = new JButton("Edit");
         backButton = new JButton("Back to Menu");
         //Set component location
-        userIdLabel.setBounds(110, 20 , 80, 30);
-        userIdTextField.setBounds(200, 20 , 100, 30);
-        passwordLabel.setBounds(110, 60 , 80, 30);
-        passwordField.setBounds(200, 60 , 100, 30);
+        userIdLabel.setBounds(110, 20, 80, 30);
+        userIdTextField.setBounds(200, 20, 100, 30);
+        passwordLabel.setBounds(110, 60, 80, 30);
+        passwordField.setBounds(200, 60, 100, 30);
         realNameLabel.setBounds(110, 100, 80, 30);
-        realNameTextField.setBounds(200, 100 , 100, 30);
-        emailLabel.setBounds(110, 140 , 50, 30);
-        emailTextField.setBounds(200, 140 , 100, 30);
-        editAccountButton.setBounds(140, 190 , 120, 30);
-        backButton.setBounds(140,225, 120, 30);
+        realNameTextField.setBounds(200, 100, 100, 30);
+        emailLabel.setBounds(110, 140, 50, 30);
+        emailTextField.setBounds(200, 140, 100, 30);
+        editAccountButton.setBounds(140, 190, 120, 30);
+        backButton.setBounds(140, 225, 120, 30);
 
         //Add actionLister
         editAccountButton.addActionListener(actionListener);
@@ -175,6 +190,14 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
         editAccountFrame.setVisible(true);
     }
 
+    /**
+     *
+     *
+     * @param password
+     * @param realName
+     * @param email
+     * @return
+     */
     public boolean contentCheck(String password, String realName, String email) {
         boolean correct = true;
 
@@ -197,7 +220,7 @@ public class EditAccountFrame extends JOptionPane implements Runnable{
             correct = false;
         }
         if (!realName.matches("[A-Za-z]+?[\\-]+?[A-Za-z]+ ?[A-Za-z]+") &&
-            !realName.matches("[A-Za-z]+ [A-Za-z]+ ?[A-Za-z]+")) {
+                !realName.matches("[A-Za-z]+ [A-Za-z]+ ?[A-Za-z]+")) {
             JOptionPane.showMessageDialog(null, "Real Name must have a first"
                             + " name and a last name.\nA space needs to appear between the first name and next"
                             + " name.\nMiddle name can be included.",
