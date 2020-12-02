@@ -9,3 +9,5 @@ To design and implement a limited form of social network application.
 This document will include the following for each class: 
 1. A detailed description.
 2. Descriptions of the testing done on that class. For GUI testing, provide step-by-step guidance on the tests performed. 
+
+Test Edit
