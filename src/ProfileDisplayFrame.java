@@ -43,6 +43,11 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
     JButton backButton;
 
     ActionListener actionListener = new ActionListener() {
+        /**
+         *
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
@@ -57,6 +62,14 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
         }
     };
 
+    /**
+     *
+     *
+     * @param socket
+     * @param viewerId
+     * @param profileOwnerId
+     * @param tracker
+     */
     public ProfileDisplayFrame(Socket socket, String viewerId, String profileOwnerId, String tracker) {
         this.socket = socket;
         this.viewerId = viewerId;
@@ -64,6 +77,10 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
         this.tracker = tracker;
     }
 
+    /**
+     *
+     *
+     */
     @Override
     public void run() {
         try {
@@ -202,6 +219,5 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
             }
         });
         profileDisplayFrame.setVisible(true);
-
     }
 }

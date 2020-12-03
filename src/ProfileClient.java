@@ -5,9 +5,9 @@ import javax.swing.SwingUtilities;
 
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the client-side of our application.
- *
+ * <p>
  * This class includes the main method and invokes the Login frame of our application when begin.
  *
  * @author Group 022-2

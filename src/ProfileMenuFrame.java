@@ -12,9 +12,9 @@ import javax.swing.*;
 
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the frame that gives users the option to either create, edit, or delete their profiles.
- *
+ * <p>
  * Note that this only provides an option by displaying buttons. Details of creation, edition, or deletion
  * happens in a separate frame when the user clicks the respective button to function.
  *
@@ -32,6 +32,11 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
     JButton backButton;
 
     ActionListener actionListener = new ActionListener() {
+        /**
+         *
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
@@ -72,11 +77,20 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         }
     };
 
+    /**
+     *
+     *
+     * @param socket
+     * @param userId
+     */
     public ProfileMenuFrame(Socket socket, String userId) {
         this.socket = socket;
         this.userId = userId;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         try {
@@ -95,9 +109,9 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         editProfileButton = new JButton("Create / Edit Profile");
         backButton = new JButton("Back to Menu Frame");
         //Set component location
-        editProfileButton.setBounds(120, 50 , 160, 30);
-        deleteProfileButton.setBounds(120, 100 , 160, 30);
-        backButton.setBounds(120,150, 160, 30);
+        editProfileButton.setBounds(120, 50, 160, 30);
+        deleteProfileButton.setBounds(120, 100, 160, 30);
+        backButton.setBounds(120, 150, 160, 30);
 
         //Add actionLister
         deleteProfileButton.addActionListener(actionListener);

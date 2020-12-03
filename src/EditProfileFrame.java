@@ -12,9 +12,9 @@ import javax.swing.*;
 
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the frame to edit the details of the user profile.
- *
+ * <p>
  * All the changed profile details must conform to the respective validation rules.
  *
  * @author Group 022-2
@@ -42,6 +42,12 @@ public class EditProfileFrame extends JComponent implements Runnable {
     JButton backButton;
 
     ActionListener actionListener = new ActionListener() {
+
+        /**
+         *
+         *
+         * @param e action event to listen to
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
@@ -99,11 +105,20 @@ public class EditProfileFrame extends JComponent implements Runnable {
         }
     };
 
+    /**
+     *
+     *
+     * @param socket
+     * @param userId
+     */
     public EditProfileFrame(Socket socket, String userId) {
         this.socket = socket;
         this.userId = userId;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         try {
@@ -127,27 +142,27 @@ public class EditProfileFrame extends JComponent implements Runnable {
         aboutMeTextField = new JTextField();
         interestLabel = new JLabel("Interests");
         interestField = new JTextField();
-        relationshipLabel  = new JLabel("Relationship Status");
-        relationshipList = new JComboBox<>(new String[] {"Single", "In relationship"});
+        relationshipLabel = new JLabel("Relationship Status");
+        relationshipList = new JComboBox<>(new String[]{"Single", "In relationship"});
         genderLabel = new JLabel("Gender");
-        genderList = new JComboBox<>(new String[] {"Male", "Female", "I do not wish to identify"});
+        genderList = new JComboBox<>(new String[]{"Male", "Female", "I do not wish to identify"});
         editProfileButton = new JButton("Edit Profile");
         backButton = new JButton("Back to menu");
         //Set component location
         userPhoneNoLabel.setBounds(90, 10, 100, 30);
-        userPhoneNoTextField.setBounds(220, 10 , 100, 30);
-        currentOccupationLabel.setBounds(90, 50 , 120, 30);
-        currentOccupationTextField.setBounds(220, 50 , 100, 30);
+        userPhoneNoTextField.setBounds(220, 10, 100, 30);
+        currentOccupationLabel.setBounds(90, 50, 120, 30);
+        currentOccupationTextField.setBounds(220, 50, 100, 30);
         aboutMeLabel.setBounds(90, 90, 80, 30);
-        aboutMeTextField.setBounds(220, 90 , 100, 30);
+        aboutMeTextField.setBounds(220, 90, 100, 30);
         genderLabel.setBounds(90, 130, 100, 30);
         genderList.setBounds(220, 130, 100, 30);
         relationshipLabel.setBounds(90, 170, 120, 30);
         relationshipList.setBounds(220, 170, 100, 30);
-        interestLabel.setBounds(90, 210 , 100, 30);
-        interestField.setBounds(220, 210 , 100, 30);
-        editProfileButton.setBounds(140, 270 , 120, 30);
-        backButton.setBounds(140,310, 120, 30);
+        interestLabel.setBounds(90, 210, 100, 30);
+        interestField.setBounds(220, 210, 100, 30);
+        editProfileButton.setBounds(140, 270, 120, 30);
+        backButton.setBounds(140, 310, 120, 30);
 
         //Add actionListener
         editProfileButton.addActionListener(actionListener);
@@ -243,6 +258,17 @@ public class EditProfileFrame extends JComponent implements Runnable {
         editProfileFrame.setVisible(true);
     }
 
+    /**
+     *
+     *
+     * @param userPhoneNo
+     * @param currentOccupation
+     * @param aboutMe
+     * @param interest
+     * @param gender
+     * @param relationship
+     * @return
+     */
     public boolean contentCheck(String userPhoneNo, String currentOccupation, String aboutMe, String interest,
                                 String gender, String relationship) {
         boolean correct = true;

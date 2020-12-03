@@ -9,18 +9,18 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import javax.swing.*;
+
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the frame that gives users the option to either edit, or delete their accounts.
- *
+ * <p>
  * Note that this only provides an option by displaying buttons. Details of edition, or deletion
  * happens in a separate frame when the user clicks the respective button to function.
  *
  * @author Group 022-2
  * @version November 30, 2020
  */
-
 public class AccountMenuFrame extends JOptionPane implements Runnable {
     Socket socket;
     String userId;
@@ -32,6 +32,11 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
     JButton backButton;
 
     ActionListener actionListener = new ActionListener() {
+        /**
+         *
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
@@ -60,7 +65,7 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
                         case "Success" -> {
                             JOptionPane.showMessageDialog(null, "Congratulations! " +
                                             "You have successfully deleted your account!\n" +
-                                    "You will be redirected to Login Page.",
+                                            "You will be redirected to Login Page.",
                                     "Account deletion Successful", JOptionPane.INFORMATION_MESSAGE);
                             SwingUtilities.invokeLater(new LoginFrame(socket));
                             accountMenuFrame.dispose();
@@ -74,11 +79,20 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
         }
     };
 
+    /**
+     *
+     *
+     * @param socket
+     * @param userId
+     */
     public AccountMenuFrame(Socket socket, String userId) {
         this.socket = socket;
         this.userId = userId;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         try {
@@ -98,8 +112,8 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
         backButton = new JButton("Back to Menu Frame");
         //Set component location
         editAccountButton.setBounds(120, 50, 160, 30);
-        deleteAccountButton.setBounds(120, 100 , 160, 30);
-        backButton.setBounds(120,150, 160, 30);
+        deleteAccountButton.setBounds(120, 100, 160, 30);
+        backButton.setBounds(120, 150, 160, 30);
 
         //Add actionLister
         editAccountButton.addActionListener(actionListener);

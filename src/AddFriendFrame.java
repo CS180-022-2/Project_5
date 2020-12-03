@@ -22,7 +22,7 @@ import javax.swing.JTable;
 
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the frame to send friend requests to another users, view a list of all the application's users,
  * search a specific user among all the application's users, view the requested friend list and the pending friend list.
  *
@@ -31,7 +31,7 @@ import javax.swing.JTable;
  */
 public class AddFriendFrame extends JPanel implements Runnable {
 
-    private  final String[] columnName = {"Name", "ID", "About Me"};
+    private final String[] columnName = {"Name", "ID", "About Me"};
 
     JFrame addFriendFrame;
     JButton back;
@@ -64,6 +64,11 @@ public class AddFriendFrame extends JPanel implements Runnable {
     String userId;
 
     ActionListener actionListener = new ActionListener() {
+        /**
+         *
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == back) {
@@ -215,11 +220,21 @@ public class AddFriendFrame extends JPanel implements Runnable {
             updateAll();
         }
     };
+
+    /**
+     *
+     *
+     * @param socket
+     * @param userId
+     */
     public AddFriendFrame(Socket socket, String userId) {
         this.socket = socket;
         this.userId = userId;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
 
@@ -245,9 +260,9 @@ public class AddFriendFrame extends JPanel implements Runnable {
         addFriendFrame = new JFrame("Add Friend");
         allUserTable.setRowSorter(rowSorter);
 
-        jScrollPane = new JScrollPane(allUserTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScrollPane2 = new JScrollPane(pendingTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScrollPane3 = new JScrollPane(requestTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane = new JScrollPane(allUserTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane2 = new JScrollPane(pendingTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane3 = new JScrollPane(requestTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
         //JPopupMenu on user list
         JPopupMenu popupMenu = new JPopupMenu();
@@ -287,11 +302,11 @@ public class AddFriendFrame extends JPanel implements Runnable {
         jScrollPane2.setPreferredSize(new Dimension(300, 400));
         jScrollPane3.setPreferredSize(new Dimension(300, 400));
         JPanel left = new JPanel(new BorderLayout());
-        left.add(friend,BorderLayout.NORTH);
+        left.add(friend, BorderLayout.NORTH);
         left.add(jScrollPane3, BorderLayout.CENTER);
         left.setVisible(true);
         JPanel center = new JPanel(new BorderLayout());
-        center.add(top,BorderLayout.NORTH);
+        center.add(top, BorderLayout.NORTH);
         center.add(jScrollPane, BorderLayout.CENTER);
         center.setVisible(true);
         JPanel right = new JPanel(new BorderLayout());
@@ -304,8 +319,12 @@ public class AddFriendFrame extends JPanel implements Runnable {
         panel.add(right);
         addFriendFrame.add(panel, BorderLayout.CENTER);
 
-        jtfFilter.getDocument().addDocumentListener(new DocumentListener(){
-
+        jtfFilter.getDocument().addDocumentListener(new DocumentListener() {
+            /**
+             *
+             *
+             * @param e
+             */
             @Override
             public void insertUpdate(DocumentEvent e) {
                 String text = jtfFilter.getText();
@@ -317,6 +336,11 @@ public class AddFriendFrame extends JPanel implements Runnable {
                 }
             }
 
+            /**
+             *
+             *
+             * @param e
+             */
             @Override
             public void removeUpdate(DocumentEvent e) {
                 String text = jtfFilter.getText();
@@ -328,6 +352,11 @@ public class AddFriendFrame extends JPanel implements Runnable {
                 }
             }
 
+            /**
+             *
+             *
+             * @param e
+             */
             @Override
             public void changedUpdate(DocumentEvent e) {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -367,7 +396,12 @@ public class AddFriendFrame extends JPanel implements Runnable {
         addFriendFrame.setVisible(true);
     }
 
-    public DefaultTableModel updateAllUserModel () {
+    /**
+     *
+     *
+     * @return
+     */
+    public DefaultTableModel updateAllUserModel() {
         String[][] rowData = new String[0][0];
         printWriter.println("GetUserList");
         printWriter.println(userId);
@@ -404,7 +438,13 @@ public class AddFriendFrame extends JPanel implements Runnable {
             }
         };
     }
-    public DefaultTableModel updatePendingModel () {
+
+    /**
+     *
+     *
+     * @return
+     */
+    public DefaultTableModel updatePendingModel() {
         String[][] rowData = new String[0][0];
         printWriter.println("GetPendingList");
         printWriter.println(userId);
@@ -446,7 +486,13 @@ public class AddFriendFrame extends JPanel implements Runnable {
             }
         };
     }
-    public DefaultTableModel updateRequestModel () {
+
+    /**
+     *
+     *
+     * @return
+     */
+    public DefaultTableModel updateRequestModel() {
         String[][] rowData = new String[0][0];
         printWriter.println("GetRequestList");
         printWriter.println(userId);
@@ -481,13 +527,17 @@ public class AddFriendFrame extends JPanel implements Runnable {
                 e.printStackTrace();
             }
         }
-        return new DefaultTableModel(rowData, columnName){
+        return new DefaultTableModel(rowData, columnName) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
     }
+
+    /**
+     *
+     */
     public void updateAll() {
         allUserTable.setModel(updateAllUserModel());
         requestTable.setModel(updateRequestModel());

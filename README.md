@@ -66,6 +66,10 @@ Test Edit
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
 ##### Run() method
+This method set up the appearance of the frame    
+
+<img width="440" alt="loginFrame" src="https://user-images.githubusercontent.com/74845705/100880218-70d48e00-34e7-11eb-924e-7f10ba089471.png">
+
 ### Profile Class
 #### Description
 #### Testing

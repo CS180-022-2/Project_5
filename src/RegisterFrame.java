@@ -19,19 +19,19 @@ import javax.swing.SwingUtilities;
 
 /**
  * Project 05 - Social Network "Profile" Application
- *
+ * <p>
  * A class representing the frame that allows the users to register for this application.
  * All users must register before being able to login to the application.
- *
+ * <p>
  * Note that the user ID they set for the first time will be permanent throughout - they cannot change their user ID
  * by editing their account details.
- *
+ * <p>
  * All the account details must conform to the respective validation rules.
  *
  * @author Group 022-2
  * @version November 30, 2020
  */
-public class RegisterFrame extends JComponent implements Runnable{
+public class RegisterFrame extends JComponent implements Runnable {
     Socket socket;
     BufferedReader bufferedReader;
     PrintWriter printWriter;
@@ -48,6 +48,11 @@ public class RegisterFrame extends JComponent implements Runnable{
     JButton backButton;
 
     ActionListener actionListener = new ActionListener() {
+        /**
+         *
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == backButton) {
@@ -60,7 +65,7 @@ public class RegisterFrame extends JComponent implements Runnable{
                 rawPassword.append(passwordField.getPassword());
                 String realName = realNameTextField.getText();
                 String email = emailTextField.getText();
-                if (!contentCheck(userId, rawPassword.toString(), realName, email)){
+                if (!contentCheck(userId, rawPassword.toString(), realName, email)) {
                     return;
                 }
                 printWriter.println("UniqueIdCheck");
@@ -102,10 +107,18 @@ public class RegisterFrame extends JComponent implements Runnable{
         }
     };
 
+    /**
+     *
+     *
+     * @param socket
+     */
     public RegisterFrame(Socket socket) {
         this.socket = socket;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         try {
@@ -132,16 +145,16 @@ public class RegisterFrame extends JComponent implements Runnable{
         registerButton = new JButton("Register");
         backButton = new JButton("Back to login");
         //Set component location
-        userIdLabel.setBounds(110, 20 , 80, 30);
-        userIdTextField.setBounds(200, 20 , 100, 30);
-        passwordLabel.setBounds(110, 60 , 80, 30);
-        passwordField.setBounds(200, 60 , 100, 30);
+        userIdLabel.setBounds(110, 20, 80, 30);
+        userIdTextField.setBounds(200, 20, 100, 30);
+        passwordLabel.setBounds(110, 60, 80, 30);
+        passwordField.setBounds(200, 60, 100, 30);
         realNameLabel.setBounds(110, 100, 80, 30);
-        realNameTextField.setBounds(200, 100 , 100, 30);
-        emailLabel.setBounds(110, 140 , 50, 30);
-        emailTextField.setBounds(200, 140 , 100, 30);
-        registerButton.setBounds(140, 190 , 120, 30);
-        backButton.setBounds(140,225, 120, 30);
+        realNameTextField.setBounds(200, 100, 100, 30);
+        emailLabel.setBounds(110, 140, 50, 30);
+        emailTextField.setBounds(200, 140, 100, 30);
+        registerButton.setBounds(140, 190, 120, 30);
+        backButton.setBounds(140, 225, 120, 30);
 
         //Add actionLister
         registerButton.addActionListener(actionListener);
@@ -183,6 +196,16 @@ public class RegisterFrame extends JComponent implements Runnable{
         });
         registerFrame.setVisible(true);
     }
+
+    /**
+     *
+     *
+     * @param userId
+     * @param password
+     * @param realName
+     * @param email
+     * @return
+     */
     public boolean contentCheck(String userId, String password, String realName, String email) {
         boolean correct = true;
         if (!userId.matches("^[a-zA-Z0-9_-][^%+\\\\/#@*:;`~<>?!.,'\"]+$")) {
@@ -211,7 +234,7 @@ public class RegisterFrame extends JComponent implements Runnable{
             correct = false;
         }
         if (!realName.matches("[A-Za-z]+?[\\-]+?[A-Za-z]+ ?[A-Za-z]+") &&
-            !realName.matches("[A-Za-z]+ [A-Za-z]+ ?[A-Za-z]+")) {
+                !realName.matches("[A-Za-z]+ [A-Za-z]+ ?[A-Za-z]+")) {
             JOptionPane.showMessageDialog(null, "Real Name must have a first"
                             + " name and a last name.\nA space needs to appear between the first name and next"
                             + " name\nMiddle name can be included.",
