@@ -91,7 +91,8 @@ public class UserFrame extends JComponent implements Runnable {
                     }
                     model = updateModel(userId);
                     jTable.setModel(model);
-                    jTable.repaint();
+                    jTable.setRowSorter(new TableRowSorter<>(model));
+                    userFrame.repaint();
                 }
             }
         }
