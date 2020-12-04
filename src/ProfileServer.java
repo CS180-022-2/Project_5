@@ -2,7 +2,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.io.*;
-
 /**
  * Project 05 - Social Network "Profile" Application
  * <p>
@@ -13,6 +12,7 @@ import java.io.*;
  * @author Group 022-2
  * @version November 30, 2020
  */
+
 public class ProfileServer implements Runnable {
     Socket socket;
     public static ArrayList<User> userArrayList;

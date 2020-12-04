@@ -14,7 +14,6 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-
 /**
  * Project 05 - Social Network "Profile" Application
  * <p>
@@ -25,6 +24,7 @@ import javax.swing.table.TableRowSorter;
  * @author Group 022-2
  * @version November 30, 2020
  */
+
 public class UserFrame extends JComponent implements Runnable {
     Socket socket;
     BufferedReader bufferedReader;

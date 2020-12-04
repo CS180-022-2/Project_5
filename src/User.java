@@ -1,6 +1,5 @@
 import java.io.Serializable;
 import java.util.ArrayList;
-
 /**
  * Project 05 - Social Network "Profile" Application
  * <p>
@@ -9,6 +8,7 @@ import java.util.ArrayList;
  * @author Group 022-2
  * @version November 30, 2020
  */
+
 public class User implements Serializable {
     private String userId;
     private String password;

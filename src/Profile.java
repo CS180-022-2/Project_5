@@ -1,5 +1,4 @@
 import java.io.Serializable;
-
 /**
  * Project 05 - Social Network "Profile" Application
  * <p>
@@ -8,6 +7,7 @@ import java.io.Serializable;
  * @author Group 022-2
  * @version November 30, 2020
  */
+
 public class Profile implements Serializable {
     private String phoneNumber;
     private String relationship;

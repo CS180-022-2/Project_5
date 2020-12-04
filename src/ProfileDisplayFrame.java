@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-
 /**
  * Project 05 - Social Network "Profile" Application
  * <p>
@@ -20,6 +19,7 @@ import java.net.Socket;
  * @author Group 022-2
  * @version November 30, 2020
  */
+
 public class ProfileDisplayFrame extends JComponent implements Runnable {
     Socket socket;
     String viewerId;
