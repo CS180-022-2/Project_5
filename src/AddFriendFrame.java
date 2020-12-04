@@ -542,7 +542,8 @@ public class AddFriendFrame extends JPanel implements Runnable {
         allUserTable.setModel(updateAllUserModel());
         requestTable.setModel(updateRequestModel());
         pendingTable.setModel(updatePendingModel());
-        allUserTable.setRowSorter(new TableRowSorter<>(allUserTable.getModel()));
+        rowSorter.setModel(allUserTable.getModel());
+        allUserTable.setRowSorter(rowSorter);
         addFriendFrame.repaint();
     }
 }
