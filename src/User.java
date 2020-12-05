@@ -21,6 +21,7 @@ public class User implements Serializable {
 
     /**
      * Creates a User object with the specified parameters
+     * Three empty arraylist and a profile with empty string would be constructed
      *
      * @param userId   the user's ID
      * @param password the user's Password

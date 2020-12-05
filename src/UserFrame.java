@@ -20,6 +20,7 @@ import javax.swing.table.TableRowSorter;
  * A class representing the frame displaying the friend list of the user in the application.
  * <p>
  * The user is able to see the profile of users in the friend list and delete them from the friend list.
+ * Use a JTable to display all users
  *
  * @author Group 022-2
  * @version November 30, 2020
@@ -49,9 +50,7 @@ public class UserFrame extends JComponent implements Runnable {
 
     ActionListener popupItemListener = new ActionListener() {
         /**
-         *
-         *
-         * @param e
+         * @param e invoked when any of the choice of the popup menu is selected.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -128,10 +127,10 @@ public class UserFrame extends JComponent implements Runnable {
     };
 
     /**
+     * The constructor of UserFrame which use two parameters : socket and userId
      *
-     *
-     * @param socket
-     * @param userId
+     * @param socket The socket that connect this computer connect with the server
+     * @param userId The userId of the login user
      */
     public UserFrame(Socket socket, String userId) {
         this.socket = socket;
@@ -227,9 +226,7 @@ public class UserFrame extends JComponent implements Runnable {
             }
 
             /**
-             *
-             *
-             * @param e
+             * @param e DocumentEvent e which is when user change the text inside the jtfFilter JTextField
              */
             @Override
             public void changedUpdate(DocumentEvent e) {
@@ -263,10 +260,10 @@ public class UserFrame extends JComponent implements Runnable {
     }
 
     /**
+     *The method that communicate with the server and get the updated userInfo in the login user's friendList
      *
-     *
-     * @param userId
-     * @return
+     * @param userId The id of the login user
+     * @return return the updated model with the content of current friendList
      */
     public DefaultTableModel updateModel(String userId) {
         printWriter.println("GetFriendList");
@@ -306,9 +303,9 @@ public class UserFrame extends JComponent implements Runnable {
             /**
              *
              *
-             * @param row
-             * @param column
-             * @return
+             * @param row Row of Data
+             * @param column The column head
+             * @return return a DefaultTableModel with the parameter and override its isCellEditable to return false
              */
             @Override
             public boolean isCellEditable(int row, int column) {
