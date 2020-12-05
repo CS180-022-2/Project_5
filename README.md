@@ -14,6 +14,10 @@ In situation where the user needs to select a line and engage action, the below 
 
 <img width="196" alt="selectLine" src="https://user-images.githubusercontent.com/74845705/101247930-3f61f980-3757-11eb-961d-9709fbf044f4.png">
 
+In situation where the user needs to input info for account or profile, something like the below prompt will appear if they input something invalid
+
+<img width="428" alt="rerror1" src="https://user-images.githubusercontent.com/74845705/101247963-84862b80-3757-11eb-9969-f80adc369654.png">
+
 ### AccountMenuFrame Class
 #### Description
 #### Testing
