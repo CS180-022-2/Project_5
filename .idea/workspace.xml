@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainData.dat" beforeDir="false" afterPath="$PROJECT_DIR$/MainData.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest$TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest$TestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddFriendFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddFriendFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditProfileFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +123,7 @@
       <workItem from="1607077984174" duration="3608000" />
       <workItem from="1607203646904" duration="710000" />
       <workItem from="1607250076883" duration="9132000" />
-      <workItem from="1607268197057" duration="3077000" />
+      <workItem from="1607268197057" duration="4120000" />
     </task>
     <servers />
   </component>
