@@ -486,11 +486,21 @@ public class ProfileServer implements Runnable {
                     }
                     case "EditOwnAccount" -> {
                         String userEdit = bufferedReader.readLine();
+                        User targetUser = null;
                         String[] splitUserEdit = userEdit.split(", ");
-                        userArrayList.removeIf(user -> user.getUserId().equals(splitUserEdit[0]));
-                        userArrayList.add(new User(splitUserEdit[0], splitUserEdit[1],
-                                splitUserEdit[2], splitUserEdit[3]));
-                        printWriter.println("Success");
+                        for (User user : userArrayList) {
+                            if (user.getUserId().equals(splitUserEdit[0])) {
+                                targetUser = user;
+                            }
+                        }
+                        if (targetUser != null) {
+                            targetUser.setPassword(splitUserEdit[1]);
+                            targetUser.setName(splitUserEdit[2]);
+                            targetUser.setEmail(splitUserEdit[3]);
+                            printWriter.println("Success");
+                        } else {
+                            printWriter.println("User not found");
+                        }
                         printWriter.flush();
                     }
                     case "DeleteOwnAccount" -> {
