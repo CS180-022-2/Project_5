@@ -1,4 +1,4 @@
-# Project_5
+# Project 5, Group 022-2
 ### CS 180 Capstone Project
 To design and implement a limited form of social network application. 
 
@@ -17,6 +17,9 @@ In situation where the user needs to select a line and engage action, the below 
 In situation where the user needs to input info for account or profile, something like the below prompt will appear if they input something invalid
 
 <img width="428" alt="rerror1" src="https://user-images.githubusercontent.com/74845705/101247963-84862b80-3757-11eb-9969-f80adc369654.png">
+
+## Instructions 
+Run the program by first running profileServer.java, then profileClient.java. The login GUI should pop up if everything is working. If profileClient.java cannot connect, check the socket id and port numbers. 
 
 ### AccountMenuFrame Class
 #### Description
