@@ -98,13 +98,17 @@ public class RunLocalTest {
 
             superinterfaces = clazz.getInterfaces();
 
-            Assert.assertTrue("Ensure that `"+ className +"` is `public`!", Modifier.isPublic(modifiers));
+            Assert.assertTrue("Ensure that `"+ className +
+                    "` is `public`!", Modifier.isPublic(modifiers));
 
-            Assert.assertFalse("Ensure that `"+ className +"` is NOT `abstract`!", Modifier.isAbstract(modifiers));
+            Assert.assertFalse("Ensure that `"+ className +
+                    "` is NOT `abstract`!", Modifier.isAbstract(modifiers));
 
-            Assert.assertEquals("Ensure that `"+ className +"` extends `JOptionPane`!", JOptionPane.class, superclass);
+            Assert.assertEquals("Ensure that `"+ className +
+                    "` extends `JOptionPane`!", JOptionPane.class, superclass);
 
-            Assert.assertEquals("Ensure that `"+ className +"` implements 'Runnable'", 1, superinterfaces.length);
+            Assert.assertEquals("Ensure that `"+ className +
+                    "` implements 'Runnable'", 1, superinterfaces.length);
 
         }
         @Test(timeout = 1_000)
@@ -145,9 +149,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountMenuFrameFieldDeclarationTest2() {
@@ -187,9 +193,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountMenuFrameFieldDeclarationTest3() {
@@ -229,9 +237,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountMenuFrameFieldDeclarationTest4() {
@@ -271,9 +281,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountMenuFrameFieldDeclarationTest5() {
@@ -313,9 +325,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountMenuFrameFieldDeclarationTest6() {
@@ -355,9 +369,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountMenuFrameFieldDeclarationTest7() {
@@ -397,9 +413,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountMenuFrameFieldDeclarationTest8() {
@@ -439,9 +457,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountMenuFrameFieldDeclarationTest9() {
@@ -481,9 +501,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountMenuFrameParameterizedConstructorDeclarationTest() {
@@ -508,9 +530,11 @@ public class RunLocalTest {
 
             exceptions = constructor.getExceptionTypes();
 
-            Assert.assertTrue("Ensure that `" + className + "`'s parameterized constructor is `public`!", Modifier.isPublic(modifiers));
+            Assert.assertTrue("Ensure that `" + className + "`'s parameterized constructor is `public`!",
+                    Modifier.isPublic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s parameterized constructor has an empty `throws` clause!", expectedLength, exceptions.length);
+            Assert.assertEquals("Ensure that `" + className + "`'s parameterized constructor " +
+                    "has an empty `throws` clause!", expectedLength, exceptions.length);
         }
         ///////////////////////////////////////////////////////////////////////
         // exempt
@@ -554,13 +578,17 @@ public class RunLocalTest {
 
             exceptions = method.getExceptionTypes();
 
-            Assert.assertTrue("Ensure that `" + className + "`'s `" + methodName + "` method is `public`!", Modifier.isPublic(modifiers));
+            Assert.assertTrue("Ensure that `" + className + "`'s `" + methodName
+                    + "` method is `public`!", Modifier.isPublic(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + methodName + "` method is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + methodName
+                    + "` method is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName + "` method has the correct return type!", expectedReturnType, actualReturnType);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName
+                    + "` method has the correct return type!", expectedReturnType, actualReturnType);
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName + "` method has an empty `throws` clause!", expectedLength, exceptions.length);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName
+                    + "` method has an empty `throws` clause!", expectedLength, exceptions.length);
 
         }
         /////////////////////////////////////////////////////////////////////////////
@@ -587,11 +615,14 @@ public class RunLocalTest {
 
             Assert.assertTrue("Ensure that `"+ className +"` is `public`!", Modifier.isPublic(modifiers));
 
-            Assert.assertFalse("Ensure that `"+ className +"` is NOT `abstract`!", Modifier.isAbstract(modifiers));
+            Assert.assertFalse("Ensure that `"+ className +"` is NOT `abstract`!",
+                    Modifier.isAbstract(modifiers));
 
-            Assert.assertEquals("Ensure that `"+ className +"` extends `JOptionPane`!", JOptionPane.class, superclass);
+            Assert.assertEquals("Ensure that `"+ className +"` extends `JOptionPane`!",
+                    JOptionPane.class, superclass);
 
-            Assert.assertEquals("Ensure that `"+ className +"` implements 'Runnable'", 1, superinterfaces.length);
+            Assert.assertEquals("Ensure that `"+ className +"` implements 'Runnable'",
+                    1, superinterfaces.length);
 
         }
         @Test(timeout = 1_000)
@@ -632,9 +663,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountProfileFrameFieldDeclarationTest2() {
@@ -674,9 +707,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountProfileFrameFieldDeclarationTest3() {
@@ -716,9 +751,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountProfileFrameFieldDeclarationTest4() {
@@ -758,9 +795,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountProfileFrameFieldDeclarationTest5() {
@@ -800,9 +839,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountProfileFrameFieldDeclarationTest6() {
@@ -842,9 +883,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
+                    + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void accountProfileFrameFieldDeclarationTest7() {
@@ -6529,9 +6572,11 @@ public class RunLocalTest {
 
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
 
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
+            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName +
+                    "` field is NOT `static`!", Modifier.isStatic(modifiers));
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName +
+                    "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
         public void printWriterFieldDeclarationTest() {
@@ -11064,9 +11109,6 @@ public class RunLocalTest {
             m = "login";
             Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.login("derek2", "Cs180==="));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.login("dere", "Cs180==="));
-            /*m = "dualLoginCheck";
-            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.dualLoginCheck("derek2"));
-            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", false, ps.dualLoginCheck("dere"));*/
             m = "getProfile";
             Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", ps.getProfile("derek2"), ps.getProfile("derek2"));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.getProfile("dere"));
