@@ -35,7 +35,6 @@ This method sets up the appearance of the frame
 
 <img width="290" alt="accountMenuFrame" src="https://user-images.githubusercontent.com/74845705/101246891-fc048c80-3750-11eb-926f-f616bbf17ca3.png">
 
-
 + Pressing "Edit Acoount" button will take the user to EditProfileFrame
 + Pressing "Back" button will take the user to AccountProfileFrame
 + Pressing "Delete Account" button will prompt this message below and delete the profile
@@ -81,6 +80,8 @@ This method set up the appearance of the frame
 + Pressing "accept" button will make accepted user appear on current user's friendlist
 + Pressing "deny" button will make the denied user disappear from the pending list
 + Pressing "resendRequest" button will make current user reappear on requested user's pending list
+
+Step by step Test
 
 Pending Table
 
@@ -129,6 +130,8 @@ This method sets up the appearance of the frame
 
 + Pressing "editAccountButton" button will reset user's account info with input
 + Pressing "Back" button will take the user to AccountMenuFrame
+
+Step by step Test
 
 Let's delete Joshua's account
 
@@ -184,6 +187,8 @@ This method sets up the appearance of the frame
 
 + Pressing "editProfileButton" button will reset user's profile info with input
 + Pressing "Back" button will take the user to ProfileMenuFrame
+
+Step by step Test
 
 Test by editing Derek's profile which was blank
 
@@ -295,8 +300,6 @@ This method set up the appearance of the frame
 
 <img width="213" alt="deleteProfile" src="https://user-images.githubusercontent.com/74845705/101247657-bac2ab80-3755-11eb-8d93-8a571f51b73a.png">
 
-
-
 ### ProfileServer Class
 #### Description
 A class representing the backend server-side of our application. All the processing of data, connecting to the client, and file I/O happens here.
@@ -390,7 +393,9 @@ This method set up the appearance of the frame
 + Pressing "add" button will take the user to AddFriendFrame
 + Pressing "account" button will take the user to AccountProfileFrame
 
-**Search Bar Testing**
+Step by step Test
+
+Search Bar Testing
 
 Before search
 
