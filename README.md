@@ -131,6 +131,7 @@ This method sets up the appearance of the frame
 + Pressing "Back" button will take the user to AccountMenuFrame
 
 Let's delete Joshua's account
+
 First login in as Joshua, id = joshua, password = Cs180===
 
 <img width="437" alt="LoginAsJoshua" src="https://user-images.githubusercontent.com/74845705/101284361-9d0b4a00-381a-11eb-8e4b-17f33905f828.png">
@@ -144,6 +145,24 @@ Delete successfully !
 Using the same userID and password, we can't no longer login as Joshua
 
 <img width="434" alt="LoginasJOshuaNOWFAIL" src="https://user-images.githubusercontent.com/74845705/101284371-abf1fc80-381a-11eb-8209-b684d91f35e0.png">
+
+Let's edit Leo's account
+
+His account before edit was passowrd: Cs180=== Name: Leo Li  email: li@purdue.edu
+
+<img width="439" alt="LeoLogIn" src="https://user-images.githubusercontent.com/74845705/101284663-2a02d300-381c-11eb-8a73-37f7968dca83.png">
+
+Edit leo's account info as: password: Cs280===  Name: Leo La  email: la@purdue.edu
+
+<img width="290" alt="LeoEditingAccount" src="https://user-images.githubusercontent.com/74845705/101284666-2c652d00-381c-11eb-85b7-527f081ff1bf.png">
+
+Now we see the changes as another user
+
+<img width="220" alt="LeoaddfriendFrame" src="https://user-images.githubusercontent.com/74845705/101284665-2bcc9680-381c-11eb-93a4-9cdfc38f1665.png">
+
+Leo has to login with password Cs280=== instead of Cs180=== from now on
+
+<img width="435" alt="LeoLoginwithcs280" src="https://user-images.githubusercontent.com/74845705/101284664-2b340000-381c-11eb-9527-cacf80d06802.png">
 
 #### Class Documentation
 ##### contentCheck() method
