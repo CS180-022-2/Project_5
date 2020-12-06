@@ -21,6 +21,9 @@ In situation where the user needs to input info for account or profile, somethin
 ## Instructions 
 Run the program by first running profileServer.java, then profileClient.java. The login GUI should pop up if everything is working. If profileClient.java cannot connect, check the socket id and port numbers. 
 
+## Known Issues
+JTable does not update itself unless the user performs any functionality. Users may need to press the back button to "Refresh" the frame in order to see new changes.
+
 ### AccountMenuFrame Class
 #### Description
 This is a class representing the frame that gives users the option to either edit, or delete their accounts. The above mentioned functions are accessed through the use of buttons. 
