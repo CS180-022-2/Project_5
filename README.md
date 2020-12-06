@@ -40,6 +40,10 @@ This method sets up the appearance of the frame
 + Pressing "Delete Account" button will prompt this message below and delete the profile
 
 <img width="213" alt="deleteProfile" src="https://user-images.githubusercontent.com/74845705/101247219-26574980-3753-11eb-945b-5e53de35b869.png">
+#### Class Documentation
+##### public AccountMenuFrame(Socket socket, String userId) Constructor
+The constructor of AccountMenuFrame which uses two parameters : socket, the socket that connect this local machine with the server, and userId, the userId of the login user. 
+
 
 ### AccountProfileFrame Class
 #### Description
@@ -59,6 +63,11 @@ This method sets up the appearance of the frame
 + Pressing "Profile" button will take the user to ProfileMenuFrame
 + Pressing "Back" button will take the user to UserFrame
 + Pressing "Account" button will take the user to AccountMenuFrame
+#### Class Documentation
+##### public AccountProfileFrame(Socket socket, String userId) Constructor
+The constructor of AccountMenuFrame which uses two parameters : socket, the socket that connects this local machine with the server, and userId, the userId of the login user.
+
+
 ### AddFriendFrame Class
 #### Description
 A class representing the frame to send friend requests to another users, view a list of all the application's users, search a specific user among all the application's users, view the requested friend list and the pending friend list.
@@ -104,6 +113,8 @@ Derek will be added to friend list
 <img width="395" alt="afterafteraccept" src="https://user-images.githubusercontent.com/74845705/101283401-0a1be100-3815-11eb-8d5d-1debf2b96371.png">
 
 #### Class Documentation
+##### public AddFriendFrame(Socket socket, String userId) Constructor
+The constructor so that socket and the login userId can be passed. Two parameters: socket and userId.
 ##### updateAllUserModel() method
 Communicates with the server to get most updated user list
 ##### updatePendingModel()
@@ -112,6 +123,7 @@ Communicates with the server to get the updated user info in the pending list
 Communicates with the server to get the updated user info in the request list
 ##### updateAll() method
 Updates the data by changing the model of all three tables. Resets the rowSorter to make sure the search bar keep working. Then repaints the JFrame addFriendFrame
+
 
 ### EditAccountFrame Class
 #### Description
@@ -166,10 +178,12 @@ Now we see the changes as another user
 Leo has to login with password Cs280=== instead of Cs180=== from now on
 
 <img width="435" alt="LeoLoginwithcs280" src="https://user-images.githubusercontent.com/74845705/101284664-2b340000-381c-11eb-9527-cacf80d06802.png">
-
 #### Class Documentation
+##### public EditAccountFrame(Socket socket, String userId) Constructor
+The constructor of UserFrame which uses two parameters : socket, the socket that connects this local machine with the server, and userId, the userId of the login user.
 ##### contentCheck() method
 Checks inserted information to make sure it doesn't contain forbidden characters.
+
 
 ### EditProfileFrame Class
 #### Description
@@ -211,9 +225,10 @@ Let's delete Derek's profile now
 Looking at Derek's profile as another user, Derek's profile became blank again
 
 <img width="278" alt="DeleteAfterDerekProfiel" src="https://user-images.githubusercontent.com/74845705/101284109-51a46c00-3819-11eb-979d-4b3650e9c38c.png">
-
 #### Class Documentation
-##### contentCheck()
+##### public EditProfileFrame(Socket socket, String userId) Constructor
+The constructor of EditProfileFrame which uses two parameters : socket, the socket that connects this local machine with the server, and userId, the userId of the login user.
+##### contentCheck() method
 Checks inserted information to make sure it doesn't contain forbidden characters and that it isn't empty.
 
 
@@ -238,6 +253,9 @@ This method sets up the appearance of the frame
 <img width="195" alt="loginSuccessful" src="https://user-images.githubusercontent.com/74845705/101247892-e85c2480-3756-11eb-9ce9-b6a078837e6b.png">
 
 + Pressing "registerButton" button will take the user to RegisterFrame
+#### Class documentation
+##### public LoginFrame(Socket socket) Constructor
+The constructor of LoginFrame which uses one parameter : socket, the socket that connects this local machine with the server.
 
 
 ### Profile Class
@@ -249,8 +267,9 @@ A class representing the profile of the registered user.
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### Class Documentation
-##### public Profile(String phoneNumber, String relationship, String gender, String currentOccupation, String interest, String aboutMe)
+##### public Profile(String phoneNumber, String relationship, String gender, String currentOccupation, String interest, String aboutMe) Constructor
 Constructor for the Profile class. Creates a new Profile with the provided data. 
+##### Getter & Setter methods
 Class includes getters and setters for each of the fields.
 
 ### ProfileClient Class
@@ -261,6 +280,9 @@ A class representing the client-side of our application. This class includes the
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### Class Documentation
+##### main method
+The main method of our program. Initializes the hostname with "localhost" and port number with 1112. Starts by invoking a LoginFrame in the Event Dispatch Thread.
 
 
 ### ProfileDisplayFrame Class
@@ -278,6 +300,9 @@ This method sets up the appearance of the frame
 <img width="288" alt="profileDisplayFrame" src="https://user-images.githubusercontent.com/74845705/101246958-7c2af200-3751-11eb-813a-ba2bc89de723.png">
 
 + Pressing "Back" button will take the user to UserFrame or AddFriendFrame depending the current frame the user's at
+#### Class Documentation 
+##### public ProfileDisplayFrame(Socket socket, String viewerId, String profileOwnerId, String tracker) Constructor
+The constructor of ProfileDisplayFrame which uses four parameters : socket, the socket that connects this local machine with the server, viewerId, the userId of the viewer, profileOwnerId, the userId of the owner of this profile, and tracker, the tracker that tracks the user.
 
 
 ### ProfileMenuFrame Class
@@ -299,6 +324,10 @@ This method set up the appearance of the frame
 + Pressing "deleteProfileButton" button will prompt a comfirmation message, if the user chose yes then its profile info will be reset to blank
 
 <img width="213" alt="deleteProfile" src="https://user-images.githubusercontent.com/74845705/101247657-bac2ab80-3755-11eb-8d93-8a571f51b73a.png">
+#### Class Documentation
+##### public ProfileMenuFrame(Socket socket, String userId) Constructor
+The constructor of EditProfileFrame which uses two parameters : socket, the socket that connects this local machine with the server, and userId, the userId of the login user.
+
 
 ### ProfileServer Class
 #### Description
@@ -309,6 +338,8 @@ A class representing the backend server-side of our application. All the process
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### Class Documentation
+##### public ProfileServer(Socket socket) Constructor
+The constructor of ProfileServer which uses one parameter : socket, the socket that connects this computer connect with the server.
 ##### login() method
 Check the username and password to see if the user logs in. Returns true if the user entered username and password are correct, false otherwise.
 ##### getProfile() method
@@ -331,6 +362,7 @@ Denies the request in pending list and deletes history in pending and requested 
 Checks if the request has been sent. If not, resend request; if sent, asks the user to be more patient. Return "RequestExisted" if the request is in the user's pending list; "ResendSuccess" if there is no request and the request is resend; "No such user found" if Ids cannot be found.
 ##### run() method
 Starts whenever a new socket is accepted. Creates a printWriter and a bufferedReader. Uses a switch statement to perform different tasks required by the client.
+
 
 ### RegisterFrame Class
 #### Description
@@ -357,6 +389,8 @@ This method set up the appearance of the frame
 
 <img width="626" alt="rerror2" src="https://user-images.githubusercontent.com/74845705/101247823-7a176200-3756-11eb-8f57-ada560164c6e.png">
 #### Class Documentation
+##### public RegisterFrame(Socket socket) Constructor
+The constructor of the RegisterFrame, includes one parameter: socket, the socket that connects this local machine with the server.
 ##### contentCheck() method
 Checks the format of text in JTextField and JPasswordField for user id, password, real name, and email. The functionality is implemented using String.matches() method which requires a regex as its parameter. The content has to fully match the regex in order to have boolean correct as true
 
@@ -374,6 +408,7 @@ A class representing the user who will be registering to use our application.
 Creates a User object with the specified parameters. Three empty arraylist and a profile with empty string would be constructed/initialized.
 ##### Getters & Setters
 Class also contains getters and setters for fields userId, password, name, email, friendList, and userProfile.
+
 
 ### UserFrame Class
 #### Description
