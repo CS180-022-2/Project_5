@@ -110,7 +110,7 @@ public class EditAccountFrame extends JOptionPane implements Runnable {
     }
 
     /**
-     *
+     * Sets up the appearance of the edit account frame
      */
     @Override
     public void run() {
@@ -189,14 +189,14 @@ public class EditAccountFrame extends JOptionPane implements Runnable {
         });
         editAccountFrame.setVisible(true);
     }
-
+    
     /**
+     * Checks inserted information to make sure it doesn't contain forbidden characters.
      *
-     *
-     * @param password
-     * @param realName
-     * @param email
-     * @return
+     * @param password the password to be checked
+     * @param realName the name to be checked 
+     * @param email the email to be checked
+     * @return true if above input passes checks, false otherwise.
      */
     public boolean contentCheck(String password, String realName, String email) {
         boolean correct = true;
