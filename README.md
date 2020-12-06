@@ -82,24 +82,23 @@ This method set up the appearance of the frame
 + Pressing "deny" button will make the denied user disappear from the pending list
 + Pressing "resendRequest" button will make current user reappear on requested user's pending list
 
-**Pending Table**
+Pending Table
 
 <img width="227" alt="pendingDerek" src="https://user-images.githubusercontent.com/74845705/101283377-e789c800-3814-11eb-8e4a-c7e8d218a110.png">
 
-**If Deny**
+If Deny
 
 <img width="227" alt="pendingDeny" src="https://user-images.githubusercontent.com/74845705/101283397-08eab400-3815-11eb-900a-558ff2c57065.png">
 
-
-**If Accept**
+If Accept
 
 <img width="229" alt="pendingAccept - Copy" src="https://user-images.githubusercontent.com/74845705/101283402-0ab47780-3815-11eb-8a22-c81460a1d749.png">
 
-**This prompt comes up**
+This prompt comes up
 
 <img width="236" alt="acceptSuccess - Copy" src="https://user-images.githubusercontent.com/74845705/101283400-0a1be100-3815-11eb-93a1-c0b084d974a2.png">
 
-**Derek will be added to friend list**
+Derek will be added to friend list
 
 <img width="395" alt="afterafteraccept" src="https://user-images.githubusercontent.com/74845705/101283401-0a1be100-3815-11eb-8d5d-1debf2b96371.png">
 
@@ -130,6 +129,22 @@ This method sets up the appearance of the frame
 
 + Pressing "editAccountButton" button will reset user's account info with input
 + Pressing "Back" button will take the user to AccountMenuFrame
+
+Let's delete Joshua's account
+First login in as Joshua, id = joshua, password = Cs180===
+
+<img width="437" alt="LoginAsJoshua" src="https://user-images.githubusercontent.com/74845705/101284361-9d0b4a00-381a-11eb-8e4b-17f33905f828.png">
+
+<img width="288" alt="LoginAsJoshuaandDELETE" src="https://user-images.githubusercontent.com/74845705/101284373-ad232980-381a-11eb-81c3-6e95fda7ccc4.png">
+
+Delete successfully !
+
+<img width="318" alt="LoginASJOSHUAandDELETESUcceses" src="https://user-images.githubusercontent.com/74845705/101284375-adbbc000-381a-11eb-9453-edc4e0099184.png">
+
+Using the same userID and password, we can't no longer login as Joshua
+
+<img width="434" alt="LoginasJOshuaNOWFAIL" src="https://user-images.githubusercontent.com/74845705/101284371-abf1fc80-381a-11eb-8209-b684d91f35e0.png">
+
 #### Class Documentation
 ##### contentCheck() method
 Checks inserted information to make sure it doesn't contain forbidden characters.
@@ -157,11 +172,11 @@ Test by editing Derek's profile which was blank
 
 Viewing Derek's profile as another user
 
-<img width="288" alt="profileDisplayFrame" src="https://user-images.githubusercontent.com/74845705/101283851-148baa00-3818-11eb-89ba-2a5587b5648b.png">
+<img width="224" alt="ViewDerekProfile" src="https://user-images.githubusercontent.com/74845705/101283853-148baa00-3818-11eb-8e0d-77746a57adda.png">
 
 It's just as how Derek edited it
 
-<img width="224" alt="ViewDerekProfile" src="https://user-images.githubusercontent.com/74845705/101283853-148baa00-3818-11eb-8e0d-77746a57adda.png">
+<img width="288" alt="profileDisplayFrame" src="https://user-images.githubusercontent.com/74845705/101283851-148baa00-3818-11eb-89ba-2a5587b5648b.png">
 
 Let's delete Derek's profile now
 
