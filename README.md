@@ -81,6 +81,28 @@ This method set up the appearance of the frame
 + Pressing "accept" button will make accepted user appear on current user's friendlist
 + Pressing "deny" button will make the denied user disappear from the pending list
 + Pressing "resendRequest" button will make current user reappear on requested user's pending list
+
+**Pending Table**
+
+<img width="227" alt="pendingDerek" src="https://user-images.githubusercontent.com/74845705/101283377-e789c800-3814-11eb-8e4a-c7e8d218a110.png">
+
+**If Deny**
+
+<img width="227" alt="pendingDeny" src="https://user-images.githubusercontent.com/74845705/101283397-08eab400-3815-11eb-900a-558ff2c57065.png">
+
+
+**If Accept**
+
+<img width="229" alt="pendingAccept - Copy" src="https://user-images.githubusercontent.com/74845705/101283402-0ab47780-3815-11eb-8a22-c81460a1d749.png">
+
+**This prompt comes up**
+
+<img width="236" alt="acceptSuccess - Copy" src="https://user-images.githubusercontent.com/74845705/101283400-0a1be100-3815-11eb-93a1-c0b084d974a2.png">
+
+**Derek will be added to friend list**
+
+<img width="395" alt="afterafteraccept" src="https://user-images.githubusercontent.com/74845705/101283401-0a1be100-3815-11eb-8d5d-1debf2b96371.png">
+
 #### Class Documentation
 ##### updateAllUserModel() method
 Communicates with the server to get most updated user list
@@ -128,6 +150,29 @@ This method sets up the appearance of the frame
 
 + Pressing "editProfileButton" button will reset user's profile info with input
 + Pressing "Back" button will take the user to ProfileMenuFrame
+
+Test by editing Derek's profile which was blank
+
+<img width="278" alt="editProfileAsDerek" src="https://user-images.githubusercontent.com/74845705/101283849-135a7d00-3818-11eb-9e8e-7989fa670575.png">
+
+Viewing Derek's profile as another user
+
+<img width="288" alt="profileDisplayFrame" src="https://user-images.githubusercontent.com/74845705/101283851-148baa00-3818-11eb-89ba-2a5587b5648b.png">
+
+It's just as how Derek edited it
+
+<img width="224" alt="ViewDerekProfile" src="https://user-images.githubusercontent.com/74845705/101283853-148baa00-3818-11eb-8e0d-77746a57adda.png">
+
+Let's delete Derek's profile now
+
+<img width="213" alt="deleteProfile" src="https://user-images.githubusercontent.com/74845705/101284104-50733f00-3819-11eb-9c27-ff4e593ad281.png">
+
+<img width="306" alt="DeleteDerekProfile" src="https://user-images.githubusercontent.com/74845705/101284110-523d0280-3819-11eb-98c2-a2baedf3bbcb.png">
+
+Looking at Derek's profile as another user, Derek's profile became blank again
+
+<img width="278" alt="DeleteAfterDerekProfiel" src="https://user-images.githubusercontent.com/74845705/101284109-51a46c00-3819-11eb-979d-4b3650e9c38c.png">
+
 #### Class Documentation
 ##### contentCheck()
 Checks inserted information to make sure it doesn't contain forbidden characters and that it isn't empty.
@@ -310,6 +355,17 @@ This method set up the appearance of the frame
 + Pressing "Back" button will take the user to LoginFrame
 + Pressing "add" button will take the user to AddFriendFrame
 + Pressing "account" button will take the user to AccountProfileFrame
+
+**Search Bar Testing**
+
+Before search
+
+<img width="405" alt="UserBeforeSearch" src="https://user-images.githubusercontent.com/74845705/101283545-03da3480-3816-11eb-9efc-a6fda40e5bce.png">
+
+After search, the id that matches remains, the rest disappear
+
+<img width="402" alt="UserAfterSearch" src="https://user-images.githubusercontent.com/74845705/101283547-050b6180-3816-11eb-9f64-a30d5f7cbb7b.png">
+
 #### Class Documentation
 ##### public UserFrame(Socket socket, String userId) Constructor
 The constructor of UserFrame which use two parameters : socket and userId. socket: the socket that connect this computer connect with the server. userId: The userId of the login user
