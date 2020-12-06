@@ -117,7 +117,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
     }
 
     /**
-     *
+     * Sets up the appearance of the edit profile frame  
      */
     @Override
     public void run() {
@@ -259,15 +259,15 @@ public class EditProfileFrame extends JComponent implements Runnable {
     }
 
     /**
+     * Checks inserted information to make sure it doesn't contain forbidden characters and that it isn't empty.
      *
-     *
-     * @param userPhoneNo
-     * @param currentOccupation
-     * @param aboutMe
-     * @param interest
-     * @param gender
-     * @param relationship
-     * @return
+     * @param userPhoneNo the phone number the user enters  
+     * @param currentOccupation the job that the user enters
+     * @param aboutMe the aboutMe page that user enters
+     * @param interest the interests page that user enters
+     * @param gender the gender that user selects
+     * @param relationship the relationship status that user selects
+     * @return true if checks passes, false otherwise.
      */
     public boolean contentCheck(String userPhoneNo, String currentOccupation, String aboutMe, String interest,
                                 String gender, String relationship) {
