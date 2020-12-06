@@ -8,35 +8,20 @@ import org.junit.runner.notification.Failure;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.lang.reflect.*;
 
 import java.net.Socket;
+import java.nio.Buffer;
 import java.util.ArrayList;
-/**
- * Project 05 - Social Network "Profile" Application
- *
- * A set of public test cases to test whether:
- *
- *  1. Each class have a test verifying that it exists and inherits from the correct superclass.
- *
- *  2. Each field in every class must have a test verifying that it exists, along with verifying it has the
- *     correct type and access modifier.
- *
- *  3.Each method in every class must have a test verifying that it exists, along with verifying it has the
- *     correct return type and access modifier.
- *
- *  4.Each method in every class must have two implementation tests:
- *      - That verifies it works correctly with proper input
- *      - That tests that it fails with improper input.
- *
- * @author Group 022-2
- * @version November 30, 2020
- */
 
-public class  RunLocalTest {
+import static org.junit.Assert.fail;
+
+public class RunLocalTest {
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(TestCase.class);
         if (result.wasSuccessful()) {
@@ -47,6 +32,15 @@ public class  RunLocalTest {
             }
         }
     }
+
+    /**
+     * A set of public test cases.
+     *
+     * <p>Purdue University -- CS18000 -- Fall 2020</p>
+     *
+     * @author Purdue CS
+     * @version August 24, 2020
+     */
 
     public static class TestCase {
         private final PrintStream originalOutput = System.out;
@@ -73,12 +67,16 @@ public class  RunLocalTest {
         private String getOutput() {
             return testOut.toString();
         }
-
         @SuppressWarnings("SameParameterValue")
         private void receiveInput(String str) {
             testIn = new ByteArrayInputStream(str.getBytes());
             System.setIn(testIn);
         }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        // Test Cases for all classes
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+
         // AccountMenuFrame
         @Test(timeout = 1_000)
         public void accountMenuFrameClassDeclarationTest() {
@@ -515,6 +513,7 @@ public class  RunLocalTest {
             Assert.assertEquals("Ensure that `" + className + "`'s parameterized constructor has an empty `throws` clause!", expectedLength, exceptions.length);
         }
         ///////////////////////////////////////////////////////////////////////
+        // exempt
         @Test(timeout = 1000)
         public void accountMenuFrameRunMethodTest() {
             Class<?> clazz;
@@ -1001,6 +1000,7 @@ public class  RunLocalTest {
             Assert.assertEquals("Ensure that `" + className + "`'s parameterized constructor has an empty `throws` clause!", expectedLength, exceptions.length);
         }
         ///////////////////////////////////////////////////////////////////////
+        // exempt
         @Test(timeout = 1000)
         public void accountProfileFrameRunMethodTest() {
             Class<?> clazz;
@@ -1594,7 +1594,7 @@ public class  RunLocalTest {
             Class<?> type;
 
             // Set the field that you want to test
-            String fieldName = "jTable";
+            String fieldName = "allUserTable";
 
             // Set the type of the field you want to test
             // Use the type + .class
@@ -1636,7 +1636,7 @@ public class  RunLocalTest {
             Class<?> type;
 
             // Set the field that you want to test
-            String fieldName = "jTable2";
+            String fieldName = "requestTable";
 
             // Set the type of the field you want to test
             // Use the type + .class
@@ -1678,7 +1678,7 @@ public class  RunLocalTest {
             Class<?> type;
 
             // Set the field that you want to test
-            String fieldName = "jTable3";
+            String fieldName = "pendingTable";
 
             // Set the type of the field you want to test
             // Use the type + .class
@@ -2159,6 +2159,7 @@ public class  RunLocalTest {
             Assert.assertEquals("Ensure that `" + className + "`'s parameterized constructor has an empty `throws` clause!", expectedLength, exceptions.length);
         }
         ///////////////////////////////////////////////////////////////////////
+        // Exempt
         @Test(timeout = 1000)
         public void addFriendFrameRunMethodTest() {
             Class<?> clazz;
@@ -2254,7 +2255,9 @@ public class  RunLocalTest {
 
             Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName + "` method has the correct return type!", expectedReturnType, actualReturnType);
 
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName + "` method has an empty `throws` clause!", expectedLength, exceptions.length);
+
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName + "` works correctly with proper input!", expectedLength, exceptions.length);
+            Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName + "` fails with improper input!", expectedLength, exceptions.length);
 
         }
         @Test(timeout = 1000)
@@ -8592,7 +8595,7 @@ public class  RunLocalTest {
 
             Assert.assertEquals("Ensure that `"+ className +"` extends `Object`!", Object.class, superclass);
 
-            Assert.assertEquals("Ensure that `"+ className +"` implements no interfaces!", 0, superinterfaces.length);
+            Assert.assertEquals("Ensure that `"+ className +"` implements Serializable!", 1, superinterfaces.length);
         }
 
         @Test(timeout = 1_000)
@@ -10463,49 +10466,34 @@ public class  RunLocalTest {
         // ProfileMenuFrame
         @Test(timeout = 1_000)
         public void menuFrameFrameClassDeclarationTest() {
-
             Class<?> clazz = ProfileMenuFrame.class;
             String className = "ProfileMenuFrame";
-
             int modifiers;
             Class<?> superclass;
             Class<?>[] superinterfaces;
-
             // Perform tests
-
             modifiers = clazz.getModifiers();
-
             superclass = clazz.getSuperclass();
-
             superinterfaces = clazz.getInterfaces();
-
             Assert.assertTrue("Ensure that `"+ className +"` is `public`!", Modifier.isPublic(modifiers));
-
             Assert.assertFalse("Ensure that `"+ className +"` is NOT `abstract`!", Modifier.isAbstract(modifiers));
-
             Assert.assertEquals("Ensure that `"+ className +"` extends `JComponent`!", JComponent.class, superclass);
-
             Assert.assertEquals("Ensure that `"+ className +"` implements Runnable!", 1, superinterfaces.length);
         }
 
         @Test(timeout = 1_000)
         public void menuFrameFieldDeclarationTestOne() {
-
             Class<?> clazz = ProfileMenuFrame.class;
             String className = "ProfileMenuFrame";
-
             Field testField;
             int modifiers;
             Class<?> type;
-
-            // Set the field that you want to test
+            // Set the field that you want to tes
             String fieldName = "socket";
-
             // Set the type of the field you want to test
             // Use the type + .class
             // For example, String.class or int.class
             Class<?> expectedType = Socket.class;
-
             // Attempt to access the class field
             try {
                 testField = clazz.getDeclaredField(fieldName);
@@ -10514,17 +10502,11 @@ public class  RunLocalTest {
 
                 return;
             } //end try catch
-
             // Perform tests
-
             modifiers = testField.getModifiers();
-
             type = testField.getType();
-
             //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `private`!", Modifier.isPrivate(modifiers));
-
             Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
-
             Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
         }
         @Test(timeout = 1_000)
@@ -10839,97 +10821,16 @@ public class  RunLocalTest {
 
             Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
         }
-        @Test(timeout = 1_000)
-        public void menuFrameFieldDeclarationTest10() {
-
-            Class<?> clazz = ProfileMenuFrame.class;
-            String className = "ProfileMenuFrame";
-
-            Field testField;
-            int modifiers;
-            Class<?> type;
-
-            // Set the field that you want to test
-            String fieldName = "userFrameButton";
-
-            // Set the type of the field you want to test
-            // Use the type + .class
-            // For example, String.class or int.class
-            Class<?> expectedType = JButton.class;
-
-            // Attempt to access the class field
-            try {
-                testField = clazz.getDeclaredField(fieldName);
-            } catch (NoSuchFieldException e) {
-                Assert.fail("Ensure that `" + className + "` declares a field named `" + fieldName + "`!");
-
-                return;
-            } //end try catch
-
-            // Perform tests
-
-            modifiers = testField.getModifiers();
-
-            type = testField.getType();
-
-            //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `private`!", Modifier.isPrivate(modifiers));
-
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
-
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
-        }
-        @Test(timeout = 1_000)
-        public void menuFrameFieldDeclarationTest11() {
-
-            Class<?> clazz = ProfileMenuFrame.class;
-            String className = "ProfileMenuFrame";
-
-            Field testField;
-            int modifiers;
-            Class<?> type;
-
-            // Set the field that you want to test
-            String fieldName = "userId";
-
-            // Set the type of the field you want to test
-            // Use the type + .class
-            // For example, String.class or int.class
-            Class<?> expectedType = String.class;
-
-            // Attempt to access the class field
-            try {
-                testField = clazz.getDeclaredField(fieldName);
-            } catch (NoSuchFieldException e) {
-                Assert.fail("Ensure that `" + className + "` declares a field named `" + fieldName + "`!");
-
-                return;
-            } //end try catch
-
-            // Perform tests
-
-            modifiers = testField.getModifiers();
-
-            type = testField.getType();
-
-            //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `private`!", Modifier.isPrivate(modifiers));
-
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName + "` field is NOT `static`!", Modifier.isStatic(modifiers));
-
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName + "` field is the correct type!", expectedType, type);
-        }
 
 
         @Test(timeout = 1_000)
         public void menuFrameParameterizedConstructorDeclarationTestOne() {
-
             Class<?> clazz = ProfileMenuFrame.class;
             String className = "ProfileMenuFrame";
-
             Constructor<?> constructor;
             int modifiers;
             Class<?>[] exceptions;
             int expectedLength = 0;
-
             try {
                 constructor = clazz.getDeclaredConstructor(Socket.class, String.class);
             } catch (NoSuchMethodException e) {
@@ -10937,36 +10838,27 @@ public class  RunLocalTest {
 
                 return;
             } //end try catch
-
             modifiers = constructor.getModifiers();
-
             exceptions = constructor.getExceptionTypes();
-
             Assert.assertTrue("Ensure that `" + className + "`'s parameterized constructor is `public`!", Modifier.isPublic(modifiers));
-
             Assert.assertEquals("Ensure that `" + className + "`'s parameterized constructor has an empty`throws` clauses!", expectedLength, exceptions.length);
         }
         /////////////////////////////////////////////////////////////////////////////////////
         @Test(timeout = 1000)
         public void menuFrameMethodTestOne() {
-
             Class<?> clazz = ProfileMenuFrame.class;
             String className = "ProfileMenuFrame";
-
             Method method;
             int modifiers;
             Class<?> actualReturnType;
             int expectedLength = 0;
             Class<?>[] exceptions;
-
             // Set the method that you want to test
             String methodName = "run";
-
             // Set the return type of the method you want to test
             // Use the type + .class
             // For example, String.class or int.class
             Class<?> expectedReturnType = void.class;
-
             // Attempt to access the class method
             try {
                 method = clazz.getDeclaredMethod(methodName);
@@ -10976,22 +10868,232 @@ public class  RunLocalTest {
 
                 return;
             } //end try catch
-
             // Perform tests
-
             modifiers = method.getModifiers();
-
             actualReturnType = method.getReturnType();
-
             exceptions = method.getExceptionTypes();
-
             Assert.assertTrue("Ensure that `" + className + "`'s `" + methodName + "` method is `Public`!", Modifier.isPublic(modifiers));
-
             Assert.assertFalse("Ensure that `" + className + "`'s `" + methodName + "` method is NOT `static`!", Modifier.isStatic(modifiers));
-
             Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName + "` method has the correct return type!", expectedReturnType, actualReturnType);
-
             Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName + "` method has an empty `throws` clause!", expectedLength, exceptions.length);
+
+        }
+        /////////////////////////////////////////////////////////////////////////////////////
+        // Method Test Pass or Fail
+        @Test
+        public void methodPassFail() throws IOException {
+            User derek = new User("derek", "Cs180===", "Derek Sun", "sun@purdue.edu");
+            User leo = new User("leo", "Cs180===", "Leo li", "li@purdue.edu");
+            User jason = new User("jason", "Cs180===", "Jason Hung", "hung@purdue.edu");
+            User joshua = new User("joshua", "Cs180===", "Joshua Tree", "joshua@purdue.edu");
+            User youngjun = new User("youngjun", "Cs180===", "Youngjun Yoo", "yoo@purdue.edu");
+            ArrayList<User> friend = new ArrayList<User>();
+            ArrayList<User> request = new ArrayList<User>();
+            ArrayList<User> pending = new ArrayList<User>();
+            friend.add(leo);
+            request.add(jason);
+            pending.add(youngjun);
+            derek.setFriendList(friend);
+            derek.setRequestList(request);
+            derek.setPendingList(pending);
+
+            Profile derekP = new Profile("12345678", "single", "male", "student", "ball", "student");
+            derek.setUserProfile(derekP);
+            Profile leoP = new Profile("", "", "", "", "", "");
+            leo.setUserProfile(leoP);
+            Profile jasonP = new Profile("", "", "", "", "", "");
+            jason.setUserProfile(jasonP);
+            Profile joshuaP = new Profile("", "", "", "", "", "");
+            joshua.setUserProfile(joshuaP);
+            Profile youngjunP = new Profile("", "", "", "", "", "");
+            youngjun.setUserProfile(youngjunP);
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // User   // Ensure '' works correctly
+            String c = "User";
+            String m = "getUserId";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "derek", derek.getUserId());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", "dereks", derek.getUserId());
+            m = "getFriendList";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", friend, derek.getFriendList());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derek.getFriendList());
+            m = "setFriendList";
+            derek.setFriendList(friend);
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", friend, derek.getFriendList());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derek.getFriendList());
+            m = "getPendingList";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", pending, derek.getPendingList());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derek.getPendingList());
+            m = "setPendingList";
+            derek.setPendingList(pending);
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", pending, derek.getPendingList());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derek.getPendingList());
+            m = "getRequestList";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", request, derek.getRequestList());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derek.getRequestList());
+            m = "setRequestList";
+            derek.setRequestList(request);
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", request, derek.getRequestList());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derek.getRequestList());
+
+            m = "getPassword";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "Cs180===", derek.getPassword());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", "Ds180===", derek.getPassword());
+            m = "getName";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "Derek Sun", derek.getName());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", "Derek S", derek.getName());
+            m = "getEmail";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "sun@purdue.edu", derek.getEmail());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", "@purdue.edu", derek.getEmail());
+            m = "getUserProfile";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", derekP, derek.getUserProfile());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derek.getUserProfile());
+            m = "setUserProfile";
+            derek.setUserProfile(derekP);
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", derekP, derek.getUserProfile());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derek.getUserProfile());
+            m = "setUserId";
+            derek.setUserId("derek");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "derek", derek.getUserId());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", "dereks", derek.getUserId());
+            m = "setPassword";
+            derek.setPassword("Cs180===");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "Cs180===", derek.getPassword());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", "Ds180===", derek.getPassword());
+            m = "setName";
+            derek.setName("Derek Sun");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "Derek Sun", derek.getName());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", "Derek S", derek.getName());
+            m = "setEmail";
+            derek.setEmail("sun@purdue.edu");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "sun@purdue.edu", derek.getEmail());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", "@purdue.edu", derek.getEmail());
+            //////////////////////////////////////////////////////////////////////////////////
+            // Profile
+            c = "Profile";
+            m = "getPhoneNumber";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "12345678", derekP.getPhoneNumber());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getPhoneNumber());
+            m = "setPhoneNumber";
+            derekP.setPhoneNumber("");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "", derekP.getPhoneNumber());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getPhoneNumber());
+            m = "getRelationship";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "single", derekP.getRelationship());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getRelationship());
+            m = "setRelationship";
+            derekP.setRelationship("");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "", derekP.getRelationship());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getRelationship());
+            m = "getGender";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "male", derekP.getGender());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getGender());
+            m = "setGender";
+            derekP.setGender("");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "", derekP.getGender());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getGender());
+            m = "getCurrentOccupation";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "student", derekP.getCurrentOccupation());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getCurrentOccupation());
+            m = "setCurrentOccupation";
+            derekP.setCurrentOccupation("");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "", derekP.getCurrentOccupation());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getCurrentOccupation());
+            m = "getInterest";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "ball", derekP.getInterest());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getGender());
+            m = "setInterest";
+            derekP.setInterest("");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "", derekP.getInterest());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getInterest());
+            m = "getAboutMe";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "student", derekP.getAboutMe());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getAboutMe());
+            m = "setAboutMe";
+            derekP.setAboutMe("");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "", derekP.getAboutMe());
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", null, derekP.getAboutMe());
+            //////////////////////////////////////////////////////////////////////////////////
+            // Register Frame
+            c = "RegisterFrame";
+            m = "contentCheck";
+            Socket socket = new Socket("localhost", 1112);
+            RegisterFrame rf = new RegisterFrame(socket);
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, rf.contentCheck(derek.getUserId(), derek.getPassword()
+                    ,derek.getName(), derek.getEmail()));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, rf.contentCheck(".+", "Cs180===", "Derek Sun", "sun@purdue.edu"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, rf.contentCheck("derek", "", "Derek Sun", derek.getEmail()));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, rf.contentCheck("derek", "Cs180===", "Derek S", "sun@purdue.edu"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, rf.contentCheck("derek", "Cs180===", "Derek Sun", ""));
+            //////////////////////////////////////////////////////////////////////////////////
+            // EditAccountFrame
+            c = "EditAccountFrame";
+            EditAccountFrame eaf = new EditAccountFrame(socket, "derek2");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, eaf.contentCheck("Cs180==="
+                    ,"Derek Sun", "sun@purdue.edu"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, eaf.contentCheck("", "Derek Sun", "sun@purdue.edu"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, eaf.contentCheck("", "Derek Sun", ""));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, eaf.contentCheck("Cs180===", "Derek S", "sun@purdue.edu"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, eaf.contentCheck("Cs180===", "Derek Sun", ""));
+
+            // EditProfileFrame
+            c = "EditProfileFrame";
+            EditProfileFrame ep = new EditProfileFrame(socket, "derek2");
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ep.contentCheck("1111111111", "student", "hi"
+                    , "student", "male", "single"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ep.contentCheck("", "student", "hi"
+                    , "student", "male", "single"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ep.contentCheck("1111111111", "", "hi"
+                    , "student", "male", "single"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ep.contentCheck("1111111111", "student", ""
+                    , "student", "male", "single"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ep.contentCheck("1111111111", "student", "hi"
+                    , "", "male", "single"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ep.contentCheck("1111111111", "student", "hi"
+                    , "", "", "single"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ep.contentCheck("1111111111", "student", "hi"
+                    , "", "male", ""));
+            // ProfileServer
+            ProfileServer ps = new ProfileServer(socket);
+            String[] hi = new String[]{};
+            try {
+                ps.main(hi);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            c = "ProfileServer";
+            m = "login";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.login("derek2", "Cs180==="));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.login("dere", "Cs180==="));
+            m = "dualLoginCheck";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.dualLoginCheck("derek2"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", false, ps.dualLoginCheck("dere"));
+            m = "getProfile";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", ps.getProfile("derek2"), ps.getProfile("derek2"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.getProfile("dere"));
+            m = "setUserProfile";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.setUserProfile(derekP, "derek2"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.setUserProfile(joshuaP, ""));
+            m = "requestFriend";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "Already requested!", ps.requestFriend("derek2", "jason"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.requestFriend("dere", ""));
+            m = "deleteFriend";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.deleteFriend("derek2", "leo"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.deleteFriend("d", ""));
+            m = "uniquePhoneNoCheck";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.uniquePhoneNoCheck("12345678"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.uniquePhoneNoCheck(""));
+            m = "uniqueIdCheck";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.uniqueIdCheck("xdwx"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.uniqueIdCheck("derek2"));
+            m = "acceptFriend";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "AcceptSuccess", ps.acceptFriend("jason", "derek2"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.acceptFriend("", ""));
+            m = "denyFriend";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "DenySuccess", ps.denyFriend("joshua", "derek2"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.denyFriend("", ""));
+            m = "resendRequest";
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "ResendSuccess", ps.resendRequest("derek2", "joshua"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.resendRequest("", ""));
 
         }
     }
