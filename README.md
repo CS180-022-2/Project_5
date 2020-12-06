@@ -39,7 +39,6 @@ This method sets up the appearance of the frame
 
 <img width="213" alt="deleteProfile" src="https://user-images.githubusercontent.com/74845705/101247219-26574980-3753-11eb-945b-5e53de35b869.png">
 
-
 ### AccountProfileFrame Class
 #### Description
 A class representing the frame that serves as an intermediary for creation, edition, and deletion of both user account and profile.
@@ -82,18 +81,12 @@ This method set up the appearance of the frame
 #### Class Documentation
 ##### updateAllUserModel() method
 Communicates with the server to get most updated user list
-@return A DefaultTableModel with the updated data as its column
 ##### updatePendingModel()
 Communicates with the server to get the updated user info in the pending list
-@return A DefaultTableModel with the updated data as its column
 ##### updateRequestModel() method
-Communicate with the server to get the updated user info in the request list
-@return A DefaultTableModel with the updated data as its column
+Communicates with the server to get the updated user info in the request list
 ##### updateAll() method
 Updates the data by changing the model of all three tables. Resets the rowSorter to make sure the search bar keep working. Then repaints the JFrame addFriendFrame
-
-
-
 
 ### EditAccountFrame Class
 #### Description
@@ -114,17 +107,11 @@ This method sets up the appearance of the frame
 + Pressing "Back" button will take the user to AccountMenuFrame
 #### Class Documentation
 ##### contentCheck() method
-Checks inserted information to make sure it doesn't contain forbidden characters.\n
-@param password the password to be checked
-@param realName the name to be checked 
-@param email the email to be checked
-@return true if above input passes checks, false otherwise.
-
-
-
+Checks inserted information to make sure it doesn't contain forbidden characters.
 
 ### EditProfileFrame Class
 #### Description
+A class representing the frame to edit the details of the user profile. All the changed profile details must conform to the respective validation rules.
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
@@ -132,14 +119,20 @@ Checks inserted information to make sure it doesn't contain forbidden characters
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
 ##### Run() method
-This method set up the appearance of the frame  
+This method sets up the appearance of the frame  
 
 <img width="288" alt="profileFrame" src="https://user-images.githubusercontent.com/74845705/101246947-6c131280-3751-11eb-80ab-f20f8d62a04e.png">
 
 + Pressing "editProfileButton" button will reset user's profile info with input
 + Pressing "Back" button will take the user to ProfileMenuFrame
+#### Class Documentation
+##### contentCheck()
+Checks inserted information to make sure it doesn't contain forbidden characters and that it isn't empty.
+
+
 ### LoginFrame Class
 #### Description
+A class representing the frame that will appear at the very beginning when the user starts the application. Users will be able to login using their User ID and Password. Note that users need to first register to be able to log in. 
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
@@ -147,7 +140,7 @@ This method set up the appearance of the frame
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
 ##### Run() method
-This method set up the appearance of the frame    
+This method sets up the appearance of the frame    
 
 <img width="440" alt="loginFrame" src="https://user-images.githubusercontent.com/74845705/100880218-70d48e00-34e7-11eb-924e-7f10ba089471.png">
 
@@ -158,22 +151,34 @@ This method set up the appearance of the frame
 <img width="195" alt="loginSuccessful" src="https://user-images.githubusercontent.com/74845705/101247892-e85c2480-3756-11eb-9ce9-b6a078837e6b.png">
 
 + Pressing "registerButton" button will take the user to RegisterFrame
+
+
 ### Profile Class
 #### Description
+A class representing the profile of the registered user.
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### Class Documentation
+##### public Profile(String phoneNumber, String relationship, String gender, String currentOccupation, String interest, String aboutMe)
+Constructor for the Profile class. Creates a new Profile with the provided data. 
+Class includes getters and setters for each of the fields.
+
 ### ProfileClient Class
 #### Description
+A class representing the client-side of our application. This class includes the main method and invokes the Login frame of our application when begin.
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+
+
 ### ProfileDisplayFrame Class
 #### Description
+A class representing the profile details of the user in a separate frame. Profile details include: Phone Number, Current Occupation, About Me, Interests, Gender, and Relationship Status
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
@@ -181,13 +186,16 @@ This method set up the appearance of the frame
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
 ##### Run() method
-This method set up the appearance of the frame  
+This method sets up the appearance of the frame  
 
 <img width="288" alt="profileDisplayFrame" src="https://user-images.githubusercontent.com/74845705/101246958-7c2af200-3751-11eb-813a-ba2bc89de723.png">
 
 + Pressing "Back" button will take the user to UserFrame or AddFriendFrame depending the current frame the user's at
+
+
 ### ProfileMenuFrame Class
 #### Description
+A class representing the frame that gives users the option to either create, edit, or delete their profiles. This class cts as a hub hosting buttons that leads users to other frames that carry out creation, edition, or deletion.
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
@@ -205,15 +213,43 @@ This method set up the appearance of the frame
 
 <img width="213" alt="deleteProfile" src="https://user-images.githubusercontent.com/74845705/101247657-bac2ab80-3755-11eb-8d93-8a571f51b73a.png">
 
+
+
 ### ProfileServer Class
 #### Description
+A class representing the backend server-side of our application. All the processing of data, connecting to the client, and file I/O happens here.
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### Class Documentation
+##### login() method
+Check the username and password to see if the user logs in. Returns true if the user entered username and password are correct, false otherwise.
+##### getProfile() method
+Returns the Profile that matches with the given userId parameter
+##### setUserProfile() method
+Sets the userProfile up with the inserted userId. Return true if setup is successful, false if userId is not found in the database.
+##### requestFriend() method
+Sends out a friend request to the reciever using userId as a guide. Returns "RequestSuccess" if the request was successful; "Already friend!" if in each other 's friendList already; "Already requested!" if requested user is in requester's requested list; "Already being requested!" if the requested user has already sent a request to requester.
+##### deleteFriend() method
+Deletes a friend in user's friend's list and removes user from the deleted friend's friends list. Return true if the deletion is successful, false otherwise.
+##### uniquePhoneNoCheck() method
+Checks to make sure every phone number registered is unique. Returns true if the phone number is unique, false if it has been used.
+##### uniqueIdCheck() method
+Checks if the given parameter userId is unique in the database. Returns true if userId is unique, false otherwise
+##### acceptFriend() method
+Accepts the request in pending list, add to each other's friendList, and remove from pending and requested list. Return "AcceptSuccess" if there is an request and are accepted successfully; "No request found" if there are no request; "No such user found" if Ids cannot be found.
+##### denyFriend() method
+Denies the request in pending list and deletes history in pending and requested list. Return "DenySuccess" if there is an request and deny successfully; "No request found" if there are no request; "No such user found" if Ids cannot be found.
+##### resendRequest() method
+Checks if the request has been sent. If not, resend request; if sent, asks the user to be more patient. Return "RequestExisted" if the request is in the user's pending list; "ResendSuccess" if there is no request and the request is resend; "No such user found" if Ids cannot be found.
+##### run() method
+Starts whenever a new socket is accepted. Creates a printWriter and a bufferedReader. Uses a switch statement to perform different tasks required by the client.
+
 ### RegisterFrame Class
 #### Description
+A class representing the frame that allows the users to register for this application. All users must register before being able to login to the application. All the account details must conform to the respective validation rules.
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
@@ -235,16 +271,28 @@ This method set up the appearance of the frame
 <img width="428" alt="rerror1" src="https://user-images.githubusercontent.com/74845705/101247821-797ecb80-3756-11eb-95c7-f20ee400e052.png">
 
 <img width="626" alt="rerror2" src="https://user-images.githubusercontent.com/74845705/101247823-7a176200-3756-11eb-8f57-ada560164c6e.png">
+#### Class Documentation
+##### contentCheck() method
+Checks the format of text in JTextField and JPasswordField for user id, password, real name, and email. The functionality is implemented using String.matches() method which requires a regex as its parameter. The content has to fully match the regex in order to have boolean correct as true
+
 
 ### User Class
 #### Description
+A class representing the user who will be registering to use our application.
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
 3. Tested that all methods exist, and have the correct return type and modifiers
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
+#### Class Documentation
+##### public User(String userId, String password, String name, String email) Constructor
+Creates a User object with the specified parameters. Three empty arraylist and a profile with empty string would be constructed/initialized.
+##### Getters & Setters
+Class also contains getters and setters for fields userId, password, name, email, friendList, and userProfile.
+
 ### UserFrame Class
 #### Description
+A class representing the frame displaying the friend list of the user in the application. The user is able to see the profile of users in the friend list and delete them from the friend list. Use a JTable to display all your friends and a search bar to find certain friends.
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
@@ -259,3 +307,8 @@ This method set up the appearance of the frame
 + Pressing "Back" button will take the user to LoginFrame
 + Pressing "add" button will take the user to AddFriendFrame
 + Pressing "account" button will take the user to AccountProfileFrame
+#### Class Documentation
+##### public UserFrame(Socket socket, String userId) Constructor
+The constructor of UserFrame which use two parameters : socket and userId. socket: the socket that connect this computer connect with the server. userId: The userId of the login user
+##### updateModel() method
+Communicates with the server and get the updated userInfo in the login user's friendList
