@@ -83,8 +83,8 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
             return;
         }
         accountProfileFrame = new JFrame("Menu Frame");
-        Container AccountProfileContentPane = accountProfileFrame.getContentPane();
-        AccountProfileContentPane.setLayout(null);
+        Container accountProfileContentPane = accountProfileFrame.getContentPane();
+        accountProfileContentPane.setLayout(null);
         accountButton = new JButton("Account");
         profileButton = new JButton("Profile");
         backButton = new JButton("Back to User Frame");
@@ -100,9 +100,9 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
         backButton.addActionListener(actionListener);
 
         //Add all components into the Frame;
-        AccountProfileContentPane.add(accountButton);
-        AccountProfileContentPane.add(profileButton);
-        AccountProfileContentPane.add(backButton);
+        accountProfileContentPane.add(accountButton);
+        accountProfileContentPane.add(profileButton);
+        accountProfileContentPane.add(backButton);
 
         //Finalize the Frame
         accountProfileFrame.setSize(400, 300);

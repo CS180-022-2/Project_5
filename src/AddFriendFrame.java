@@ -268,9 +268,12 @@ public class AddFriendFrame extends JPanel implements Runnable {
         addFriendFrame = new JFrame("Add Friend");
         allUserTable.setRowSorter(rowSorter);
 
-        jScrollPane = new JScrollPane(allUserTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScrollPane2 = new JScrollPane(pendingTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        jScrollPane3 = new JScrollPane(requestTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane = new JScrollPane(allUserTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane2 = new JScrollPane(pendingTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane3 = new JScrollPane(requestTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
         //JPopupMenu on user list
         JPopupMenu popupMenu = new JPopupMenu();
@@ -364,7 +367,8 @@ public class AddFriendFrame extends JPanel implements Runnable {
              */
             @Override
             public void changedUpdate(DocumentEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                throw new UnsupportedOperationException("Not supported yet.");
+                //To change body of generated methods, choose Tools | Templates.
             }
         });
 

@@ -109,8 +109,8 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
             return;
         }
         accountMenuFrame = new JFrame("Account Menu Frame");
-        Container AccountMenuFrameContentPane = accountMenuFrame.getContentPane();
-        AccountMenuFrameContentPane.setLayout(null);
+        Container accountMenuFrameContentPane = accountMenuFrame.getContentPane();
+        accountMenuFrameContentPane.setLayout(null);
         editAccountButton = new JButton("Edit Account");
         deleteAccountButton = new JButton("Delete Account");
         backButton = new JButton("Back to Menu Frame");
@@ -126,9 +126,9 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
         backButton.addActionListener(actionListener);
 
         //Add all components into the Frame;
-        AccountMenuFrameContentPane.add(editAccountButton);
-        AccountMenuFrameContentPane.add(deleteAccountButton);
-        AccountMenuFrameContentPane.add(backButton);
+        accountMenuFrameContentPane.add(editAccountButton);
+        accountMenuFrameContentPane.add(deleteAccountButton);
+        accountMenuFrameContentPane.add(backButton);
 
         //Finalize the Frame
         accountMenuFrame.setSize(400, 300);
