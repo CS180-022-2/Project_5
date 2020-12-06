@@ -114,11 +114,14 @@ This method sets up the appearance of the frame
 + Pressing "Back" button will take the user to AccountMenuFrame
 #### Class Documentation
 ##### contentCheck() method
-Checks inserted information to make sure it doesn't contain forbidden characters.
+Checks inserted information to make sure it doesn't contain forbidden characters.\n
 @param password the password to be checked
 @param realName the name to be checked 
 @param email the email to be checked
 @return true if above input passes checks, false otherwise.
+
+
+
 
 ### EditProfileFrame Class
 #### Description
