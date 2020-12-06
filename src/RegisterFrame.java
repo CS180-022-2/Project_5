@@ -117,7 +117,7 @@ public class RegisterFrame extends JComponent implements Runnable {
     }
 
     /**
-     *
+     * Sets up the registration frame
      */
     @Override
     public void run() {
