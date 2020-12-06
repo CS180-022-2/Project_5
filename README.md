@@ -20,6 +20,7 @@ In situation where the user needs to input info for account or profile, somethin
 
 ### AccountMenuFrame Class
 #### Description
+This is a class representing the frame that gives users the option to either edit, or delete their accounts. The above mentioned functions are accessed through the use of buttons. 
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
