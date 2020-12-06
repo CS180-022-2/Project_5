@@ -49,7 +49,8 @@ public class RegisterFrame extends JComponent implements Runnable {
 
     ActionListener actionListener = new ActionListener() {
         /**
-         *
+         * New action listener for listening to button press.
+         * Invoked when either backButton or registerButton is pressed.
          *
          * @param e
          */
@@ -108,9 +109,8 @@ public class RegisterFrame extends JComponent implements Runnable {
     };
 
     /**
-     *
-     *
-     * @param socket
+     *  The constructor of the RegisterFrame
+     * @param socket The socket of client and server communication.
      */
     public RegisterFrame(Socket socket) {
         this.socket = socket;
@@ -198,13 +198,15 @@ public class RegisterFrame extends JComponent implements Runnable {
     }
 
     /**
-     *
-     *
-     * @param userId
-     * @param password
-     * @param realName
-     * @param email
-     * @return
+     * The content check method
+     * Check the format of text in JTextField and JPasswordField for user id, password, real name, and email
+     * The functionality is implement using String.matches() method which requires a regex as its parameter.
+     * The content has to fully match the regex in order to have boolean correct as true
+     * @param userId The text inside userIdTextField
+     * @param password The text inside passwordField
+     * @param realName The text inside realNameTextField
+     * @param email The text inside emailTextField
+     * @return A boolean which 1 indicates pass the test while 0 indicates does not pass
      */
     public boolean contentCheck(String userId, String password, String realName, String email) {
         boolean correct = true;

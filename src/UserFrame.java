@@ -20,7 +20,7 @@ import javax.swing.table.TableRowSorter;
  * A class representing the frame displaying the friend list of the user in the application.
  * <p>
  * The user is able to see the profile of users in the friend list and delete them from the friend list.
- * Use a JTable to display all users
+ * Use a JTable to display all your friends and a search bar to find certain friends.
  *
  * @author Group 022-2
  * @version November 30, 2020
@@ -51,6 +51,9 @@ public class UserFrame extends JComponent implements Runnable {
     ActionListener popupItemListener = new ActionListener() {
         /**
          * @param e invoked when any of the choice of the popup menu is selected.
+         *          There are two menu choices: view profile and delete friend.
+         *          An if statement is used to prevent no row is selected
+         *          The functionality would be be done by send a String order and a userId to the server.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -105,8 +108,11 @@ public class UserFrame extends JComponent implements Runnable {
 
     ActionListener buttonActionListener = new ActionListener() {
         /**
-         *
-         *
+         *  This is the listener for buttons.
+         *  There are three buttons:
+         *  One is the logout button which back to loginFrame.
+         *  The second is the addFriend button which leads you to addFriend Frame.
+         *  The third would be the account and profile button which would lead you to AccountProfileFrame.
          * @param e
          */
         @Override
@@ -138,7 +144,8 @@ public class UserFrame extends JComponent implements Runnable {
     }
 
     /**
-     *
+     *  In run method, the GUIs are initialized.
+     *  bufferedReader and printWriter is created with the socket that being transferred from other frame.
      */
     @Override
     public void run() {
@@ -191,7 +198,7 @@ public class UserFrame extends JComponent implements Runnable {
         panel2.add(jScrollPane, BorderLayout.CENTER);
         panel2.setVisible(true);
         userFrame.add(panel2, BorderLayout.CENTER);
-
+        //This implements the functionality of search bar.
         jtfFilter.getDocument().addDocumentListener(new DocumentListener() {
             /**
              *
