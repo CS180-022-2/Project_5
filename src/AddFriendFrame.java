@@ -71,7 +71,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
 
     ActionListener actionListener = new ActionListener() {
         /**
-         * actionLister for back button adn menu items.
+         * ActionLister for back button and menu items.
          *
          * @param e object of the ActionEvent
          */
@@ -239,7 +239,9 @@ public class AddFriendFrame extends JPanel implements Runnable {
     }
 
     /**
-     *
+     * Run method
+     * Initialize three scrollPane, each contains a JTable
+     * A search bar is implemented using a JTextField and a RowSorter.
      */
     @Override
     public void run() {
@@ -327,9 +329,8 @@ public class AddFriendFrame extends JPanel implements Runnable {
 
         jtfFilter.getDocument().addDocumentListener(new DocumentListener() {
             /**
-             *
-             *
-             * @param e
+             * Document listener for inserting text
+             * @param e invoked when the text in the jtfFilter JTextField is inserted.
              */
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -343,9 +344,8 @@ public class AddFriendFrame extends JPanel implements Runnable {
             }
 
             /**
-             *
-             *
-             * @param e
+             * Document listener for removing text
+             * @param e invoked when the text in the jtfFilter JTextField is removed.
              */
             @Override
             public void removeUpdate(DocumentEvent e) {
@@ -359,9 +359,8 @@ public class AddFriendFrame extends JPanel implements Runnable {
             }
 
             /**
-             *
-             *
-             * @param e
+             * Document lister for changing of other attribute than text.
+             * @param e DocumentEvent e which is when user change the text inside the jtfFilter JTextField
              */
             @Override
             public void changedUpdate(DocumentEvent e) {

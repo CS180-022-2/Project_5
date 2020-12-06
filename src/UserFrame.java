@@ -145,6 +145,7 @@ public class UserFrame extends JComponent implements Runnable {
     /**
      *  In run method, the GUIs are initialized.
      *  BufferedReader and PrintWriter is created with the socket that being transferred from other frame.
+     *  A search bar is implemented by using documentLister and a JTextField
      */
     @Override
     public void run() {
@@ -200,9 +201,8 @@ public class UserFrame extends JComponent implements Runnable {
         //This implements the functionality of search bar.
         jtfFilter.getDocument().addDocumentListener(new DocumentListener() {
             /**
-             *
-             *
-             * @param e
+             * Document listener for inserting text
+             * @param e invoked when the text in the jtfFilter JTextField is inserted.
              */
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -216,9 +216,8 @@ public class UserFrame extends JComponent implements Runnable {
             }
 
             /**
-             *
-             *
-             * @param e
+             * Document listener for removing text
+             * @param e invoked when the text in the jtfFilter JTextField is removed.
              */
             @Override
             public void removeUpdate(DocumentEvent e) {
@@ -232,6 +231,7 @@ public class UserFrame extends JComponent implements Runnable {
             }
 
             /**
+             * Document lister for changing of other attribute than text.
              * @param e DocumentEvent e which is when user change the text inside the jtfFilter JTextField
              */
             @Override
@@ -245,6 +245,7 @@ public class UserFrame extends JComponent implements Runnable {
         userFrame.setLocationRelativeTo(null);
         userFrame.addWindowListener(new WindowAdapter() {
             /**
+             * Window closing listener to close the socket when the user close the software.
              * @param e Invoked when a window is in the process of being closed.
              *          The close operation can be overridden at this point.
              */
@@ -265,7 +266,6 @@ public class UserFrame extends JComponent implements Runnable {
 
     /**
      *  The method that communicate with the server and get the updated userInfo in the login user's friendList
-     *
      * @param userId The id of the login user
      * @return return the updated model with the content of current friendList
      */
@@ -305,8 +305,6 @@ public class UserFrame extends JComponent implements Runnable {
         }
         return new DefaultTableModel(rowData, columnName) {
             /**
-             *
-             *
              * @param row Row of Data
              * @param column The column head
              * @return return a DefaultTableModel with the parameter and override its isCellEditable to return false
