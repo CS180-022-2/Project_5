@@ -8,6 +8,8 @@ import javax.swing.SwingUtilities;
  * A class representing the client-side of our application.
  * <p>
  * This class includes the main method and invokes the Login frame of our application when begin.
+ * The process should be loginFrame -> (<-Register) userFrame -> accountProfileFrame OR addFriendFrame
+ * A socket is created and pass as parameters in all other frames to maintain connection with the server
  *
  * @author Group 022-2
  * @version November 30, 2020
@@ -24,6 +26,7 @@ public class ProfileClient {
                     "Unable to connect to the server", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        //Invoke LoginFrame in the Event Dispatch Thread
         SwingUtilities.invokeLater(new LoginFrame(socket));
     }
 }

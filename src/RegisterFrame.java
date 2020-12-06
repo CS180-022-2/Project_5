@@ -175,6 +175,7 @@ public class RegisterFrame extends JComponent implements Runnable {
         registerFrame.setSize(400, 300);
         registerFrame.setLocationRelativeTo(null);
         registerFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        //add a window listener to close the bufferedReader and printWriter to prevent socket close exception
         registerFrame.addWindowListener(new WindowAdapter() {
             /**
              * Invoked when a window is in the process of being closed.

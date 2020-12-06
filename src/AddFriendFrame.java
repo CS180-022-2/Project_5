@@ -24,6 +24,12 @@ import javax.swing.JTable;
  * <p>
  * A class representing the frame to send friend requests to another users, view a list of all the application's users,
  * search a specific user among all the application's users, view the requested friend list and the pending friend list.
+ * Three JScrollPane, each contains a JTable.
+ * The center one would have a table that contains all users where you can choose users to send friend request
+ * The left one would have a table that record all users which you have sent request to but not get respond
+ * You can choose to resend request.
+ * The right one would have a table that contains all users which have sent you a request. You can either accept or deny
+ *
  *
  * @author Group 022-2
  * @version November 30, 2020
@@ -65,7 +71,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
 
     ActionListener actionListener = new ActionListener() {
         /**
-         *
+         * actionLister for back button adn menu items.
          *
          * @param e
          */
@@ -222,7 +228,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
     };
 
     /**
-     *
+     * The constructor so that socket and the login userId can be passed.
      *
      * @param socket
      * @param userId
@@ -374,6 +380,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
         addFriendFrame.pack();
         addFriendFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addFriendFrame.setLocationRelativeTo(null);
+        // Add a windowListener to close the bufferedReader, printWriter, and socket when user close by pressing the "x"
         addFriendFrame.addWindowListener(new WindowAdapter() {
             /**
              * Invoked when a window is in the process of being closed.
@@ -397,9 +404,9 @@ public class AddFriendFrame extends JPanel implements Runnable {
     }
 
     /**
-     *
-     *
-     * @return
+     * updateAllUserModel method
+     * Communicate with the server to get most update user list.
+     * @return A DefaultTableModel with the updated data as its column.
      */
     public DefaultTableModel updateAllUserModel() {
         String[][] rowData = new String[0][0];
@@ -440,9 +447,9 @@ public class AddFriendFrame extends JPanel implements Runnable {
     }
 
     /**
-     *
-     *
-     * @return
+     * updatePendingModel method
+     * Communicate with the server to get the updated user info in the pending list
+     * @return A DefaultTableModel with the updated data as its column.
      */
     public DefaultTableModel updatePendingModel() {
         String[][] rowData = new String[0][0];
@@ -488,9 +495,9 @@ public class AddFriendFrame extends JPanel implements Runnable {
     }
 
     /**
-     *
-     *
-     * @return
+     * updateRequestModel method
+     * Communicate with the server to get the updated user info in the request list
+     * @return A DefaultTableModel with the updated data as its column.
      */
     public DefaultTableModel updateRequestModel() {
         String[][] rowData = new String[0][0];
@@ -536,7 +543,10 @@ public class AddFriendFrame extends JPanel implements Runnable {
     }
 
     /**
-     *
+     * updateAll method
+     * Update the date by changing the model of all three tables
+     * reset the rowSorter to make sure the search bar keep working
+     * Then repaint the JFrame addFriendFrame
      */
     public void updateAll() {
         allUserTable.setModel(updateAllUserModel());

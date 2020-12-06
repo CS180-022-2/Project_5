@@ -28,8 +28,13 @@ public class ProfileServer implements Runnable {
     }
 
     public static void main(String[] args) {
+        //Initialize an arraylist to store all user data.
         userArrayList = new ArrayList<>();
         f = new File("MainData.dat");
+        /** if there is no such date file, a file would be created
+         *  else would user objectInputStream to read user object inside the file.
+         */
+
         if (!f.exists()) {
             try {
                 f.createNewFile();
@@ -43,7 +48,9 @@ public class ProfileServer implements Runnable {
                     userArrayList.add((User) readObject);
                     readObject = objectInputStream.readObject();
                 }
-                // catch EOF exception which indicates that the objectInputStream has reached an end.
+                /** catch EOF exception which indicates that the objectInputStream has reached an end.
+                 *  This is for special case when there is no object inside the data file but the file is created.
+                 */
             } catch (EOFException eofException) {
 
             } catch (IOException | ClassNotFoundException e) {
@@ -52,6 +59,11 @@ public class ProfileServer implements Runnable {
         }
         try {
             ServerSocket serverSocket = new ServerSocket(1112);
+            /**
+             * Use a while loop to accept all socket receives with multithreading
+             * A thread would be start whenever the a socket is accepted
+             * The socket would be pass to a thread to interacting with the client.
+             */
             while (true) {
                 Socket socket = serverSocket.accept();
                 ProfileServer server = new ProfileServer(socket);
@@ -63,21 +75,12 @@ public class ProfileServer implements Runnable {
     }
 
     /**
-     *
-     *
-     * @param userId
-     * @return
-     */
-    synchronized boolean dualLoginCheck(String userId) {
-        return true;
-    }
-
-    /**
-     *
-     *
-     * @param username
-     * @param password
-     * @return
+     * login method
+     * Check the username and password to see if the user logs in
+     * @param username the username of the login user
+     * @param password the password of the login user
+     * @return true if the username and password are correct
+     *         false if otherwise
      */
     synchronized boolean login(String username, String password) {
         boolean hasAccount = false;
@@ -131,10 +134,12 @@ public class ProfileServer implements Runnable {
 
     /**
      *
-     *
-     * @param ownId
-     * @param friendId
-     * @return
+     * @param ownId id of the requester
+     * @param friendId id of the user that the requester want to request
+     * @return "RequestSuccess" if the success;
+     *         "Already friend!" if in each other 's friendList;
+     *         "Already requested!" if requested user in requester 's requested list;
+     *         "Already being requested!" if the requested user has already sent a request to requester;
      */
     synchronized String requestFriend(String ownId, String friendId) {
         User own = null;
@@ -167,11 +172,11 @@ public class ProfileServer implements Runnable {
     }
 
     /**
-     *
-     *
-     * @param ownId
-     * @param friendId
-     * @return
+     * deleteFriend method
+     * delete the friend in deleter 's  friendList and deleter in friend's friendList.
+     * @param ownId the id of the deleter
+     * @param friendId the id of the friend that deleter want to delete
+     * @return True if the deletion is success; False if no existence
      */
     synchronized boolean deleteFriend(String ownId, String friendId) {
         User ownUser = null;
@@ -196,10 +201,11 @@ public class ProfileServer implements Runnable {
     }
 
     /**
+     * uniquePhoneNoCheck method
+     * Check to make sure every phone number registered is unique.
      *
-     *
-     * @param phoneNumber
-     * @return
+     * @param phoneNumber  Phone Number of the user
+     * @return True if the phone number is unique; False if it has been used.
      */
     synchronized boolean uniquePhoneNoCheck(String phoneNumber) {
         if (userArrayList.isEmpty()) {
@@ -236,11 +242,16 @@ public class ProfileServer implements Runnable {
     }
 
     /**
+     * acceptFriend method
+     * accept the request in pending list
+     * add to each other 's friendList
+     * delete history in pending and requested list
      *
-     *
-     * @param ownId
-     * @param friendId
-     * @return
+     * @param ownId the id of the user who accept the request
+     * @param friendId the id of the user who sent the request
+     * @return "AcceptSuccess" if there is an request and are accepted successfully
+     *         "No request found" if there are no request
+     *         "No such user found" if can not find the user of either ownId or friendId
      */
     synchronized String acceptFriend(String ownId, String friendId) {
         User own = null;
@@ -271,11 +282,15 @@ public class ProfileServer implements Runnable {
     }
 
     /**
+     * denyFriend method
+     * deny the request in pending list
+     * delete history in pending and requested list
      *
-     *
-     * @param ownId
-     * @param friendId
-     * @return
+     * @param ownId the id of the user who deny the request
+     * @param friendId the id of the user who sent the request
+     * @return "DenySuccess" if there is an request and deny successfully
+     *         "No request found" if there are no request
+     *         "No such user found" if can not find the user of either ownId or friendId
      */
     synchronized String denyFriend(String ownId, String friendId) {
         User own = null;
@@ -304,11 +319,14 @@ public class ProfileServer implements Runnable {
     }
 
     /**
-     *
-     *
-     * @param ownId
-     * @param friendId
-     * @return
+     * resendRequest method
+     * check if the request has been sent
+     * if not resend request, if sent, ask the user to be more patient
+     * @param ownId the login user
+     * @param friendId the user who have been requested
+     * @return "RequestExisted" if the request is in the user's pending list
+     *         "ResendSuccess" if there is no request and the request is resend
+     *         "No such user found" if can not find user of either ownId or friendId
      */
     synchronized String resendRequest(String ownId, String friendId) {
         User own = null;
@@ -340,7 +358,10 @@ public class ProfileServer implements Runnable {
     }
 
     /**
-     *
+     * run method
+     * Start whenever a new socket is accepted
+     * create a printWriter and a bufferedReader
+     * Use a switch to perform different tasks required by the clients
      */
     @Override
     public void run() {
@@ -349,11 +370,12 @@ public class ProfileServer implements Runnable {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             while (true) {
                 String command = bufferedReader.readLine();
+                //To stop this thread when the user close the software.
                 if (command == null) {
-
                     printWriter.close();
                     bufferedReader.close();
                     socket.close();
+                    // Save the data into the data file if userArrayList is not empty
                     if (!userArrayList.isEmpty()) {
                         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(f))) {
                             for (User user : userArrayList) {
@@ -370,11 +392,7 @@ public class ProfileServer implements Runnable {
                         String loginUser = bufferedReader.readLine();
                         String password = bufferedReader.readLine();
                         boolean hasAccount = login(loginUser, password);
-                        /*
-                            DualLoginCheck can prevent the login of several accounts.
-                            Not implemented yet, wait until the whole project is finished.
-                         */
-                        if (hasAccount && dualLoginCheck(loginUser)) {
+                        if (hasAccount) {
                             printWriter.println("Success");
                         } else if (hasAccount) {
                             printWriter.println("DualLogin");
