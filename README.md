@@ -163,6 +163,16 @@ It's just as how Derek edited it
 
 <img width="224" alt="ViewDerekProfile" src="https://user-images.githubusercontent.com/74845705/101283853-148baa00-3818-11eb-8e0d-77746a57adda.png">
 
+Let's delete Derek's profile now
+
+<img width="213" alt="deleteProfile" src="https://user-images.githubusercontent.com/74845705/101284104-50733f00-3819-11eb-9c27-ff4e593ad281.png">
+
+<img width="306" alt="DeleteDerekProfile" src="https://user-images.githubusercontent.com/74845705/101284110-523d0280-3819-11eb-98c2-a2baedf3bbcb.png">
+
+Looking at Derek's profile as another user, Derek's profile became blank again
+
+<img width="278" alt="DeleteAfterDerekProfiel" src="https://user-images.githubusercontent.com/74845705/101284109-51a46c00-3819-11eb-979d-4b3650e9c38c.png">
+
 #### Class Documentation
 ##### contentCheck()
 Checks inserted information to make sure it doesn't contain forbidden characters and that it isn't empty.
