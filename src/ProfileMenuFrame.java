@@ -89,7 +89,7 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
     }
 
     /**
-     *
+     * Sets up the Profile menu frame
      */
     @Override
     public void run() {
