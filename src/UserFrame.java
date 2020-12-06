@@ -134,7 +134,7 @@ public class UserFrame extends JComponent implements Runnable {
     /**
      * The constructor of UserFrame which use two parameters : socket and userId
      *
-     * @param socket The socket that connect this computer connect with the server
+     * @param socket The socket that connects this local machine with the server
      * @param userId The userId of the login user
      */
     public UserFrame(Socket socket, String userId) {

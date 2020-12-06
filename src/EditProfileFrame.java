@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Locale;
 import javax.swing.*;
 /**
  * Project 05 - Social Network "Profile" Application
@@ -56,10 +57,10 @@ public class EditProfileFrame extends JComponent implements Runnable {
                 editProfileFrame.dispose();
             }
             if (e.getSource() == editProfileButton) {
-                String userPhoneNo = userPhoneNoTextField.getText();
-                String currentOccupation = currentOccupationTextField.getText();
-                String aboutMe = aboutMeTextField.getText();
-                String interest = interestField.getText();
+                String userPhoneNo = userPhoneNoTextField.getText().trim();
+                String currentOccupation = currentOccupationTextField.getText().trim();
+                String aboutMe = aboutMeTextField.getText().trim();
+                String interest = interestField.getText().trim();
                 String gender = String.valueOf(genderList.getSelectedItem());
                 String relationship = String.valueOf(relationshipList.getSelectedItem());
                 if (!contentCheck(userPhoneNo, currentOccupation, aboutMe, interest, gender, relationship)) {
@@ -82,7 +83,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
                 //Pass the data to server
                 printWriter.println("EditOwnProfile");
                 printWriter.println(userId);
-                printWriter.printf("%s, %s, %s, %s, %s, %s\n", userPhoneNo, relationship, gender, currentOccupation,
+                printWriter.printf("%s/ %s/ %s/ %s/ %s/ %s\n", userPhoneNo, relationship, gender, currentOccupation,
                         interest, aboutMe);
                 printWriter.flush();
                 String success = "";

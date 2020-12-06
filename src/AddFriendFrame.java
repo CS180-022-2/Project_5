@@ -382,10 +382,8 @@ public class AddFriendFrame extends JPanel implements Runnable {
         // Add a windowListener to close the bufferedReader, printWriter, and socket when user close by pressing the "x"
         addFriendFrame.addWindowListener(new WindowAdapter() {
             /**
-             * Invoked when a window is in the process of being closed.
-             * The close operation can be overridden at this point.
-             *
-             * @param e
+             * @param e Invoked when a window is in the process of being closed.
+             *          The close operation can be overridden at this point.
              */
             @Override
             public void windowClosing(WindowEvent e) {

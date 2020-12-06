@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileMenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileMenuFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RunLocalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunLocalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainData.dat" beforeDir="false" afterPath="$PROJECT_DIR$/MainData.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest$TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest$TestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddFriendFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddFriendFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditProfileFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +75,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.RunLocalTest">
+  <component name="RunManager" selected="Application.ProfileServer">
     <configuration name="ProfileClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ProfileClient" />
       <module name="Project_5" />
@@ -81,13 +97,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -99,9 +117,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RunLocalTest" />
         <item itemvalue="Application.ProfileClient" />
         <item itemvalue="Application.ProfileServer" />
+        <item itemvalue="Application.RunLocalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +139,8 @@
       <workItem from="1607054844131" duration="3165000" />
       <workItem from="1607077984174" duration="3608000" />
       <workItem from="1607203646904" duration="710000" />
-      <workItem from="1607250076883" duration="7621000" />
+      <workItem from="1607250076883" duration="9132000" />
+      <workItem from="1607268197057" duration="3077000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.io.*;
 /**
@@ -599,9 +600,14 @@ public class ProfileServer implements Runnable {
                     }
                     case "EditOwnProfile" -> {
                         String userId = bufferedReader.readLine();
-                        String[] splitProfile = bufferedReader.readLine().split(", ");
-                        Profile userProfile = new Profile(splitProfile[0], splitProfile[1], splitProfile[2],
-                                splitProfile[3], splitProfile[4], splitProfile[5]);
+                        Profile userProfile = getProfile(userId);
+                        String[] splitProfile = bufferedReader.readLine().split("/ ");
+                        userProfile.setPhoneNumber(splitProfile[0]);
+                        userProfile.setRelationship(splitProfile[1]);
+                        userProfile.setGender(splitProfile[2]);
+                        userProfile.setCurrentOccupation(splitProfile[3]);
+                        userProfile.setInterest(splitProfile[4]);
+                        userProfile.setAboutMe(splitProfile[5]);
                         boolean success = setUserProfile(userProfile, userId);
                         if (success) {
                             printWriter.println("Success");
@@ -613,7 +619,8 @@ public class ProfileServer implements Runnable {
                     case "DeleteOwnProfile" -> {
                         String userId = bufferedReader.readLine();
                         if (getProfile(userId).getPhoneNumber().equals("") && getProfile(userId).getAboutMe().equals("")
-                                && getProfile(userId).getCurrentOccupation().equals("") && getProfile(userId).getInterest().equals("")) {
+                                && getProfile(userId).getCurrentOccupation().equals("") &&
+                                getProfile(userId).getInterest().equals("")) {
                             printWriter.println("No Profile");
                             printWriter.flush();
                             break;
