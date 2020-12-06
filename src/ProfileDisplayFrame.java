@@ -63,12 +63,12 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
     };
 
     /**
+     * Constructor for the ProfileDisplayFrame class
      *
-     *
-     * @param socket
-     * @param viewerId
-     * @param profileOwnerId
-     * @param tracker
+     * @param socket the socket to connect to
+     * @param viewerId 
+     * @param profileOwnerId 
+     * @param tracker 
      */
     public ProfileDisplayFrame(Socket socket, String viewerId, String profileOwnerId, String tracker) {
         this.socket = socket;
@@ -78,8 +78,7 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
     }
 
     /**
-     *
-     *
+     * Sets up the appearance of the profile display frame 
      */
     @Override
     public void run() {
