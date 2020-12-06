@@ -112,6 +112,7 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         deleteProfileButton = new JButton("Delete Profile");
         editProfileButton = new JButton("Create / Edit Profile");
         backButton = new JButton("Back to Menu Frame");
+
         //Set component location
         editProfileButton.setBounds(120, 50, 160, 30);
         deleteProfileButton.setBounds(120, 100, 160, 30);
@@ -126,6 +127,7 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         profileMenuFrameContentPane.add(editProfileButton);
         profileMenuFrameContentPane.add(deleteProfileButton);
         profileMenuFrameContentPane.add(backButton);
+
         //Finalize the Frame
         profileMenuFrame.setSize(400, 300);
         profileMenuFrame.setLocationRelativeTo(null);

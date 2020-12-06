@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainData.dat" beforeDir="false" afterPath="$PROJECT_DIR$/MainData.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccountMenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountMenuFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccountProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountProfileFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddFriendFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddFriendFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditAccountFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditAccountFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditProfileFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileDisplayFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileDisplayFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProfileMenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileMenuFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RunLocalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunLocalTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +59,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.ProfileClient">
+  <component name="RunManager" selected="Application.RunLocalTest">
     <configuration name="ProfileClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ProfileClient" />
       <module name="Project_5" />
@@ -112,9 +99,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RunLocalTest" />
         <item itemvalue="Application.ProfileClient" />
         <item itemvalue="Application.ProfileServer" />
-        <item itemvalue="Application.RunLocalTest" />
       </list>
     </recent_temporary>
   </component>
@@ -134,7 +121,7 @@
       <workItem from="1607054844131" duration="3165000" />
       <workItem from="1607077984174" duration="3608000" />
       <workItem from="1607203646904" duration="710000" />
-      <workItem from="1607250076883" duration="6702000" />
+      <workItem from="1607250076883" duration="7621000" />
     </task>
     <servers />
   </component>

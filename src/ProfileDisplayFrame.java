@@ -65,12 +65,12 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
 
     /**
      * The constructor of ProfileDisplayFrame which uses four parameters : socket, viewerId, profileOwnerId, and
-     *                                                                     tracer.
+     *                                                                     tracker.
      *
      * @param socket The socket that connects this local machine with the server
      * @param viewerId The userId of the viewer
      * @param profileOwnerId The userId of the owner of this profile
-     * @param tracker The tracker that tracks the
+     * @param tracker The tracker that tracks the user.
      */
     public ProfileDisplayFrame(Socket socket, String viewerId, String profileOwnerId, String tracker) {
         this.socket = socket;

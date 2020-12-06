@@ -11064,9 +11064,9 @@ public class RunLocalTest {
             m = "login";
             Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.login("derek2", "Cs180==="));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.login("dere", "Cs180==="));
-            m = "dualLoginCheck";
+            /*m = "dualLoginCheck";
             Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.dualLoginCheck("derek2"));
-            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", false, ps.dualLoginCheck("dere"));
+            Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", false, ps.dualLoginCheck("dere"));*/
             m = "getProfile";
             Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", ps.getProfile("derek2"), ps.getProfile("derek2"));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.getProfile("dere"));
