@@ -28,7 +28,7 @@ This is a class representing the frame that gives users the option to either edi
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
 ##### Run() method
-This method set up the appearance of the frame  
+This method sets up the appearance of the frame  
 
 <img width="290" alt="accountMenuFrame" src="https://user-images.githubusercontent.com/74845705/101246891-fc048c80-3750-11eb-926f-f616bbf17ca3.png">
 
@@ -42,6 +42,8 @@ This method set up the appearance of the frame
 
 ### AccountProfileFrame Class
 #### Description
+A class representing the frame that serves as an intermediary for creation, edition, and deletion of both user account and profile.
+When the user wants to edit or delete their account, they can click "Account" button and vice versa for their profile.
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
@@ -49,7 +51,7 @@ This method set up the appearance of the frame
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
 ##### Run() method
-This method set up the appearance of the frame  
+This method sets up the appearance of the frame  
 
 <img width="288" alt="accountProfileFrame" src="https://user-images.githubusercontent.com/74845705/101246918-42f28200-3751-11eb-952f-bbc8cb84f60e.png">
 
@@ -58,6 +60,8 @@ This method set up the appearance of the frame
 + Pressing "Account" button will take the user to AccountMenuFrame
 ### AddFriendFrame Class
 #### Description
+A class representing the frame to send friend requests to another users, view a list of all the application's users, search a specific user among all the application's users, view the requested friend list and the pending friend list.
+Three JScrollPane, each contains a JTable. The center one would have a table that contains all users where you can choose users to send friend request. The left one would have a table that record all users which you have sent request to but not get respond. You can choose to resend request. The right one would have a table that contains all users which have sent you a request. You can either accept or deny
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
@@ -75,8 +79,26 @@ This method set up the appearance of the frame
 + Pressing "accept" button will make accepted user appear on current user's friendlist
 + Pressing "deny" button will make the denied user disappear from the pending list
 + Pressing "resendRequest" button will make current user reappear on requested user's pending list
+#### Class Documentation
+##### updateAllUserModel() method
+Communicates with the server to get most updated user list
+@return A DefaultTableModel with the updated data as its column
+##### updatePendingModel()
+Communicates with the server to get the updated user info in the pending list
+@return A DefaultTableModel with the updated data as its column
+##### updateRequestModel() method
+Communicate with the server to get the updated user info in the request list
+@return A DefaultTableModel with the updated data as its column
+##### updateAll() method
+Updates the data by changing the model of all three tables. Resets the rowSorter to make sure the search bar keep working. Then repaints the JFrame addFriendFrame
+
+
+
+
 ### EditAccountFrame Class
 #### Description
+A class representing the frame to edit the user account details.
+Users can change their name, email address, and password but not the user ID. All the changed account details must conform to the respective validation rules.
 #### Testing
 1. Tested that the class exists and inherits or implement the correct classes
 2. Tested that all fields exist, and are of correct type and modifiers
@@ -84,12 +106,20 @@ This method set up the appearance of the frame
 4. Two implementation tests to test if each method work with correct input and     fails with incorrect input. 
 #### GUI
 ##### Run() method
-This method set up the appearance of the frame  
+This method sets up the appearance of the frame  
 
 <img width="288" alt="editAccountFrame" src="https://user-images.githubusercontent.com/74845705/101246934-5bfb3300-3751-11eb-936d-5578c25ef8b1.png">
 
 + Pressing "editAccountButton" button will reset user's account info with input
 + Pressing "Back" button will take the user to AccountMenuFrame
+#### Class Documentation
+##### contentCheck() method
+Checks inserted information to make sure it doesn't contain forbidden characters.
+@param password the password to be checked
+@param realName the name to be checked 
+@param email the email to be checked
+@return true if above input passes checks, false otherwise.
+
 ### EditProfileFrame Class
 #### Description
 #### Testing
