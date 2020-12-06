@@ -9894,53 +9894,6 @@ public class RunLocalTest {
         }
         /////////////////////////////////////////////////////////////////////////////////////
         @Test(timeout = 1000)
-        public void profileServerMethodTestOne() {
-
-            Class<?> clazz = ProfileServer.class;
-            String className = "ProfileServer";
-
-            Method method;
-            int modifiers;
-            Class<?> actualReturnType;
-            int expectedLength = 0;
-            Class<?>[] exceptions;
-
-            // Set the method that you want to test
-            String methodName = "dualLoginCheck";
-
-            // Set the return type of the method you want to test
-            // Use the type + .class
-            // For example, String.class or int.class
-            Class<?> expectedReturnType = boolean.class;
-
-            // Attempt to access the class method
-            try {
-                method = clazz.getDeclaredMethod(methodName, String.class);
-            } catch (NoSuchMethodException e) {
-                Assert.fail("Ensure that `" + className + "` declares a method named `" + methodName + "` that" +
-                        " has no parameters!");
-
-                return;
-            } //end try catch
-
-            // Perform tests
-
-            modifiers = method.getModifiers();
-
-            actualReturnType = method.getReturnType();
-
-            exceptions = method.getExceptionTypes();
-
-            Assert.assertTrue("Ensure that `" + className + "`'s `" + methodName + "` method is `Synchronized`!", Modifier.isSynchronized(modifiers));
-
-            Assert.assertFalse("Ensure that `" + className + "`'s `" + methodName + "` method is NOT `static`!", Modifier.isStatic(modifiers));
-
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName + "` method has the correct return type!", expectedReturnType, actualReturnType);
-
-            Assert.assertEquals("Ensure that `" + className + "`'s `" + methodName + "` method has an empty `throws` clause!", expectedLength, exceptions.length);
-
-        }
-        @Test(timeout = 1000)
         public void profileServerMethodTestTwo() {
 
             Class<?> clazz = ProfileServer.class;
