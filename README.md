@@ -35,7 +35,6 @@ This method sets up the appearance of the frame
 
 <img width="290" alt="accountMenuFrame" src="https://user-images.githubusercontent.com/74845705/101246891-fc048c80-3750-11eb-926f-f616bbf17ca3.png">
 
-
 + Pressing "Edit Acoount" button will take the user to EditProfileFrame
 + Pressing "Back" button will take the user to AccountProfileFrame
 + Pressing "Delete Account" button will prompt this message below and delete the profile
@@ -82,24 +81,25 @@ This method set up the appearance of the frame
 + Pressing "deny" button will make the denied user disappear from the pending list
 + Pressing "resendRequest" button will make current user reappear on requested user's pending list
 
-**Pending Table**
+Step by step Test
+
+Pending Table
 
 <img width="227" alt="pendingDerek" src="https://user-images.githubusercontent.com/74845705/101283377-e789c800-3814-11eb-8e4a-c7e8d218a110.png">
 
-**If Deny**
+If Deny
 
 <img width="227" alt="pendingDeny" src="https://user-images.githubusercontent.com/74845705/101283397-08eab400-3815-11eb-900a-558ff2c57065.png">
 
-
-**If Accept**
+If Accept
 
 <img width="229" alt="pendingAccept - Copy" src="https://user-images.githubusercontent.com/74845705/101283402-0ab47780-3815-11eb-8a22-c81460a1d749.png">
 
-**This prompt comes up**
+This prompt comes up
 
 <img width="236" alt="acceptSuccess - Copy" src="https://user-images.githubusercontent.com/74845705/101283400-0a1be100-3815-11eb-93a1-c0b084d974a2.png">
 
-**Derek will be added to friend list**
+Derek will be added to friend list
 
 <img width="395" alt="afterafteraccept" src="https://user-images.githubusercontent.com/74845705/101283401-0a1be100-3815-11eb-8d5d-1debf2b96371.png">
 
@@ -130,6 +130,43 @@ This method sets up the appearance of the frame
 
 + Pressing "editAccountButton" button will reset user's account info with input
 + Pressing "Back" button will take the user to AccountMenuFrame
+
+Step by step Test
+
+Let's delete Joshua's account
+
+First login in as Joshua, id = joshua, password = Cs180===
+
+<img width="437" alt="LoginAsJoshua" src="https://user-images.githubusercontent.com/74845705/101284361-9d0b4a00-381a-11eb-8e4b-17f33905f828.png">
+
+<img width="288" alt="LoginAsJoshuaandDELETE" src="https://user-images.githubusercontent.com/74845705/101284373-ad232980-381a-11eb-81c3-6e95fda7ccc4.png">
+
+Delete successfully !
+
+<img width="318" alt="LoginASJOSHUAandDELETESUcceses" src="https://user-images.githubusercontent.com/74845705/101284375-adbbc000-381a-11eb-9453-edc4e0099184.png">
+
+Using the same userID and password, we can't no longer login as Joshua
+
+<img width="434" alt="LoginasJOshuaNOWFAIL" src="https://user-images.githubusercontent.com/74845705/101284371-abf1fc80-381a-11eb-8209-b684d91f35e0.png">
+
+Let's edit Leo's account
+
+His account before edit was passowrd: Cs180=== Name: Leo Li  email: li@purdue.edu
+
+<img width="439" alt="LeoLogIn" src="https://user-images.githubusercontent.com/74845705/101284663-2a02d300-381c-11eb-8a73-37f7968dca83.png">
+
+Edit leo's account info as: password: Cs280===  Name: Leo La  email: la@purdue.edu
+
+<img width="290" alt="LeoEditingAccount" src="https://user-images.githubusercontent.com/74845705/101284666-2c652d00-381c-11eb-85b7-527f081ff1bf.png">
+
+Now we see the changes as another user
+
+<img width="220" alt="LeoaddfriendFrame" src="https://user-images.githubusercontent.com/74845705/101284665-2bcc9680-381c-11eb-93a4-9cdfc38f1665.png">
+
+Leo has to login with password Cs280=== instead of Cs180=== from now on
+
+<img width="435" alt="LeoLoginwithcs280" src="https://user-images.githubusercontent.com/74845705/101284664-2b340000-381c-11eb-9527-cacf80d06802.png">
+
 #### Class Documentation
 ##### contentCheck() method
 Checks inserted information to make sure it doesn't contain forbidden characters.
@@ -151,17 +188,19 @@ This method sets up the appearance of the frame
 + Pressing "editProfileButton" button will reset user's profile info with input
 + Pressing "Back" button will take the user to ProfileMenuFrame
 
+Step by step Test
+
 Test by editing Derek's profile which was blank
 
 <img width="278" alt="editProfileAsDerek" src="https://user-images.githubusercontent.com/74845705/101283849-135a7d00-3818-11eb-9e8e-7989fa670575.png">
 
 Viewing Derek's profile as another user
 
-<img width="288" alt="profileDisplayFrame" src="https://user-images.githubusercontent.com/74845705/101283851-148baa00-3818-11eb-89ba-2a5587b5648b.png">
+<img width="224" alt="ViewDerekProfile" src="https://user-images.githubusercontent.com/74845705/101283853-148baa00-3818-11eb-8e0d-77746a57adda.png">
 
 It's just as how Derek edited it
 
-<img width="224" alt="ViewDerekProfile" src="https://user-images.githubusercontent.com/74845705/101283853-148baa00-3818-11eb-8e0d-77746a57adda.png">
+<img width="288" alt="profileDisplayFrame" src="https://user-images.githubusercontent.com/74845705/101283851-148baa00-3818-11eb-89ba-2a5587b5648b.png">
 
 Let's delete Derek's profile now
 
@@ -261,8 +300,6 @@ This method set up the appearance of the frame
 
 <img width="213" alt="deleteProfile" src="https://user-images.githubusercontent.com/74845705/101247657-bac2ab80-3755-11eb-8d93-8a571f51b73a.png">
 
-
-
 ### ProfileServer Class
 #### Description
 A class representing the backend server-side of our application. All the processing of data, connecting to the client, and file I/O happens here.
@@ -356,7 +393,9 @@ This method set up the appearance of the frame
 + Pressing "add" button will take the user to AddFriendFrame
 + Pressing "account" button will take the user to AccountProfileFrame
 
-**Search Bar Testing**
+Step by step Test
+
+Search Bar Testing
 
 Before search
 
