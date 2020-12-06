@@ -100,7 +100,7 @@ public class LoginFrame extends JComponent implements Runnable {
     };
 
     /**
-     *
+     * Sets up the appearance of the login frame 
      */
     @Override
     public void run() {
