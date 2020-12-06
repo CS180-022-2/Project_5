@@ -43,9 +43,9 @@ public class LoginFrame extends JComponent implements Runnable {
     PrintWriter printWriter;
 
     /**
+     * The constructor of LoginFrame which uses one parameter : socket
      *
-     *
-     * @param socket
+     * @param socket The socket that connects this local machine with the server
      */
     public LoginFrame(Socket socket) {
         this.socket = socket;
@@ -53,9 +53,10 @@ public class LoginFrame extends JComponent implements Runnable {
 
     ActionListener actionListener = new ActionListener() {
         /**
-         *
-         *
-         * @param e
+         * @param e Invoked when any of the button in the frame is selected.
+         *          There are two button choices: Login and Register.
+         *          Register button would lead to the RegisterFrame while login button
+         *          would perform the functionality by sending userId and password to the server.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -100,7 +101,8 @@ public class LoginFrame extends JComponent implements Runnable {
     };
 
     /**
-     * Sets up the appearance of the login frame 
+     * Sets up the appearance of the Login Frame by initializing GUIs.
+     * BufferedReader and PrintWriter is created with the socket that is being transferred from other frame.
      */
     @Override
     public void run() {
@@ -114,6 +116,7 @@ public class LoginFrame extends JComponent implements Runnable {
             return;
         }
 
+        //Initialize components and set component location
         loginFrame = new JFrame("Easy Chat");
         Container loginFrameContentPane = loginFrame.getContentPane();
         loginFrameContentPane.setLayout(null);
@@ -132,6 +135,7 @@ public class LoginFrame extends JComponent implements Runnable {
         registerButton.setBounds(290, 160, 100, 30);
         registerButton.addActionListener(actionListener);
 
+        //Add all components into the Frame
         loginFrameContentPane.add(registerButton);
         loginFrameContentPane.add(loginButton);
         loginFrameContentPane.add(userIdLabel);
@@ -139,15 +143,14 @@ public class LoginFrame extends JComponent implements Runnable {
         loginFrameContentPane.add(passwordLabel);
         loginFrameContentPane.add(passwordField);
 
+        //Finalize the Frame
         loginFrame.setSize(600, 300);
         loginFrame.setLocationRelativeTo(null);
         loginFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         loginFrame.addWindowListener(new WindowAdapter() {
             /**
-             * Invoked when a window is in the process of being closed.
-             * The close operation can be overridden at this point.
-             *
-             * @param e
+             * @param e Invoked when a window is in the process of being closed.
+             *          The close operation can be overridden at this point.
              */
             @Override
             public void windowClosing(WindowEvent e) {

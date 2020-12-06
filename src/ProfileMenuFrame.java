@@ -33,9 +33,12 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
 
     ActionListener actionListener = new ActionListener() {
         /**
-         *
-         *
-         * @param e
+         *@param e Invoked when any of the button in the frame is selected.
+         *         There are three button choices: Back, Edit Profile, and Delete Profile
+         *         Back button will lead to the AccountProfileFrame while Edit Profile button
+         *         will lead to the EditProfileFrame. Delete Profile button would happen within the
+         *         ProfileMenuFrame by sending "DeleteOwnProfile" to the server and the server
+         *         initializes all the text fields to blank state.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -78,10 +81,10 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
     };
 
     /**
+     * The constructor of EditProfileFrame which uses two parameters : socket and userId
      *
-     *
-     * @param socket
-     * @param userId
+     * @param socket The socket that connects this local machine with the server
+     * @param userId The userId of the login user
      */
     public ProfileMenuFrame(Socket socket, String userId) {
         this.socket = socket;
@@ -89,7 +92,8 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
     }
 
     /**
-     * Sets up the Profile menu frame
+     * Sets up the appearance of the Profile Menu Frame by initializing GUIs.
+     * BufferedReader and PrintWriter is created with the socket that is being transferred from other frame.
      */
     @Override
     public void run() {
@@ -128,10 +132,8 @@ public class ProfileMenuFrame extends JComponent implements Runnable {
         profileMenuFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         profileMenuFrame.addWindowListener(new WindowAdapter() {
             /**
-             * Invoked when a window is in the process of being closed.
-             * The close operation can be overridden at this point.
-             *
-             * @param e
+             * @param e Invoked when a window is in the process of being closed.
+             *          The close operation can be overridden at this point.
              */
             @Override
             public void windowClosing(WindowEvent e) {

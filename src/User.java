@@ -175,7 +175,7 @@ public class User implements Serializable {
     }
 
     /**
-     * set new user profile
+     * sets new user profile
      *
      * @param userProfile new user profile to set
      */

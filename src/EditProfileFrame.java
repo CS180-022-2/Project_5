@@ -42,11 +42,12 @@ public class EditProfileFrame extends JComponent implements Runnable {
     JButton backButton;
 
     ActionListener actionListener = new ActionListener() {
-
         /**
-         *
-         *
-         * @param e action event to listen to
+         *@param e Invoked when any of the button in the frame is selected.
+         *         There are two button choices: Back and Edit Profile.
+         *         Back button will lead to the ProfileMenuFrame while Edit Profile button
+         *         would perform the functionality by sending the user phone number, current occupation,
+         *         about user, interest, gender, and relationship status to the server.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -64,7 +65,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
                 if (!contentCheck(userPhoneNo, currentOccupation, aboutMe, interest, gender, relationship)) {
                     return;
                 }
-                printWriter.println("UniquePhoneNoCheck");
+                /*printWriter.println("UniquePhoneNoCheck");
                 printWriter.println(userPhoneNo);
                 printWriter.flush();
                 String result = "";
@@ -73,7 +74,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
-                /*if (!result.equals("Unique")) {
+                if (!result.equals("Unique")) {
                     JOptionPane.showMessageDialog(null, "User Phone Number exists",
                             "User Phone Number Error", JOptionPane.WARNING_MESSAGE);
                     return;
@@ -106,10 +107,10 @@ public class EditProfileFrame extends JComponent implements Runnable {
     };
 
     /**
+     * The constructor of EditProfileFrame which uses two parameters : socket and userId
      *
-     *
-     * @param socket
-     * @param userId
+     * @param socket The socket that connects this local machine with the server
+     * @param userId The userId of the login user
      */
     public EditProfileFrame(Socket socket, String userId) {
         this.socket = socket;
@@ -117,7 +118,8 @@ public class EditProfileFrame extends JComponent implements Runnable {
     }
 
     /**
-     * Sets up the appearance of the edit profile frame  
+     *  Sets up the appearance of the Edit Profile Frame by initializing GUIs.
+     *  BufferedReader and PrintWriter is created with the socket that is being transferred from other frame.
      */
     @Override
     public void run() {
@@ -133,6 +135,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
         editProfileFrame = new JFrame("Profile Frame");
         Container editProfileFrameContentPane = editProfileFrame.getContentPane();
         editProfileFrameContentPane.setLayout(null);
+
         //Initialize components
         userPhoneNoLabel = new JLabel("Phone Number");
         userPhoneNoTextField = new JTextField();
@@ -148,6 +151,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
         genderList = new JComboBox<>(new String[]{"Male", "Female", "I do not wish to identify"});
         editProfileButton = new JButton("Edit Profile");
         backButton = new JButton("Back to menu");
+
         //Set component location
         userPhoneNoLabel.setBounds(90, 10, 100, 30);
         userPhoneNoTextField.setBounds(220, 10, 100, 30);
@@ -216,7 +220,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
             }
         }
 
-        //Add all components into the Frame;
+        //Add all components into the Frame
         editProfileFrameContentPane.add(userPhoneNoLabel);
         editProfileFrameContentPane.add(userPhoneNoTextField);
         editProfileFrameContentPane.add(currentOccupationLabel);
@@ -238,10 +242,8 @@ public class EditProfileFrame extends JComponent implements Runnable {
         editProfileFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         editProfileFrame.addWindowListener(new WindowAdapter() {
             /**
-             * Invoked when a window is in the process of being closed.
-             * The close operation can be overridden at this point.
-             *
-             * @param e
+             * @param e Invoked when a window is in the process of being closed.
+             *          The close operation can be overridden at this point.
              */
             @Override
             public void windowClosing(WindowEvent e) {
@@ -259,7 +261,7 @@ public class EditProfileFrame extends JComponent implements Runnable {
     }
 
     /**
-     * Checks inserted information to make sure it doesn't contain forbidden characters and that it isn't empty.
+     * Checks inserted information to make sure it doesn't contain forbidden characters and it isn't empty.
      *
      * @param userPhoneNo the phone number the user enters  
      * @param currentOccupation the job that the user enters

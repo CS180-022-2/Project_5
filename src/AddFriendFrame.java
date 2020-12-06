@@ -73,7 +73,7 @@ public class AddFriendFrame extends JPanel implements Runnable {
         /**
          * actionLister for back button adn menu items.
          *
-         * @param e
+         * @param e object of the ActionEvent
          */
         @Override
         public void actionPerformed(ActionEvent e) {

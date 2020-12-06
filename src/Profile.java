@@ -18,6 +18,7 @@ public class Profile implements Serializable {
 
     /**
      * creates a new Profile with the provided details
+     *
      * @param phoneNumber       phone number of the user
      * @param relationship      relationship status of the user
      * @param gender            gender of the user

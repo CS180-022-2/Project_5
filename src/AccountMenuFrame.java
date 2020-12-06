@@ -33,9 +33,12 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
 
     ActionListener actionListener = new ActionListener() {
         /**
-         *
-         *
-         * @param e
+         * @param e Invoked when any of the button in the frame is selected.
+         *          There are three button choices: Back, Edit Account, and Delete Account.
+         *          Back and Edit Account button will lead to the respective frames while
+         *          the Delete Account button happens within the AccountMenuFrame.
+         *          Delete Account would be done by sending a userID to the server and server processes
+         *          the deletion of the user account based on the userID.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -80,10 +83,10 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
     };
 
     /**
+     *  The constructor of AccountMenuFrame which uses two parameters : socket and userId
      *
-     *
-     * @param socket
-     * @param userId
+     * @param socket The socket that connect this local machine with the server
+     * @param userId The userId of the login user
      */
     public AccountMenuFrame(Socket socket, String userId) {
         this.socket = socket;
@@ -91,7 +94,8 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
     }
 
     /**
-     *
+     *  Sets up the appearance of the Account Menu Frame by initializing GUIs.
+     *  BufferedReader and PrintWriter is created with the socket that is being transferred from other frame.
      */
     @Override
     public void run() {
@@ -110,6 +114,7 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
         editAccountButton = new JButton("Edit Account");
         deleteAccountButton = new JButton("Delete Account");
         backButton = new JButton("Back to Menu Frame");
+
         //Set component location
         editAccountButton.setBounds(120, 50, 160, 30);
         deleteAccountButton.setBounds(120, 100, 160, 30);
@@ -124,16 +129,15 @@ public class AccountMenuFrame extends JOptionPane implements Runnable {
         AccountMenuFrameContentPane.add(editAccountButton);
         AccountMenuFrameContentPane.add(deleteAccountButton);
         AccountMenuFrameContentPane.add(backButton);
+
         //Finalize the Frame
         accountMenuFrame.setSize(400, 300);
         accountMenuFrame.setLocationRelativeTo(null);
         accountMenuFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         accountMenuFrame.addWindowListener(new WindowAdapter() {
             /**
-             * Invoked when a window is in the process of being closed.
-             * The close operation can be overridden at this point.
-             *
-             * @param e
+             * @param e Invoked when a window is in the process of being closed.
+             *          The close operation can be overridden at this point.
              */
             @Override
             public void windowClosing(WindowEvent e) {

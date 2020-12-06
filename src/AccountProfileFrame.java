@@ -34,9 +34,10 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
 
     ActionListener actionListener = new ActionListener() {
         /**
-         *
-         *
-         * @param e
+         * @param e Invoked when any of the button in the frame is selected.
+         *          There are three button choices: Back, Profile, and Account.
+         *          All the buttons here will lead to the respective frames to process
+         *          the required functionality.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -56,10 +57,10 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
     };
 
     /**
+     *  The constructor of AccountMenuFrame which uses two parameters : socket and userId
      *
-     *
-     * @param socket
-     * @param userId
+     * @param socket The socket that connects this local machine with the server
+     * @param userId The userId of the login user
      */
     public AccountProfileFrame(Socket socket, String userId) {
         this.socket = socket;
@@ -67,7 +68,8 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
     }
 
     /**
-     *
+     *  Sets up the appearance of the Account Profile Frame by initializing GUIs.
+     *  BufferedReader and PrintWriter is created with the socket that is being transferred from other frame.
      */
     @Override
     public void run() {
@@ -86,6 +88,7 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
         accountButton = new JButton("Account");
         profileButton = new JButton("Profile");
         backButton = new JButton("Back to User Frame");
+
         //Set component location
         accountButton.setBounds(120, 50, 150, 30);
         profileButton.setBounds(120, 100, 150, 30);
@@ -100,16 +103,15 @@ public class AccountProfileFrame extends JOptionPane implements Runnable {
         AccountProfileContentPane.add(accountButton);
         AccountProfileContentPane.add(profileButton);
         AccountProfileContentPane.add(backButton);
+
         //Finalize the Frame
         accountProfileFrame.setSize(400, 300);
         accountProfileFrame.setLocationRelativeTo(null);
         accountProfileFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         accountProfileFrame.addWindowListener(new WindowAdapter() {
             /**
-             * Invoked when a window is in the process of being closed.
-             * The close operation can be overridden at this point.
-             *
-             * @param e
+             * @param e Invoked when a window is in the process of being closed.
+             *          The close operation can be overridden at this point.
              */
             @Override
             public void windowClosing(WindowEvent e) {

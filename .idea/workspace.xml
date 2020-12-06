@@ -4,39 +4,20 @@
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainData.dat" beforeDir="false" afterPath="$PROJECT_DIR$/MainData.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AccountMenuFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AccountMenuFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AccountMenuFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AccountMenuFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AccountProfileFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AccountProfileFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AccountProfileFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AccountProfileFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditAccountFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditAccountFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditAccountFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditAccountFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/EditProfileFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/LoginFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/LoginFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/LoginFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/Profile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileDisplayFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileDisplayFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileDisplayFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileDisplayFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileMenuFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RegisterFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RegisterFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RegisterFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RegisterFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest$TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest$TestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccountMenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountMenuFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccountProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountProfileFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddFriendFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddFriendFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditAccountFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditAccountFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditProfileFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileDisplayFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileDisplayFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileMenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileMenuFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +132,9 @@
       <workItem from="1606924622632" duration="1222000" />
       <workItem from="1606968444878" duration="1736000" />
       <workItem from="1607054844131" duration="3165000" />
-      <workItem from="1607077984174" duration="558000" />
+      <workItem from="1607077984174" duration="3608000" />
+      <workItem from="1607203646904" duration="710000" />
+      <workItem from="1607250076883" duration="6702000" />
     </task>
     <servers />
   </component>

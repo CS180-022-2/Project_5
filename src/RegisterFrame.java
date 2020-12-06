@@ -49,10 +49,8 @@ public class RegisterFrame extends JComponent implements Runnable {
 
     ActionListener actionListener = new ActionListener() {
         /**
-         * New action listener for listening to button press.
-         * Invoked when either backButton or registerButton is pressed.
-         *
-         * @param e
+         * @param e New action listener for listening to button press.
+         *          Invoked when either backButton or registerButton is pressed.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -109,15 +107,16 @@ public class RegisterFrame extends JComponent implements Runnable {
     };
 
     /**
-     *  The constructor of the RegisterFrame
-     * @param socket The socket of client and server communication.
+     * The constructor of the RegisterFrame
+     * @param socket The socket that connects this local machine with the server
      */
     public RegisterFrame(Socket socket) {
         this.socket = socket;
     }
 
     /**
-     * Sets up the registration frame
+     * Sets up the appearance of the Register Frame by initializing GUIs.
+     * BufferedReader and PrintWriter is created with the socket that is being transferred from other frame.
      */
     @Override
     public void run() {
@@ -133,6 +132,7 @@ public class RegisterFrame extends JComponent implements Runnable {
         registerFrame = new JFrame("Register Frame");
         Container registerFrameContentPane = registerFrame.getContentPane();
         registerFrameContentPane.setLayout(null);
+
         //Initialize components
         userIdLabel = new JLabel("User ID");
         userIdTextField = new JTextField();
@@ -144,6 +144,7 @@ public class RegisterFrame extends JComponent implements Runnable {
         emailTextField = new JTextField();
         registerButton = new JButton("Register");
         backButton = new JButton("Back to login");
+
         //Set component location
         userIdLabel.setBounds(110, 20, 80, 30);
         userIdTextField.setBounds(200, 20, 100, 30);
@@ -171,17 +172,17 @@ public class RegisterFrame extends JComponent implements Runnable {
         registerFrameContentPane.add(emailTextField);
         registerFrameContentPane.add(registerButton);
         registerFrameContentPane.add(backButton);
+
         //Finalize the Frame
         registerFrame.setSize(400, 300);
         registerFrame.setLocationRelativeTo(null);
         registerFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
         //add a window listener to close the bufferedReader and printWriter to prevent socket close exception
         registerFrame.addWindowListener(new WindowAdapter() {
             /**
-             * Invoked when a window is in the process of being closed.
-             * The close operation can be overridden at this point.
-             *
-             * @param e
+             * @param e Invoked when a window is in the process of being closed.
+             *          The close operation can be overridden at this point.
              */
             @Override
             public void windowClosing(WindowEvent e) {
@@ -200,14 +201,15 @@ public class RegisterFrame extends JComponent implements Runnable {
 
     /**
      * The content check method
-     * Check the format of text in JTextField and JPasswordField for user id, password, real name, and email
-     * The functionality is implement using String.matches() method which requires a regex as its parameter.
-     * The content has to fully match the regex in order to have boolean correct as true
+     * Checks the format of text in JTextField and JPasswordField for user id, password, real name, and email
+     * The functionality is implemented using String.matches() method which requires a regex as its parameter.
+     * The content has to fully match the regex in order to set boolean correct to true.
+     *
      * @param userId The text inside userIdTextField
      * @param password The text inside passwordField
      * @param realName The text inside realNameTextField
      * @param email The text inside emailTextField
-     * @return A boolean which 1 indicates pass the test while 0 indicates does not pass
+     * @return A boolean in which 1 indicates passed the test while 0 indicates failed the test
      */
     public boolean contentCheck(String userId, String password, String realName, String email) {
         boolean correct = true;

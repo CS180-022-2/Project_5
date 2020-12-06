@@ -17,6 +17,11 @@ import javax.swing.SwingUtilities;
 
 public class ProfileClient {
 
+    /**
+     * The main method of our program.
+     * Initializes the hostname with "localhost" and port number with 1112.
+     * Starts by invoking a LoginFrame in the Event Dispatch Thread.
+     */
     public static void main(String[] args) {
         Socket socket;
         try {
@@ -26,7 +31,7 @@ public class ProfileClient {
                     "Unable to connect to the server", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        //Invoke LoginFrame in the Event Dispatch Thread
+        // Invoke LoginFrame in the Event Dispatch Thread
         SwingUtilities.invokeLater(new LoginFrame(socket));
     }
 }

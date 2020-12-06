@@ -19,9 +19,9 @@ public class ProfileServer implements Runnable {
     public static File f;
 
     /**
+     * The constructor of ProfileServer which uses one parameter : socket
      *
-     *
-     * @param socket
+     * @param socket The socket that connect this computer connect with the server
      */
     public ProfileServer(Socket socket) {
         this.socket = socket;
@@ -31,10 +31,10 @@ public class ProfileServer implements Runnable {
         //Initialize an arraylist to store all user data.
         userArrayList = new ArrayList<>();
         f = new File("MainData.dat");
-        /** if there is no such date file, a file would be created
-         *  else would user objectInputStream to read user object inside the file.
+        /*
+         * If there is no such date file, a file would be created
+         * else, would lead user objectInputStream to read user object inside the file.
          */
-
         if (!f.exists()) {
             try {
                 f.createNewFile();
@@ -48,8 +48,8 @@ public class ProfileServer implements Runnable {
                     userArrayList.add((User) readObject);
                     readObject = objectInputStream.readObject();
                 }
-                /** catch EOF exception which indicates that the objectInputStream has reached an end.
-                 *  This is for special case when there is no object inside the data file but the file is created.
+                /* Catch EOF exception which indicates that the objectInputStream has reached an end.
+                 * This is for special case when there is no object inside the data file but the file is created.
                  */
             } catch (EOFException eofException) {
 
@@ -59,7 +59,7 @@ public class ProfileServer implements Runnable {
         }
         try {
             ServerSocket serverSocket = new ServerSocket(1112);
-            /**
+            /*
              * Use a while loop to accept all socket receives with multithreading
              * A thread would be start whenever the a socket is accepted
              * The socket would be pass to a thread to interacting with the client.
@@ -76,7 +76,8 @@ public class ProfileServer implements Runnable {
 
     /**
      * login method
-     * Check the username and password to see if the user logs in
+     * Check the username and password to see if the user logs in.
+     *
      * @param username the username of the login user
      * @param password the password of the login user
      * @return true if the username and password are correct
@@ -99,7 +100,8 @@ public class ProfileServer implements Runnable {
     }
 
     /**
-     * gets the Profile that matches with the given userId parameter
+     * getProfile method
+     * Gets the Profile that matches with the given userId parameter
      *
      * @param userId the user ID to search for
      * @return Profile if found, null if not found
@@ -115,6 +117,7 @@ public class ProfileServer implements Runnable {
     }
 
     /**
+     * setUserProfile method
      * Sets the userProfile up with the inserted userId
      *
      * @param userProfile the profile to set up
@@ -133,7 +136,8 @@ public class ProfileServer implements Runnable {
     }
 
     /**
-     * Sends out a friend request to the reciever using userId as a guide
+     * requestFriend method
+     * Sends out a friend request to the receiver using userId as a guide
      *
      * @param ownId id of the requester
      * @param friendId id of the user that the requester want to request
@@ -174,7 +178,8 @@ public class ProfileServer implements Runnable {
 
     /**
      * deleteFriend method
-     * delete the friend in deleter 's  friendList and deleter in friend's friendList.
+     * Delete the friend in user's friendList and vice versa for the friend who got deleted.
+     *
      * @param ownId the id of the deleter
      * @param friendId the id of the friend that deleter want to delete
      * @return True if the deletion is success; False if no existence
@@ -223,6 +228,7 @@ public class ProfileServer implements Runnable {
     }
 
     /**
+     * uniqueIdCheck method
      * checks if the given parameter userId is unique in the database
      *
      * @param userId the userId to check
@@ -245,7 +251,7 @@ public class ProfileServer implements Runnable {
     /**
      * acceptFriend method
      * accept the request in pending list
-     * add to each other 's friendList
+     * add to each other's friendList
      * delete history in pending and requested list
      *
      * @param ownId the id of the user who accept the request
@@ -323,6 +329,7 @@ public class ProfileServer implements Runnable {
      * resendRequest method
      * check if the request has been sent
      * if not resend request, if sent, ask the user to be more patient
+     *
      * @param ownId the login user
      * @param friendId the user who have been requested
      * @return "RequestExisted" if the request is in the user's pending list

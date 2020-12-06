@@ -50,7 +50,7 @@ public class UserFrame extends JComponent implements Runnable {
 
     ActionListener popupItemListener = new ActionListener() {
         /**
-         * @param e invoked when any of the choice of the popup menu is selected.
+         * @param e Invoked when any of the choice of the popup menu is selected.
          *          There are two menu choices: view profile and delete friend.
          *          An if statement is used to prevent no row is selected
          *          The functionality would be be done by send a String order and a userId to the server.
@@ -108,12 +108,11 @@ public class UserFrame extends JComponent implements Runnable {
 
     ActionListener buttonActionListener = new ActionListener() {
         /**
-         *  This is the listener for buttons.
-         *  There are three buttons:
-         *  One is the logout button which back to loginFrame.
-         *  The second is the addFriend button which leads you to addFriend Frame.
-         *  The third would be the account and profile button which would lead you to AccountProfileFrame.
-         * @param e
+         *  @param e This is the listener for buttons.
+         *           There are three buttons:
+         *           One is the logout button which back to LoginFrame.
+         *           The second is the addFriend button which leads you to AddFriend Frame.
+         *           The third would be the account and profile button which would lead you to AccountProfileFrame.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -145,7 +144,7 @@ public class UserFrame extends JComponent implements Runnable {
 
     /**
      *  In run method, the GUIs are initialized.
-     *  bufferedReader and printWriter is created with the socket that being transferred from other frame.
+     *  BufferedReader and PrintWriter is created with the socket that being transferred from other frame.
      */
     @Override
     public void run() {
@@ -246,10 +245,8 @@ public class UserFrame extends JComponent implements Runnable {
         userFrame.setLocationRelativeTo(null);
         userFrame.addWindowListener(new WindowAdapter() {
             /**
-             * Invoked when a window is in the process of being closed.
-             * The close operation can be overridden at this point.
-             *
-             * @param e
+             * @param e Invoked when a window is in the process of being closed.
+             *          The close operation can be overridden at this point.
              */
             @Override
             public void windowClosing(WindowEvent e) {
@@ -267,7 +264,7 @@ public class UserFrame extends JComponent implements Runnable {
     }
 
     /**
-     *The method that communicate with the server and get the updated userInfo in the login user's friendList
+     *  The method that communicate with the server and get the updated userInfo in the login user's friendList
      *
      * @param userId The id of the login user
      * @return return the updated model with the content of current friendList

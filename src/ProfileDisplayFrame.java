@@ -44,9 +44,10 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
 
     ActionListener actionListener = new ActionListener() {
         /**
-         *
-         *
-         * @param e
+         *@param e Invoked when any of the button in the frame is selected.
+         *         There are two button choices: Back and Add Friend.
+         *         Back button will lead to the UserFrame while Add Friend button
+         *         would lead to the AddFriendFrame.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -63,12 +64,13 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
     };
 
     /**
-     * Constructor for the ProfileDisplayFrame class
+     * The constructor of ProfileDisplayFrame which uses four parameters : socket, viewerId, profileOwnerId, and
+     *                                                                     tracer.
      *
-     * @param socket the socket to connect to
-     * @param viewerId 
-     * @param profileOwnerId 
-     * @param tracker 
+     * @param socket The socket that connects this local machine with the server
+     * @param viewerId The userId of the viewer
+     * @param profileOwnerId The userId of the owner of this profile
+     * @param tracker The tracker that tracks the
      */
     public ProfileDisplayFrame(Socket socket, String viewerId, String profileOwnerId, String tracker) {
         this.socket = socket;
@@ -78,7 +80,8 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
     }
 
     /**
-     * Sets up the appearance of the profile display frame 
+     *  Sets up the appearance of the Profile Display Frame by initializing GUIs.
+     *  BufferedReader and PrintWriter is created with the socket that is being transferred from other frame.
      */
     @Override
     public void run() {
@@ -172,6 +175,7 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
                 relationshipList.setSelectedIndex(1);
             }
         }
+        //Disallowing the edition of text fields
         userPhoneNoTextField.setEditable(false);
         currentOccupationTextField.setEditable(false);
         aboutMeTextField.setEditable(false);
@@ -200,10 +204,8 @@ public class ProfileDisplayFrame extends JComponent implements Runnable {
         profileDisplayFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         profileDisplayFrame.addWindowListener(new WindowAdapter() {
             /**
-             * Invoked when a window is in the process of being closed.
-             * The close operation can be overridden at this point.
-             *
-             * @param e
+             * @param e Invoked when a window is in the process of being closed.
+             *          The close operation can be overridden at this point.
              */
             @Override
             public void windowClosing(WindowEvent e) {

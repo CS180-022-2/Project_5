@@ -40,9 +40,11 @@ public class EditAccountFrame extends JOptionPane implements Runnable {
 
     ActionListener actionListener = new ActionListener() {
         /**
-         *
-         *
-         * @param e
+         *@param e Invoked when any of the button in the frame is selected.
+         *         There are two button choices: Back and Edit Account.
+         *         Back button will lead to the AccountMenuFrame while Edit Account button
+         *         would perform the functionality by sending the userID, password, user name, and
+         *         user email to the server.
          */
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -55,24 +57,9 @@ public class EditAccountFrame extends JOptionPane implements Runnable {
                 rawPassword.append(passwordField.getPassword());
                 String realName = realNameTextField.getText();
                 String email = emailTextField.getText();
-                ;
                 if (!contentCheck(rawPassword.toString(), realName, email)) {
                     return;
                 }
-                /*printWriter.println("UniqueIdCheck");
-                printWriter.println(userId);
-                printWriter.flush();
-                String result = "";
-                try {
-                    result = bufferedReader.readLine();
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-                if (!result.equals("Unique")) {
-                    JOptionPane.showMessageDialog(null, "UserID exists",
-                            "UserID Error", JOptionPane.WARNING_MESSAGE);
-                    return;
-                }*/
                 //Pass the data to server
                 printWriter.println("EditOwnAccount");
                 printWriter.printf("%s, %s, %s, %s\n", userId, rawPassword.toString(), realName, email);
@@ -99,10 +86,10 @@ public class EditAccountFrame extends JOptionPane implements Runnable {
     };
 
     /**
+     *  The constructor of UserFrame which uses two parameters : socket and userId
      *
-     *
-     * @param socket
-     * @param userId
+     * @param socket The socket that connects this local machine with the server
+     * @param userId The userId of the login user
      */
     public EditAccountFrame(Socket socket, String userId) {
         this.socket = socket;
@@ -110,7 +97,8 @@ public class EditAccountFrame extends JOptionPane implements Runnable {
     }
 
     /**
-     * Sets up the appearance of the edit account frame
+     *  Sets up the appearance of the Edit Account Frame by initializing GUIs.
+     *  BufferedReader and PrintWriter is created with the socket that is being transferred from other frame.
      */
     @Override
     public void run() {
@@ -126,6 +114,7 @@ public class EditAccountFrame extends JOptionPane implements Runnable {
         editAccountFrame = new JFrame("Edit Account Frame");
         Container editAccountFrameContentPane = editAccountFrame.getContentPane();
         editAccountFrameContentPane.setLayout(null);
+
         //Initialize components
         userIdLabel = new JLabel("User ID");
         userIdTextField = new JLabel(userId);
@@ -137,6 +126,7 @@ public class EditAccountFrame extends JOptionPane implements Runnable {
         emailTextField = new JTextField();
         editAccountButton = new JButton("Edit");
         backButton = new JButton("Back to Menu");
+
         //Set component location
         userIdLabel.setBounds(110, 20, 80, 30);
         userIdTextField.setBounds(200, 20, 100, 30);
@@ -164,16 +154,15 @@ public class EditAccountFrame extends JOptionPane implements Runnable {
         editAccountFrameContentPane.add(emailTextField);
         editAccountFrameContentPane.add(editAccountButton);
         editAccountFrameContentPane.add(backButton);
+
         //Finalize the Frame
         editAccountFrame.setSize(400, 300);
         editAccountFrame.setLocationRelativeTo(null);
         editAccountFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         editAccountFrame.addWindowListener(new WindowAdapter() {
             /**
-             * Invoked when a window is in the process of being closed.
-             * The close operation can be overridden at this point.
-             *
-             * @param e
+             * @param e Invoked when a window is in the process of being closed.
+             *          The close operation can be overridden at this point.
              */
             @Override
             public void windowClosing(WindowEvent e) {
@@ -194,7 +183,7 @@ public class EditAccountFrame extends JOptionPane implements Runnable {
      * Checks inserted information to make sure it doesn't contain forbidden characters.
      *
      * @param password the password to be checked
-     * @param realName the name to be checked 
+     * @param realName the name to be checked
      * @param email the email to be checked
      * @return true if above input passes checks, false otherwise.
      */
