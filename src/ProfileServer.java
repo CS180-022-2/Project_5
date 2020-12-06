@@ -115,11 +115,11 @@ public class ProfileServer implements Runnable {
     }
 
     /**
+     * Sets the userProfile up with the inserted userId
      *
-     *
-     * @param userProfile
-     * @param userId
-     * @return
+     * @param userProfile the profile to set up
+     * @param userId the Id to connect the profile to 
+     * @return true if success, false if userId is not found
      */
     synchronized boolean setUserProfile(Profile userProfile, String userId) {
         boolean success = false;
@@ -133,6 +133,7 @@ public class ProfileServer implements Runnable {
     }
 
     /**
+     * Sends out a friend request to the reciever using userId as a guide
      *
      * @param ownId id of the requester
      * @param friendId id of the user that the requester want to request
