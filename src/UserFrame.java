@@ -193,7 +193,8 @@ public class UserFrame extends JComponent implements Runnable {
         userFrame.add(panel, BorderLayout.NORTH);
         panel3.add(back);
         userFrame.add(panel3, BorderLayout.SOUTH);
-        jScrollPane = new JScrollPane(jTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane = new JScrollPane(jTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                  JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JPanel panel2 = new JPanel(new BorderLayout());
         panel2.add(jScrollPane, BorderLayout.CENTER);
         panel2.setVisible(true);
@@ -236,9 +237,8 @@ public class UserFrame extends JComponent implements Runnable {
              */
             @Override
             public void changedUpdate(DocumentEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                throw new UnsupportedOperationException("Not supported yet.");
             }
-
         });
         userFrame.pack();
         userFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -266,12 +266,12 @@ public class UserFrame extends JComponent implements Runnable {
 
     /**
      *  The method that communicate with the server and get the updated userInfo in the login user's friendList
-     * @param userId The id of the login user
+     * @param loginId The id of the login user
      * @return return the updated model with the content of current friendList
      */
-    public DefaultTableModel updateModel(String userId) {
+    public DefaultTableModel updateModel(String loginId) {
         printWriter.println("GetFriendList");
-        printWriter.println(userId);
+        printWriter.println(loginId);
         printWriter.flush();
         String result = null;
         try {
