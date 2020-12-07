@@ -11746,6 +11746,7 @@ public class RunLocalTest {
                     ep.contentCheck("1111111111", "student", "hi"
                     , "", "male", ""));
             // ProfileServer
+            /*
             ProfileServer ps = new ProfileServer(socket);
             String[] hi = new String[]{};
             try {
@@ -11804,7 +11805,7 @@ public class RunLocalTest {
                     ps.resendRequest("derek2", "joshua"));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true,
                     ps.resendRequest("", ""));
-
+            */
         }
     }
 }
