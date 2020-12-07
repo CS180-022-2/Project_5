@@ -27,12 +27,12 @@ public class RunLocalTest {
         Result result = JUnitCore.runClasses(TestCase.class);
         if (result.wasSuccessful()) {
             System.out.println("Excellent - Test ran successfully");
-            System.exit(0);
         } else {
             for (Failure failure : result.getFailures()) {
                 System.out.println(failure.toString());
             }
         }
+        System.exit(0);
     }
 
     /**

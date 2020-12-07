@@ -3,9 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="d7857197-2a3c-4e87-ac95-464415f8911f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccountMenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountMenuFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccountProfileFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountProfileFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddFriendFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddFriendFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AccountMenuFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AccountMenuFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AccountProfileFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AccountProfileFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/AddFriendFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/LoginFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/LoginFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/LoginFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/ProfileServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest$TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest$TestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/RunLocalTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project_5/UserFrame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +65,19 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last.edited.regexp" value="Ching-Hsuan Hung" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.ProfileServer">
+  <component name="RunManager" selected="Application.RunLocalTest">
     <configuration name="ProfileClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ProfileClient" />
       <module name="Project_5" />
@@ -82,15 +99,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,9 +117,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ProfileClient" />
-        <item itemvalue="Application.ProfileServer" />
         <item itemvalue="Application.RunLocalTest" />
+        <item itemvalue="Application.ProfileServer" />
+        <item itemvalue="Application.ProfileClient" />
       </list>
     </recent_temporary>
   </component>
@@ -126,6 +141,10 @@
       <workItem from="1607203646904" duration="710000" />
       <workItem from="1607250076883" duration="9132000" />
       <workItem from="1607268197057" duration="5206000" />
+      <workItem from="1607321170348" duration="3574000" />
+      <workItem from="1607336526910" duration="2308000" />
+      <workItem from="1607345196675" duration="6100000" />
+      <workItem from="1607351697073" duration="248000" />
     </task>
     <servers />
   </component>
@@ -146,5 +165,43 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1193" height="208" key="GridCell.Tab.0.bottom" timestamp="1607351945653">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state width="1193" height="208" key="GridCell.Tab.0.bottom/0.0.1549.831@0.0.1549.831" timestamp="1607351945653" />
+    <state width="1193" height="208" key="GridCell.Tab.0.center" timestamp="1607351945653">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state width="1193" height="208" key="GridCell.Tab.0.center/0.0.1549.831@0.0.1549.831" timestamp="1607351945653" />
+    <state width="1193" height="208" key="GridCell.Tab.0.left" timestamp="1607351945653">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state width="1193" height="208" key="GridCell.Tab.0.left/0.0.1549.831@0.0.1549.831" timestamp="1607351945653" />
+    <state width="1193" height="208" key="GridCell.Tab.0.right" timestamp="1607351945653">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state width="1193" height="208" key="GridCell.Tab.0.right/0.0.1549.831@0.0.1549.831" timestamp="1607351945653" />
+    <state width="1506" height="261" key="GridCell.Tab.1.bottom" timestamp="1607351301492">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state width="1506" height="261" key="GridCell.Tab.1.bottom/0.0.1549.831@0.0.1549.831" timestamp="1607351301492" />
+    <state width="1506" height="261" key="GridCell.Tab.1.center" timestamp="1607351301492">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state width="1506" height="261" key="GridCell.Tab.1.center/0.0.1549.831@0.0.1549.831" timestamp="1607351301492" />
+    <state width="1506" height="261" key="GridCell.Tab.1.left" timestamp="1607351301492">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state width="1506" height="261" key="GridCell.Tab.1.left/0.0.1549.831@0.0.1549.831" timestamp="1607351301492" />
+    <state width="1506" height="261" key="GridCell.Tab.1.right" timestamp="1607351301492">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state width="1506" height="261" key="GridCell.Tab.1.right/0.0.1549.831@0.0.1549.831" timestamp="1607351301492" />
+    <state x="432" y="189" key="run.anything.popup" timestamp="1607344292461">
+      <screen x="0" y="0" width="1549" height="831" />
+    </state>
+    <state x="432" y="189" key="run.anything.popup/0.0.1549.831@0.0.1549.831" timestamp="1607344292461" />
   </component>
 </project>
