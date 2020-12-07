@@ -122,7 +122,7 @@ public class ProfileServer implements Runnable {
      * Sets the userProfile up with the inserted userId
      *
      * @param userProfile the profile to set up
-     * @param userId the Id to connect the profile to 
+     * @param userId the Id to connect the profile to
      * @return true if success, false if userId is not found
      */
     synchronized boolean setUserProfile(Profile userProfile, String userId) {
@@ -372,6 +372,7 @@ public class ProfileServer implements Runnable {
      * create a printWriter and a bufferedReader
      * Use a switch to perform different tasks required by the clients
      */
+
     @Override
     public void run() {
         try {
@@ -403,8 +404,6 @@ public class ProfileServer implements Runnable {
                         boolean hasAccount = login(loginUser, password);
                         if (hasAccount) {
                             printWriter.println("Success");
-                        } else if (hasAccount) {
-                            printWriter.println("DualLogin");
                         } else {
                             printWriter.println("Invalid");
                         }

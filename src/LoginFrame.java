@@ -83,10 +83,6 @@ public class LoginFrame extends JComponent implements Runnable {
                                     "Invalid username/password", "Login Failure",
                                     JOptionPane.INFORMATION_MESSAGE);
                             return;
-                        } else if (result.equals("DualLogin")) {
-                            JOptionPane.showMessageDialog(null,
-                                    "Your account has already logged in ", "Login Failure",
-                                    JOptionPane.INFORMATION_MESSAGE);
                         }
                     }
                 } catch (IOException ioException) {
