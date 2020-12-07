@@ -1,4 +1,4 @@
-# Project 5, Group 022-2
+# Project 5 Option 2, Group 022-2
 ### CS 180 Capstone Project
 To design and implement a limited form of social network application. 
 
