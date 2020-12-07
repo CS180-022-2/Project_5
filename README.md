@@ -327,10 +327,24 @@ This method set up the appearance of the frame
 + Pressing "deleteProfileButton" button will prompt a comfirmation message, if the user chose yes then its profile info will be reset to blank
 
 <img width="213" alt="deleteProfile" src="https://user-images.githubusercontent.com/74845705/101247657-bac2ab80-3755-11eb-8d93-8a571f51b73a.png">
+
+Delete empty profile Test Step by step
+
+Jason has an empty profile
+
+<img width="283" alt="JasonProfile" src="https://user-images.githubusercontent.com/74845705/101325037-14d28680-38a6-11eb-8340-354f61fb98e1.png">
+
+Let's delete the empty profile
+
+<img width="276" alt="JasonProfile2" src="https://user-images.githubusercontent.com/74845705/101325039-1603b380-38a6-11eb-9d00-e7328f11eeb5.png">
+
+An error occurred, we can't delete an empty profile
+
+<img width="283" alt="JasonProfile3" src="https://user-images.githubusercontent.com/74845705/101325041-169c4a00-38a6-11eb-8710-8b2d3b8d13bd.png">
+
 #### Class Documentation
 ##### public ProfileMenuFrame(Socket socket, String userId) Constructor
 The constructor of EditProfileFrame which uses two parameters : socket, the socket that connects this local machine with the server, and userId, the userId of the login user.
-
 
 ### ProfileServer Class
 #### Description
