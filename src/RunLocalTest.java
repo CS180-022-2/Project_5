@@ -11696,6 +11696,12 @@ public class RunLocalTest {
             // Register Frame
             c = "RegisterFrame";
             m = "contentCheck";
+            Thread thread = new Thread(){
+                public void run(){
+                    ProfileServer.main(new String[0]);
+                }
+            };
+            thread.start();
             Socket socket = new Socket("localhost", 1112);
             RegisterFrame rf = new RegisterFrame(socket);
             Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true,
@@ -11724,7 +11730,6 @@ public class RunLocalTest {
                     eaf.contentCheck("Cs180===", "Derek S", "sun@purdue.edu"));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true,
                     eaf.contentCheck("Cs180===", "Derek Sun", ""));
-
             // EditProfileFrame
             c = "EditProfileFrame";
             EditProfileFrame ep = new EditProfileFrame(socket, "derek2");
@@ -11754,11 +11759,6 @@ public class RunLocalTest {
             try {
                 ProfileServer ps = new ProfileServer(socket);
                 String[] hi = new String[]{};
-                try {
-                    //ps.main(hi);
-                } catch (Exception e) {
-                    System.exit(1);
-                }
                 c = "ProfileServer";
                 m = "login";
                 Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true, ps.login(
@@ -11813,7 +11813,11 @@ public class RunLocalTest {
                         ps.resendRequest("derek2", "joshua"));
                 Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true,
                         ps.resendRequest("", ""));
-            } catch (Exception e) {}
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            //System.exit is used in order to close the ProfileServer which would never ends normally due to its design
+            System.exit(0);
         }
     }
 }
