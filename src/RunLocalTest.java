@@ -98,16 +98,16 @@ public class RunLocalTest {
 
             superinterfaces = clazz.getInterfaces();
 
-            Assert.assertTrue("Ensure that `"+ className +
+            Assert.assertTrue("Ensure that `" + className +
                     "` is `public`!", Modifier.isPublic(modifiers));
 
-            Assert.assertFalse("Ensure that `"+ className +
+            Assert.assertFalse("Ensure that `" + className +
                     "` is NOT `abstract`!", Modifier.isAbstract(modifiers));
 
-            Assert.assertEquals("Ensure that `"+ className +
+            Assert.assertEquals("Ensure that `" + className +
                     "` extends `JOptionPane`!", JOptionPane.class, superclass);
 
-            Assert.assertEquals("Ensure that `"+ className +
+            Assert.assertEquals("Ensure that `" + className +
                     "` implements 'Runnable'", 1, superinterfaces.length);
 
         }
@@ -199,7 +199,7 @@ public class RunLocalTest {
             Assert.assertEquals("Ensure that `" + className + "`'s `" + fieldName
                     + "` field is the correct type!", expectedType, type);
         }
-        @Test(timeout = 1_000)
+        @Test(timeout = 1000)
         public void accountMenuFrameFieldDeclarationTest3() {
             Class<?> clazz;
             String className = "AccountMenuFrame";
@@ -233,9 +233,11 @@ public class RunLocalTest {
 
             type = testField.getType();
 
-            //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `private`!", Modifier.isPrivate(modifiers));
+            //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName +
+            // "` field is `private`!", Modifier.isPrivate(modifiers));
 
-            //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName + "` field is `final`!", Modifier.isFinal(modifiers));
+            //Assert.assertTrue("Ensure that `" + className + "`'s `" + fieldName +
+            // "` field is `final`!", Modifier.isFinal(modifiers));
 
             Assert.assertFalse("Ensure that `" + className + "`'s `" + fieldName
                     + "` field is NOT `static`!", Modifier.isStatic(modifiers));
@@ -521,7 +523,8 @@ public class RunLocalTest {
             try {
                 constructor = clazz.getDeclaredConstructor(Socket.class, String.class);
             } catch (NoSuchMethodException e) {
-                Assert.fail("Ensure that `" + className + "` declares a constructor that is `public` and has one parameters with types Socket!");
+                Assert.fail("Ensure that `" + className + "` declares a constructor that is `public` and " +
+                        "has one parameters with types Socket!");
 
                 return;
             } //end try catch
@@ -564,8 +567,8 @@ public class RunLocalTest {
             try {
                 method = clazz.getDeclaredMethod(methodName);
             } catch (NoSuchMethodException e) {
-                Assert.fail("Ensure that `" + className + "` declares a method named `" + methodName + "` that" +
-                        " has no parameters!");
+                Assert.fail("Ensure that `" + className + "` declares a method named `" + methodName + "` " +
+                        "that" + " has no parameters!");
 
                 return;
             } //end try catch
@@ -11746,7 +11749,7 @@ public class RunLocalTest {
                     ep.contentCheck("1111111111", "student", "hi"
                     , "", "male", ""));
             // ProfileServer
-            /*
+
             ProfileServer ps = new ProfileServer(socket);
             String[] hi = new String[]{};
             try {
@@ -11771,12 +11774,12 @@ public class RunLocalTest {
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true,
                     ps.setUserProfile(joshuaP, ""));
             m = "requestFriend";
-            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "Already " +
-                    "requested!", ps.requestFriend("derek2", "jason"));
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "Already friend!",
+                    ps.requestFriend("derek2", "jason"));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true,
                     ps.requestFriend("dere", ""));
             m = "deleteFriend";
-            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", true,
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", false,
                     ps.deleteFriend("derek2", "leo"));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true,
                     ps.deleteFriend("d", ""));
@@ -11791,21 +11794,21 @@ public class RunLocalTest {
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true,
                     ps.uniqueIdCheck("derek2"));
             m = "acceptFriend";
-            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "AcceptSuccess",
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "No request found.",
                     ps.acceptFriend("jason", "derek2"));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true,
                     ps.acceptFriend("", ""));
             m = "denyFriend";
-            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "DenySuccess",
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "No such user found.",
                     ps.denyFriend("joshua", "derek2"));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true,
                     ps.denyFriend("", ""));
             m = "resendRequest";
-            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "ResendSuccess",
+            Assert.assertEquals("Ensure " + c + "'s method " + m + " works correctly", "No such user found.",
                     ps.resendRequest("derek2", "joshua"));
             Assert.assertNotEquals("Ensure " + c + "'s method " + m + " works correctly", true,
                     ps.resendRequest("", ""));
-            */
+
         }
     }
 }
