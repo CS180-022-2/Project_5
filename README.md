@@ -443,6 +443,18 @@ After search, the id that matches remains, the rest disappear
 
 <img width="402" alt="UserAfterSearch" src="https://user-images.githubusercontent.com/74845705/101283547-050b6180-3816-11eb-9f64-a30d5f7cbb7b.png">
 
+Delete Friend Test step by step
+
+Log in as Derek and delete Jason 
+
+<img width="395" alt="DeleteFriend1" src="https://user-images.githubusercontent.com/74845705/101324560-67f80980-38a5-11eb-88b4-c6ef57ae39aa.png">
+
+Jason disappears from friendlist
+<img width="397" alt="DeleteFriend2" src="https://user-images.githubusercontent.com/74845705/101324566-69293680-38a5-11eb-9595-120b9ba036e9.png">
+
+Derek disappears from Jason's friendlist
+<img width="393" alt="DeleteFriend3" src="https://user-images.githubusercontent.com/74845705/101324571-69c1cd00-38a5-11eb-8dc7-9472e0aa02ca.png">
+
 #### Class Documentation
 ##### public UserFrame(Socket socket, String userId) Constructor
 The constructor of UserFrame which use two parameters : socket and userId. socket: the socket that connect this computer connect with the server. userId: The userId of the login user
